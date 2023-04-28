@@ -13,15 +13,22 @@ body {
 
 #navbar {
     position: relative;
+    
 
     #hamburger_icon {
+        : {
+
+        }
         position: absolute;
-        width: 5vw;
-        height: 10vh;
+        width: 3vw;
+        height: 4.5vh;
+        top: 2vh;
+        left: 1.5vw;
 
         background-image: url("../src/hamburger_icon.png");
         background-position: center;
         background-size: contain;
+        background-repeat: no-repeat;
     }
     #hamburger_content {
         position: absolute;
