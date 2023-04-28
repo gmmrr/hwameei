@@ -12,30 +12,31 @@
     <!-- absolute position bar -->
     <div id="navbar">
       <div id="hamburger_icon" onclick="show_hamburger_content()"></div>
+      <div id="hamburger_content_shadow"></div>
       <div id="hamburger_content" class="hamburger_switch">
         <div id="hamburger_close" onclick="show_hamburger_content()"></div>
-        <div class="hamburger_element" id="hamburger_element_homepage">
-          <div>首頁</div>
-          <div>homepage</div>
+        <div class="hamburger_element" id="hamburger_element_homepage" onclick="window.location.href='http://www.google.com'">
+          <p class="hamburger_element_zsh">首頁</p>
+          <p class="hamburger_element_eng">homepage</p>
         </div>
-        <div class="hamburger_element">
-          <div>個人化推薦</div>
-          <div>personalized recommendation</div>
+        <div class="hamburger_element" onclick="window.location.href='http://www.google.com'">
+          <p class="hamburger_element_zsh">個人化推薦</p>
+          <p class="hamburger_element_eng">personalized recommendation</p>
         </div>
-        <div class="hamburger_element">
-          <div>商品一覽</div>
-          <div>product list</div>
+        <div class="hamburger_element" onclick="window.location.href='http://www.google.com'">
+          <p class="hamburger_element_zsh">商品一覽</p>
+          <p class="hamburger_element_eng">product list</p>
         </div>
-        <div class="hamburger_element">
-          <div>門市介紹</div>
-          <div>shop introduction</div>
+        <div class="hamburger_element onclick="window.location.href='http://www.google.com'">
+          <p class="hamburger_element_zsh">門市介紹</p>
+          <p class="hamburger_element_eng">shop introduction</p>
         </div>
       </div>
     </div>
     <div id="functionbar">
-      <div id="cart_func"></div>
-      <div id="line_func"></div>
-      <div id="info_func"></div>
+      <div id="cart_func" onclick="window.location.href='http://www.google.com'"></div>
+      <div id="line_func" onclick="window.location.href='http://www.google.com'""></div>
+      <div id="info_func" onclick="window.location.href='http://www.google.com'""></div>
     </div>
     <div id="scrollbar">
       <div id="scroll_icon"></div>
@@ -45,9 +46,17 @@
     <!-- homepage -->
     <div id="homepage_background"></div>
     <div id="personalized_recommend_banner">
-      <div id="personalized_recommend">Personalized Recommendation</div>
-      <div id="personalized_recommend_zsh">個人化推薦</div>
-      <div id="choose_your_own_glasses">挑選你的專屬眼鏡</div>
+      <div id="personalized_recommend">
+        <div id="personalized_recommend_left_line"></div>
+        <p>PERSONALIZED RECOMMENDATION</p>
+        <div id="personalized_recommend_right_line"></div>
+      </div>
+      <div id="personalized_recommend_zsh">
+        <p>個人化推薦</p>
+      </div>
+      <div id="choose_your_own_glasses">
+        <p>挑選你的專屬眼鏡</p>
+      </div>
     </div>
     <div id="cards">
       <div></div>
@@ -55,15 +64,27 @@
       <div></div>
     </div>
     <div id="start_banner">
-      <div id="start_your_personalized_recommendation">開始嘗試個人化推薦吧</div>
-      <div id="start_button">START</div>
+      <div id="start_your_personalized_recommendation">
+        <p>開始嘗試個人化推薦吧</p>
+      </div>
+      <div id="start_button" onclick="window.location.href='http://www.google.com'">
+        <p>START</p>
+      </div>
     </div>
 
     <footer>
-      <div id="footer_brand_name">華美光學</div>
-      <div id="footer_address">地址:臺南市安定區中沙里沙崙30號</div>
-      <div id="footer_tel">TEL:065937597</div>
-      <div id="footer_fax">FAX:065937597</div>
+      <div id="footer_brand_name">
+        <p>華美光學</p>
+      </div>
+      <div id="footer_address">
+        <p>地址:臺南市安定區中沙里沙崙30號</p>
+      </div>
+      <div id="footer_tel">
+        <p>TEL:065937597</p>
+      </div>
+      <div id="footer_fax">
+        <p>FAX:065937597</p>
+      </div>
     </footer>
 
     <script src="./js/script.js"></script>
