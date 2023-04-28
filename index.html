@@ -11,10 +11,10 @@
   <body>
     <!-- absolute position bar -->
     <div id="navbar">
-      <div id="hamburger_icon" class="hamburger_switch"></div>
+      <div id="hamburger_icon" onclick="show_hamburger_content()"></div>
       <div id="hamburger_content" class="hamburger_switch">
-        <div id="hamburger_close"></div>
-        <div class="hamburger_element">
+        <div id="hamburger_close" onclick="show_hamburger_content()"></div>
+        <div class="hamburger_element" id="hamburger_element_homepage">
           <div>首頁</div>
           <div>homepage</div>
         </div>
@@ -33,9 +33,9 @@
       </div>
     </div>
     <div id="functionbar">
-      <div id="cart_func">cart</div>
-      <div id="line_func">line</div>
-      <div id="info_func">info</div>
+      <div id="cart_func"></div>
+      <div id="line_func"></div>
+      <div id="info_func"></div>
     </div>
     <div id="scrollbar">
       <div id="scroll_icon"></div>

@@ -1,24 +1,12 @@
-* {
-    margin: 0;
-}
-
-html {
-    width: 100vw;
-    // overflow-x: hidden;
-}
-
-body {
-    position: relative;
-}
+* { margin: 0;  }
+html { width: 100vw;overflow-x: hidden;}
+body {position: relative;}
 
 #navbar {
     position: relative;
     
 
     #hamburger_icon {
-        : {
-
-        }
         position: absolute;
         width: 3vw;
         height: 4.5vh;
@@ -29,22 +17,76 @@ body {
         background-position: center;
         background-size: contain;
         background-repeat: no-repeat;
+
+    }
+    #hamburger_icon:hover {
+        cursor: pointer;
     }
     #hamburger_content {
         position: absolute;
-        opacity: 0;
+        display: none;
         left: 0;
         height: 100vh;
         width: 65vw;
+
+        #hamburger_close {
+            position: absolute;
+            top: 2vh;
+            left: 1.5vw;
+            width: 3vw;
+            height: 4.5vh;
+
+
+            background-image: url("../src/hamburger_close.png");
+            background-position: center;
+            background-size: cover;
+            background-repeat: no-repeat;
+        }
+
+        #hamburger_close:hover {
+            cursor: pointer;
+        }
+
         .hamburger_element {
+            
+            margin-left: 3vw;
             display: flex;
+        }
+
+        #hamburger_element_homepage {
+            margin-top: 5vh;
         }
     }
 }
 
 #functionbar {
     position: fixed;
-    top: 60vh;
+    top: 65vh;
+    margin-left: 1vw;
+
+    #cart_func {
+        width: 5vw;
+        height: 5vw;
+        background-image: url("../src/funcbar_cart.png");
+        background-position: center;
+        background-size: cover;
+    }
+    #line_func {
+        width: 5vw;
+        height: 5vw;
+        margin-top: 1vh;
+        background-image: url("../src/funcbar_line.png");
+        background-position: center;
+        background-size: cover;
+    }
+    #info_func {
+        width: 5vw;
+        height: 5vw;
+        margin-top: 1vh;
+        background-image: url("../src/funcbar_info.png");
+        background-position: center;
+        background-size: cover;
+    }
 }
 
 #scrollbar {
@@ -70,7 +112,7 @@ body {
 
         border-style: solid;
         border-width: 0 0 23vh 100vw;
-        border-color: transparent transparent gray transparent;
+        border-color: transparent transparent white transparent;
     }
 }
 
@@ -84,22 +126,78 @@ body {
     background-size: cover;
 }
 
+#personalized_recommend_banner {
+    margin-top: 10vh;
+    #personalized_recommend {
+        display: flex;
+        justify-content: center;
+    }
+    #personalized_recommend_zsh {
+        display: flex;
+        justify-content: center;
+    }
+    #choose_your_own_glasses {
+        display: flex;
+        justify-content: center;
+    }
+}
 
+#cards {
+    margin-top: 5vh;
+    display: flex;
+    justify-content: space-around;
+    height: 60vh;
+    width: 100vw;
 
+    * {
+        height: 100%;
+        width: 27%;
+    }
 
+    :nth-child(1) {
+        margin-left: 5%;
+        background-image: url("../src/homepage_card1.png");
+        background-position: center;
+        background-size: contain;
+    }
+    :nth-child(2) {
+        background-image: url("../src/homepage_card2.png");
+        background-position: center;
+        background-size: contain;
+    }
+    :nth-child(3) {
+        margin-right: 5%;
+        background-image: url("../src/homepage_card3.png");
+        background-position: center;
+        background-size: contain;
+    }
+}
+
+#start_banner {
+    margin-top: 5vh;
+    #start_your_personalized_recommendation {
+        display: flex;
+        justify-content: center;
+    }
+    #start_button {
+        display: flex;
+        justify-content: center;
+    }
+}
 
 footer {
-    position: absolute;
+    margin-top: 10vh;
     bottom: 0;
 
     display: flex;
     justify-content: space-around;
+
+    #footer_brand_name {
+        margin-left: 10vw;
+    }
+    #footer_fax {
+        margin-right: 10vw;
+    }
 }
 
 
-#footer_brand_name {
-    margin-left: 10vw;
-}
-#footer_fax {
-    margin-right: 10vw;
-}
