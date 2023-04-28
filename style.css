@@ -1,0 +1,17 @@
+#navbar #hamburger_content .hamburger_element {
+  display: flex;
+}
+footer {
+  display: flex;
+  justify-content: space-around;
+}
+
+#footer_brand_name {
+  margin-left: 10vw;
+}
+
+#footer_fax {
+  margin-right: 10vw;
+}
+
+/*# sourceMappingURL=style.css.map */
