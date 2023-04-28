@@ -1,0 +1,57 @@
+* {
+  margin: 0;
+}
+
+html {
+  width: 100vw;
+}
+
+body {
+  position: relative;
+}
+
+#navbar {
+  position: relative;
+}
+#navbar #hamburger_icon {
+  position: absolute;
+}
+#navbar #hamburger_content {
+  position: absolute;
+  opacity: 0;
+  left: 0;
+  height: 100vh;
+  width: 65vw;
+}
+#navbar #hamburger_content .hamburger_element {
+  display: flex;
+}
+
+#functionbar {
+  position: fixed;
+  top: 60vh;
+}
+
+#homepage_background {
+  height: 100vh;
+  width: 100vw;
+  background-image: url("../src/homepage_backgnd.jpg");
+  background-size: cover;
+}
+
+footer {
+  position: absolute;
+  bottom: 0;
+  display: flex;
+  justify-content: space-around;
+}
+
+#footer_brand_name {
+  margin-left: 10vw;
+}
+
+#footer_fax {
+  margin-right: 10vw;
+}
+
+/*# sourceMappingURL=style.css.map */
