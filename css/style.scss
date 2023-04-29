@@ -160,20 +160,14 @@ body {position: relative; background-color: #faf8f8;}
 }
 
 
-#homepage_background_frame {
+#homepage_background {
     height: 100vh;
     width: 100vw;
-    overflow-y: hidden;
 
-    #homepage_background {
-        height: 100vh;
-        width: 100vw;
-
-        background-image: url("../src/homepage_backgnd1.jpg");
-        background-position: right;
-        background-size: cover;
-        overflow: hidden;
-    }
+    background-image: url("../src/homepage_backgnd1.jpg");
+    background-position: right;
+    background-size: cover;
+    overflow: hidden;
 }
 
 

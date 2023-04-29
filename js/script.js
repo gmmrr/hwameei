@@ -21,10 +21,10 @@ function show_hamburger_content() {
 var first_time_homepage_switching = 1;
 let homepage_switching = anime({
     targets: '#homepage_background',
-    scale: '1.02',
-    easing: 'easeOutQuart',
-    duration: '1100',
-    endDelay: '1900'
+    opacity: ['0.7', '1'],
+    easing: 'easeOutSine',
+    duration: '1000',
+    endDelay: '2000'
 });
 var homepage_index = 1;
 function homepage_change(){
