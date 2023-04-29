@@ -10,6 +10,7 @@ function show_hamburger_content() {
         hamburger_content.style.display = "none";
         hamburger_content_shadow.style.display = "none";
     }
+    
     if (first_time_hamburger_icon) {
         hamburger_content.style.display = "block";
         hamburger_content_shadow.style.display = "block";
@@ -28,7 +29,6 @@ let homepage_switching = anime({
 });
 var homepage_index = 1;
 function homepage_change(){
-    
     pic = document.getElementById("homepage_background");
     pic.style.backgroundImage = `url("src/homepage_backgnd${homepage_index}.jpg")`;
     if(!first_time_homepage_switching) {
@@ -40,15 +40,6 @@ function homepage_change(){
     } else {
         homepage_index++;
     }
-
     first_time_homepage_switching = 0;
 }
 setInterval(homepage_change,3000);
-
-
-
-// anime({
-//     targets: '#homepage_background',
-//     easing: 'easeOutQuad'
-// });
-
