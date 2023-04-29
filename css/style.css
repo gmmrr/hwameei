@@ -1,5 +1,6 @@
 * {
   margin: 0;
+  padding: 0;
 }
 
 html {
@@ -210,6 +211,7 @@ body {
   color: #62B6B7;
   font-family: "Inter", sans-serif;
   letter-spacing: 1.5rem;
+  padding-left: 1.5rem;
 }
 #personalized_recommend_banner #choose_your_own_glasses {
   display: flex;
@@ -220,6 +222,7 @@ body {
   color: #62B6B7;
   font-family: "Inter", sans-serif;
   letter-spacing: 0.8rem;
+  padding-left: 0.8rem;
 }
 
 #cards {

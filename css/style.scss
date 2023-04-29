@@ -1,4 +1,4 @@
-* { margin: 0;  }
+* { margin: 0; padding: 0; }
 html { width: 100vw;overflow-x: hidden;}
 body {position: relative; background-color: #faf8f8;}
 
@@ -168,7 +168,7 @@ body {position: relative; background-color: #faf8f8;}
     #homepage_background {
         height: 100vh;
         width: 100vw;
-        
+
         background-image: url("../src/homepage_backgnd1.jpg");
         background-position: right;
         background-size: cover;
@@ -229,6 +229,7 @@ body {position: relative; background-color: #faf8f8;}
             color: #62B6B7;
             font-family: 'Inter', sans-serif;
             letter-spacing: 1.5rem;
+            padding-left: 1.5rem;
         }
     }
     #choose_your_own_glasses {
@@ -240,6 +241,7 @@ body {position: relative; background-color: #faf8f8;}
             color: #62B6B7;
             font-family: 'Inter', sans-serif;
             letter-spacing: 0.8rem;
+            padding-left: 0.8rem;
         }
     }
 }
