@@ -1,16 +1,17 @@
 * { margin: 0;  }
 html { width: 100vw;overflow-x: hidden;}
-body {position: relative;}
+body {position: relative; background-color: #faf8f8;}
 
 #navbar {
     position: relative;
     
     #hamburger_icon {
         position: absolute;
-        width: 3vw;
-        height: 4.5vh;
+        width: 5vw;
+        height: 6vh;
         top: 2vh;
         left: 1.5vw;
+        z-index: 3;
 
         background-image: url("../src/hamburger_icon.png");
         background-position: center;
@@ -48,8 +49,9 @@ body {position: relative;}
             position: absolute;
             top: 2vh;
             left: 1.5vw;
-            width: 3vw;
-            height: 4.5vh;
+            width: 5vw;
+            height: 6vh;
+            transform: scale(0.8);
 
 
             background-image: url("../src/hamburger_close.png");
@@ -97,8 +99,8 @@ body {position: relative;}
     z-index: 3;
 
     #cart_func {
-        width: 5vw;
-        height: 5vw;
+        width: 4vw;
+        height: 4vw;
         background-image: url("../src/funcbar_cart.png");
         background-position: center;
         background-size: cover;
@@ -107,8 +109,8 @@ body {position: relative;}
         cursor: pointer;
     }
     #line_func {
-        width: 5vw;
-        height: 5vw;
+        width: 4vw;
+        height: 4vw;
         margin-top: 1vh;
         background-image: url("../src/funcbar_line.png");
         background-position: center;
@@ -118,8 +120,8 @@ body {position: relative;}
         cursor: pointer;
     }
     #info_func {
-        width: 5vw;
-        height: 5vw;
+        width: 4vw;
+        height: 4vw;
         margin-top: 1vh;
         background-image: url("../src/funcbar_info.png");
         background-position: center;
@@ -133,10 +135,10 @@ body {position: relative;}
 #scrollbar {
     #scroll_icon {
         position: absolute;
-        top: 80vh;
-        right: 1vw;
-        width: 20px;
-        height: 20vh;
+        top: 85vh;
+        right: 1.5vw;
+        width: 10px;
+        height: 10vh;
         z-index: 2;
 
         background-image: url(../src/scrollbar.png);
@@ -145,26 +147,48 @@ body {position: relative;}
     }
     #tri_after_bar{
         position: absolute;
-        top: 77vh;
+        top: 81vh;
         width: 0;
         height: 0;
         z-index: 1;
 
 
         border-style: solid;
-        border-width: 0 0 23vh 100vw;
-        border-color: transparent transparent white transparent;
+        border-width: 0 0 19vh 100vw;
+        border-color: transparent transparent #faf8f8 transparent;
     }
 }
 
 
-
-#homepage_background {
+#homepage_background_frame {
     height: 100vh;
     width: 100vw;
-    background-image: url("../src/homepage_backgnd.jpg");
+    overflow-y: hidden;
+
+    #homepage_background {
+        height: 100vh;
+        width: 100vw;
+        
+        background-image: url("../src/homepage_backgnd1.jpg");
+        background-position: right;
+        background-size: cover;
+        overflow: hidden;
+    }
+}
+
+
+#homepage_banner {
+    position: absolute;
+    top: 30vh;
+    left: 10vw;
+    height:26vh;
+    width: 30vw;
+
+    background-image: url("../src/homepage_banner.png");
     background-position: center;
-    background-size: cover;
+    background-size: contain;
+    background-repeat: no-repeat;
+    z-index: 3;
 }
 
 #personalized_recommend_banner {
@@ -184,6 +208,7 @@ body {position: relative;}
         p {
             color: #62B6B7;
             font-size: 2.5rem;
+            font-family: 'Inter', sans-serif;
         }
         #personalized_recommend_right_line {
             height: 5px;
@@ -197,10 +222,13 @@ body {position: relative;}
     #personalized_recommend_zsh {
         display: flex;
         justify-content: center;
+        margin-top: 2vh;
 
         p {
-            font-size: 2.5rem;
+            font-size: 2.3rem;
             color: #62B6B7;
+            font-family: 'Inter', sans-serif;
+            letter-spacing: 1.5rem;
         }
     }
     #choose_your_own_glasses {
@@ -208,8 +236,10 @@ body {position: relative;}
         justify-content: center;
 
         p {
-            font-size: 1.55rem;
+            font-size: 1.5rem;
             color: #62B6B7;
+            font-family: 'Inter', sans-serif;
+            letter-spacing: 0.8rem;
         }
     }
 }
@@ -227,7 +257,7 @@ body {position: relative;}
     }
 
     :nth-child(1) {
-        margin-left: 5%;
+        margin-left: 10%;
         background-image: url("../src/homepage_card1.png");
         background-position: center;
         background-size: contain;
@@ -240,7 +270,7 @@ body {position: relative;}
         background-repeat: no-repeat;
     }
     :nth-child(3) {
-        margin-right: 5%;
+        margin-right: 10%;
         background-image: url("../src/homepage_card3.png");
         background-position: center;
         background-size: contain;
@@ -255,8 +285,10 @@ body {position: relative;}
         justify-content: center;
 
         p {
-            font-size: 1.55rem;
+            font-size: 1.5rem;
             color: #97DECE;
+            font-family: 'Inter', sans-serif;
+            letter-spacing: 0.8rem;
         }
     }
     #start_button {
@@ -275,6 +307,8 @@ body {position: relative;}
             align-items: center;
             color: white;
             font-size: 2rem;
+            font-family: 'Inter', sans-serif;
+            letter-spacing: 0.8rem;
         }
     }
     #start_button:hover {

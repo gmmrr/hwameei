@@ -9,6 +9,7 @@ html {
 
 body {
   position: relative;
+  background-color: #faf8f8;
 }
 
 #navbar {
@@ -16,10 +17,11 @@ body {
 }
 #navbar #hamburger_icon {
   position: absolute;
-  width: 3vw;
-  height: 4.5vh;
+  width: 5vw;
+  height: 6vh;
   top: 2vh;
   left: 1.5vw;
+  z-index: 3;
   background-image: url("../src/hamburger_icon.png");
   background-position: center;
   background-size: contain;
@@ -51,8 +53,9 @@ body {
   position: absolute;
   top: 2vh;
   left: 1.5vw;
-  width: 3vw;
-  height: 4.5vh;
+  width: 5vw;
+  height: 6vh;
+  transform: scale(0.8);
   background-image: url("../src/hamburger_close.png");
   background-position: center;
   background-size: cover;
@@ -91,8 +94,8 @@ body {
   z-index: 3;
 }
 #functionbar #cart_func {
-  width: 5vw;
-  height: 5vw;
+  width: 4vw;
+  height: 4vw;
   background-image: url("../src/funcbar_cart.png");
   background-position: center;
   background-size: cover;
@@ -101,8 +104,8 @@ body {
   cursor: pointer;
 }
 #functionbar #line_func {
-  width: 5vw;
-  height: 5vw;
+  width: 4vw;
+  height: 4vw;
   margin-top: 1vh;
   background-image: url("../src/funcbar_line.png");
   background-position: center;
@@ -112,8 +115,8 @@ body {
   cursor: pointer;
 }
 #functionbar #info_func {
-  width: 5vw;
-  height: 5vw;
+  width: 4vw;
+  height: 4vw;
   margin-top: 1vh;
   background-image: url("../src/funcbar_info.png");
   background-position: center;
@@ -125,10 +128,10 @@ body {
 
 #scrollbar #scroll_icon {
   position: absolute;
-  top: 80vh;
-  right: 1vw;
-  width: 20px;
-  height: 20vh;
+  top: 85vh;
+  right: 1.5vw;
+  width: 10px;
+  height: 10vh;
   z-index: 2;
   background-image: url(../src/scrollbar.png);
   background-size: cover;
@@ -136,21 +139,40 @@ body {
 }
 #scrollbar #tri_after_bar {
   position: absolute;
-  top: 77vh;
+  top: 81vh;
   width: 0;
   height: 0;
   z-index: 1;
   border-style: solid;
-  border-width: 0 0 23vh 100vw;
-  border-color: transparent transparent white transparent;
+  border-width: 0 0 19vh 100vw;
+  border-color: transparent transparent #faf8f8 transparent;
 }
 
-#homepage_background {
+#homepage_background_frame {
   height: 100vh;
   width: 100vw;
-  background-image: url("../src/homepage_backgnd.jpg");
-  background-position: center;
+  overflow-y: hidden;
+}
+#homepage_background_frame #homepage_background {
+  height: 100vh;
+  width: 100vw;
+  background-image: url("../src/homepage_backgnd1.jpg");
+  background-position: right;
   background-size: cover;
+  overflow: hidden;
+}
+
+#homepage_banner {
+  position: absolute;
+  top: 30vh;
+  left: 10vw;
+  height: 26vh;
+  width: 30vw;
+  background-image: url("../src/homepage_banner.png");
+  background-position: center;
+  background-size: contain;
+  background-repeat: no-repeat;
+  z-index: 3;
 }
 
 #personalized_recommend_banner {
@@ -170,6 +192,7 @@ body {
 #personalized_recommend_banner #personalized_recommend p {
   color: #62B6B7;
   font-size: 2.5rem;
+  font-family: "Inter", sans-serif;
 }
 #personalized_recommend_banner #personalized_recommend #personalized_recommend_right_line {
   height: 5px;
@@ -180,18 +203,23 @@ body {
 #personalized_recommend_banner #personalized_recommend_zsh {
   display: flex;
   justify-content: center;
+  margin-top: 2vh;
 }
 #personalized_recommend_banner #personalized_recommend_zsh p {
-  font-size: 2.5rem;
+  font-size: 2.3rem;
   color: #62B6B7;
+  font-family: "Inter", sans-serif;
+  letter-spacing: 1.5rem;
 }
 #personalized_recommend_banner #choose_your_own_glasses {
   display: flex;
   justify-content: center;
 }
 #personalized_recommend_banner #choose_your_own_glasses p {
-  font-size: 1.55rem;
+  font-size: 1.5rem;
   color: #62B6B7;
+  font-family: "Inter", sans-serif;
+  letter-spacing: 0.8rem;
 }
 
 #cards {
@@ -206,7 +234,7 @@ body {
   width: 27%;
 }
 #cards :nth-child(1) {
-  margin-left: 5%;
+  margin-left: 10%;
   background-image: url("../src/homepage_card1.png");
   background-position: center;
   background-size: contain;
@@ -219,7 +247,7 @@ body {
   background-repeat: no-repeat;
 }
 #cards :nth-child(3) {
-  margin-right: 5%;
+  margin-right: 10%;
   background-image: url("../src/homepage_card3.png");
   background-position: center;
   background-size: contain;
@@ -234,8 +262,10 @@ body {
   justify-content: center;
 }
 #start_banner #start_your_personalized_recommendation p {
-  font-size: 1.55rem;
+  font-size: 1.5rem;
   color: #97DECE;
+  font-family: "Inter", sans-serif;
+  letter-spacing: 0.8rem;
 }
 #start_banner #start_button {
   margin-top: 3vh;
@@ -252,6 +282,8 @@ body {
   align-items: center;
   color: white;
   font-size: 2rem;
+  font-family: "Inter", sans-serif;
+  letter-spacing: 0.8rem;
 }
 #start_banner #start_button:hover {
   cursor: pointer;
