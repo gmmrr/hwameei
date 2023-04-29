@@ -25,8 +25,8 @@ let homepage_switching = anime({
     scale: '1.02',
     opacity: ['0.7', '1'],
     easing: 'easeOutSine',
-    duration: '1500',
-    endDelay: '3500'
+    duration: '2000',
+    endDelay: '3000'
 });
 var homepage_index = 1;
 function homepage_change(){
