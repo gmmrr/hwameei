@@ -159,16 +159,24 @@ body {position: relative; background-color: #faf8f8;}
     }
 }
 
-
-#homepage_background {
+#homepage_background_frame {
     height: 100vh;
     width: 100vw;
+    overflow-y: hidden;
 
-    background-image: url("../src/homepage_backgnd1.jpg");
-    background-position: right;
-    background-size: cover;
-    overflow: hidden;
+    #homepage_background {
+        height: 100vh;
+        width: 100vw;
+    
+        background-image: url("../src/homepage_backgnd1.jpg");
+        background-position: right;
+        background-size: cover;
+        overflow: hidden;
+    }
 }
+
+
+
 
 
 #homepage_banner {

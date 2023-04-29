@@ -10,7 +10,7 @@ function show_hamburger_content() {
         hamburger_content.style.display = "none";
         hamburger_content_shadow.style.display = "none";
     }
-    
+
     if (first_time_hamburger_icon) {
         hamburger_content.style.display = "block";
         hamburger_content_shadow.style.display = "block";
@@ -22,10 +22,11 @@ function show_hamburger_content() {
 var first_time_homepage_switching = 1;
 let homepage_switching = anime({
     targets: '#homepage_background',
+    scale: '1.02',
     opacity: ['0.7', '1'],
     easing: 'easeOutSine',
     duration: '1000',
-    endDelay: '2000'
+    endDelay: '4000'
 });
 var homepage_index = 1;
 function homepage_change(){
@@ -42,4 +43,4 @@ function homepage_change(){
     }
     first_time_homepage_switching = 0;
 }
-setInterval(homepage_change,3000);
+setInterval(homepage_change,5000);
