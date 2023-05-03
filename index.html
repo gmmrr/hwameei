@@ -5,13 +5,18 @@
     <meta content="width=device-width, initial-scale=1" name="viewport" />
     <title>Hwameei</title>
     <link href="./css/style.css" rel="stylesheet" type="text/css" />
+
+    <!-- font -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Inter&display=swap" rel="stylesheet" />
   </head>
 
   <body>
     <!-- absolute position bar -->
     <div id="navbar">
       <div id="hamburger_icon" onclick="show_hamburger_content()"></div>
-      <div id="hamburger_content_shadow"></div>
+      <div id="hamburger_content_shadow" onclick="show_hamburger_content()"></div>
       <div id="hamburger_content" class="hamburger_switch">
         <div id="hamburger_close" onclick="show_hamburger_content()"></div>
         <div
@@ -47,7 +52,15 @@
     </div>
 
     <!-- homepage -->
-    <div id="homepage_background"></div>
+    <div id="homepage_background_frame">
+      <div id="homepage_background">
+        <!-- as lazy loading -->
+        <img src="./src/homepage_backgnd1.jpg" style="display: none" />
+        <img src="./src/homepage_backgnd2.jpg" style="display: none" />
+        <img src="./src/homepage_backgnd3.jpg" style="display: none" />
+      </div>
+    </div>
+    <div id="homepage_banner"></div>
     <div id="personalized_recommend_banner">
       <div id="personalized_recommend">
         <div id="personalized_recommend_left_line"></div>
@@ -90,6 +103,7 @@
       </div>
     </footer>
 
+    <script src="./js/anime.min.js"></script>
     <script src="./js/script.js"></script>
   </body>
 </html>
