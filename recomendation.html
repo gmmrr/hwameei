@@ -5,9 +5,13 @@
     <meta content="width=device-width, initial-scale=1" name="viewport" />
     <title>Hwameei</title>
 
-    <link href="./css/style.css" rel="stylesheet" type="text/css" />
-    <script src="./js/script.js"></script>
+    <link href="./css/style_recomendation.css" rel="stylesheet" type="text/css" />
     <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet" />
+
+    <!-- font -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Inter&display=swap" rel="stylesheet" />
   </head>
 
   <body>
@@ -16,172 +20,133 @@
       <div id="hamburger_content_shadow"></div>
       <div id="hamburger_content" class="hamburger_switch">
         <div id="hamburger_close" onclick="show_hamburger_content()"></div>
-        <div
-          class="hamburger_element"
-          id="hamburger_element_homepage"
-          onclick="window.location.href='./index.html'"
-        >
+        <div class="hamburger_element" id="hamburger_element_homepage" onclick="window.location.href='./index.html'">
           <p class="hamburger_element_zsh">首頁</p>
           <p class="hamburger_element_eng">homepage</p>
         </div>
-        <div
-          class="hamburger_element"
-          onclick="window.location.href='./recomendation.html'"
-        >
+        <div class="hamburger_element" onclick="window.location.href='./recomendation.html'">
           <p class="hamburger_element_zsh">個人化推薦</p>
           <p class="hamburger_element_eng">personalized recommendation</p>
         </div>
-        <div
-          class="hamburger_element"
-          onclick="window.location.href='http://www.google.com'"
-        >
+        <div class="hamburger_element" onclick="window.location.href='http://www.google.com'">
           <p class="hamburger_element_zsh">商品一覽</p>
           <p class="hamburger_element_eng">product list</p>
         </div>
-        <div
-          class="hamburger_element"
-          onclick="window.location.href='http://www.google.com'"
-        >
+        <div class="hamburger_element" onclick="window.location.href='http://www.google.com'">
           <p class="hamburger_element_zsh">門市介紹</p>
           <p class="hamburger_element_eng">shop introduction</p>
         </div>
       </div>
-      <div id="you_are_in_element">You are in 個人化推薦</div>
+      <div id="functionbar">
+        <div id="cart_func" onclick="window.location.href='http://www.google.com'"></div>
+        <div id="line_func" onclick="window.location.href='http://www.google.com'"></div>
+        <div id="info_func" onclick="window.location.href='http://www.google.com'"></div>
+      </div>
+      <div id="scrollbar">
+        <div id="scroll_icon"></div>
+      </div>
+      <div id="you_are_in_element">
+        <p>You are in 個人化推薦</p>
+      </div>
     </div>
-
-    <div id="functionbar">
-      <div
-        id="cart_func"
-        onclick="window.location.href='http://www.google.com'"
-      ></div>
-      <div
-        id="line_func"
-        onclick="window.location.href='http://www.google.com'"
-      ></div>
-      <div
-        id="info_func"
-        onclick="window.location.href='http://www.google.com'"
-      ></div>
-    </div>
-    <div id="scrollbar">
-      <div id="scroll_icon"></div>
-    </div>
-
-
 
     <!-- Tab Choose Recomendation Component-->
 
-    <div id = "flex">
     <div id="navtab_container">
       <div id="text_container">
         <ul id="style_container">
-          <li id="style_title_element_1" class="active"> 1.風格篩選</li>
-          <li id="style_title_element_2" class="inactive"> 2.喜好篩選</li>
-          <li id="style_title_element_3" class="inactive"> 3.臉型篩選</li>
+          <li id="style_title_element_1" class="active">1.風格篩選</li>
+          <li id="style_title_element_2" class="inactive">2.喜好篩選</li>
+          <li id="style_title_element_3" class="inactive">3.臉型篩選</li>
         </ul>
       </div>
 
       <div id="divider_container">
-        <div id="divider_1" class="active_divider"></div>
-        <div id="divider_2" class="inactive_divider"></div>
-        <div id="divider_3" class="inactive_divider"></div>
+        <div id="divider_1" class="active"></div>
+        <div id="divider_2" class="inactive"></div>
+        <div id="divider_3" class="inactive"></div>
       </div>
     </div>
 
-    <div id="video_popup_container" >
-      <video id="img" loop muted autoplay = "autoplay">
-        <source src="src/face_recognition_video_conv.avi">
+    <div id="styleflex_container">
+      <div id="first_row_container">
+        <button>流線型</button>
+        <button>速度感</button>
+      </div>
+      <div id="second_row_container">
+        <button>時尚</button>
+        <button>簡約</button>
+
+        <button>復古</button>
+        <button>前衛</button>
+
+        <button>奢華</button>
+        <button>貓眼</button>
+      </div>
+      <div id="third_row_container">
+        <button>黑</button>
+        <button>白</button>
+
+        <button>金</button>
+        <button>銀</button>
+
+        <button>米</button>
+        <button>藍</button>
+        <button>粉</button>
+      </div>
+      <div data-aos="slide-left" class="background_container">
+        <div class="style_background_text">STYLE</div>
+      </div>
+    </div>
+
+    <div id="preferenceflex_container">
+      <div id="fourth_row_container">
+        <button>跑步</button>
+        <button>騎行</button>
+        <button>鐵人三項</button>
+      </div>
+      <div id="fifth_row_container">
+        <button>室內</button>
+        <button>閱讀</button>
+        <button>休閒</button>
+      </div>
+      <div data-aos="slide-left" class="background_container">
+        <div class="preference_background_text">PREFERENCE</div>
+      </div>
+    </div>
+
+    <div id="faceflex_container">
+      <div id="sixth_row_container">您知道自己的臉型屬於哪一種的嗎?</div>
+      <div id="seventh_row_container">來試試臉部偵測</div>
+      <div id="eigth_row_container">
+        <div id="camera_img"></div>
+      </div>
+    </div>
+
+    <div id="video_popup_container">
+      <video id="img" loop muted autoplay="autoplay">
+        <source src="src/face_recognition_video_conv.avi" />
       </video>
     </div>
 
-
-
-    <div id="resultflex_container" class="result_inactive" >
-      <div id="image_result_container" >
-        <img src="src/recognition_pic.png" alt="Pic Result" height='413px' width='430px'>
+    <div id="resultflex_container" class="result_inactive">
+      <div id="image_result_container">
+        <img src="src/recognition_pic.png" alt="Pic Result" height="413px" width="430px" />
       </div>
 
-      <div id="Your_pic_container">
-        <div id="your_pic_text">您 的 臉 型 是 . . .</div>
+      <div id="your_pic_container">
+        <div id="your_pic_text">您的臉型是...</div>
         <button id="button_pic_photo"></button>
       </div>
       <button id="button_pic">橢圓臉</button>
     </div>
 
-
-
-
-    <div id="styleflex_container">
-      <div id="first_row_container">
-        <button id="button_1">流線型</button>
-        <button id="button_2">速度感</button>
-      </div>
-      <div id="second_row_container">
-        <button id="button_3">時尚</button>
-        <button id="button_4">簡約</button>
-
-        <button id="button_5">復古</button>
-        <button id="button_6">前衛</button>
-
-        <button id="button_7">奢華</button>
-        <button id="button_8">貓眼</button>
-      </div>
-
-    <div id="third_row_container">
-      <button id="button_9">黑</button>
-      <button id="button_10">白</button>
-
-      <button id="button_11">金</button>
-      <button id="button_12">銀</button>
-
-      <button id="button_13">米</button>
-      <button id="button_14">藍</button>
-      <button id="button_15">粉</button>
-    </div>
-    <div data-aos="slide-left" class="background_container">
-      <div class="style_background_text">STYLE</div>
-    </div>
-    </div>
-
-
-
-    <div id="preferenceflex_container">
-    <div id="fourth_row_container">
-      <button id="button_16">跑步</button>
-      <button id="button_17">騎行</button>
-      <button id="button_18">鐵人三項</button>
-    </div>
-    <div id="fifth_row_container">
-      <button id="button_19">室內</button>
-      <button id="button_20">閱讀</button>
-      <button id="button_21">休閒</button>
-    </div>
-    <div data-aos="slide-left"class="background_container">
-      <div class="preference_background_text">PREFERENCE</div>
-    </div>
-    </div>
-
-    <div id="faceflex_container">
-    <div id="sixth_row_container">
-      您知道自己的臉型屬於哪一種的嗎?
-    </div>
-    <div id="seventh_row_container">
-        來試試臉部偵測
-    </div>
-    <div id="eigth_row_container">
-      <div id="camera_img">
-      </div>
-    </div>
-    </div>
-
-
-
     <div id="next_button_container">
-      <div id="next_container"  class="active_button">
-        <button id="next_button"  onclick="change_next_button()">下一步</button>
+      <div id="next_container" class="active_button">
+        <button id="next_button" onclick="change_next_button()">下一步</button>
       </div>
       <div id="next_container_2" class="inactive_button">
-        <button id="next_button_2"onclick="go_to_video()">開啟攝像鏡頭</button>
+        <button id="next_button_2" onclick="go_to_video()">開啟攝像鏡頭</button>
       </div>
       <div id="next_container_3" class="inactive_button">
         <button id="next_button_3" onclick="go_to_result()">下一步</button>
@@ -189,14 +154,13 @@
 
       <div id="succed" class="inactive_succed">選擇完成了嗎?</div>
       <div id="next_container_4" class="inactive_button">
-        <button id="next_button_4" >開始推薦</button>
+        <button id="next_button_4" onclick="window.location.href='./recomendation.html'">開始推薦</button>
       </div>
 
       <div id="other_container">
         <button id="go_back_button" class="active_button" onclick="change_goback_button()">返回</button>
-        <button id="skip_button" >略過</button>
+        <button id="skip_button">略過</button>
       </div>
-    </div>
     </div>
 
     <footer>
@@ -214,9 +178,10 @@
       </div>
     </footer>
 
+    <script src="./js/script_recomendation.js"></script>
     <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
     <script>
-      AOS.init()
+      AOS.init();
     </script>
   </body>
 </html>
