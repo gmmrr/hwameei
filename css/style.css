@@ -21,7 +21,10 @@ body.active {
   /* position: relative; */
   /* background-color: #faf8f8; */
 }
-
+#flex{
+  display: flex;
+  flex-direction: column;
+}
 
 #navbar {
   position: absolute;
@@ -401,7 +404,7 @@ footer p {
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  margin-top: 50px;
+  /* margin-top: 50px; */
 
 }
 
