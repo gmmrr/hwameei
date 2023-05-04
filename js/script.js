@@ -237,8 +237,9 @@ function go_to_video(){
         let button_2 = document.getElementById("next_container_3");
         button_2.classList.remove("inactive_button");
         button_2.classList.add("active_button");
-
-      }, 1000);
+        let container_button = document.getElementById("next_button_container");
+        container_button.classList.add("container_result");
+      }, 10000);
     }
 }
 
