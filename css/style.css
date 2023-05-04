@@ -428,7 +428,7 @@ footer p {
   display:flex;
   justify-content: center;
   align-items: center;
-  margin-top: 106px;
+  margin-top: 86px;
   /* margin-left: 89px; */
 }
 
@@ -470,6 +470,7 @@ footer p {
   line-height: 39px;
   /* identical to box height */
 
+  margin-top: 10px;
   letter-spacing: 0.5em;
 
   color: #FFFFFF;
@@ -528,7 +529,7 @@ footer p {
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  margin-top: 50px;
+  /* margin-top: 30px; */
   /* margin-left: 89px; */
 }
 #preferenceflex_container{
@@ -537,7 +538,7 @@ footer p {
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  margin-top: 50px;
+  /* margin-top: 50px; */
 
 }
 #faceflex_container{
@@ -546,14 +547,13 @@ footer p {
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  margin-top: 50px;
+  /* margin-top: 30px; */
 
 }
 #first_row_container{
   display:flex;
   justify-content: center;
   align-items: center;
-
   margin-top: 56px;
 
 }
@@ -813,7 +813,7 @@ footer p {
   align-items: center;
   height: 200px;
   width: 200px;
-  margin-top: 149px;
+  margin-top: 26px;
 
 }
 
@@ -856,12 +856,6 @@ footer p {
   text-align: left;
 
 }
-#eigth_row_container{
-  display:flex;
-  justify-content: center;
-  align-items: center;
-  margin-top: 176px;
-}
 #question_element{
   font-family: Inter;
   font-size: 20px;
@@ -876,7 +870,7 @@ footer p {
   justify-content: center;
   align-items: center;
   flex-direction: column;
-  margin-top: 87px;
+  margin-top: 30px;
   margin-bottom: 214px;
 }
 
@@ -1170,8 +1164,8 @@ footer p {
 #video_popup_container{
   display:none;
   /* transform:translate(-50%,-50%); */
-  height: 699px;
-  width: 1138px;
+  height: 502px;
+  width: 100%;
   /* padding: 50px; */
   /* box-shadow: 0 0 5px 0 rgba(0,0,0,0.3); */
   visibility: hidden;
@@ -1179,7 +1173,7 @@ footer p {
   transition:0.5s;
 }
 #video_popup_container #img{
-  width: 1138px;
+  width: 817px;
   height: 100%;
   justify-content: center;
   align-items: center;
@@ -1187,8 +1181,9 @@ footer p {
 
 #video_popup_container.active{
     display:flex;
+    margin-top:20px;
     flex-direction: column;
-    height: 699px;
+    height: 100%;
     width: 100%;
     justify-content: center;
     align-items: center;
