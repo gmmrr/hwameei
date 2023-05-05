@@ -262,6 +262,7 @@ body {
 #start_banner #start_your_personalized_recommendation {
   display: flex;
   justify-content: center;
+  padding-left: 0.8rem;
 }
 #start_banner #start_your_personalized_recommendation p {
   font-size: 1.5rem;
@@ -270,16 +271,16 @@ body {
   letter-spacing: 0.8rem;
 }
 #start_banner #start_button {
+  height: 100px;
+  width: 30vw;
   margin-top: 3vh;
-  margin-left: 30vw;
-  margin-right: 30vw;
-  height: 10vh;
+  margin-left: 35vw;
+  margin-right: 35vw;
+  border: none;
   display: flex;
   justify-content: center;
   background-color: #97DECE;
   border-radius: 20px;
-}
-#start_banner #start_button p {
   display: flex;
   align-items: center;
   color: white;

@@ -283,6 +283,7 @@ body {position: relative; background-color: #faf8f8;}
     #start_your_personalized_recommendation {
         display: flex;
         justify-content: center;
+        padding-left: 0.8rem;
 
         p {
             font-size: 1.5rem;
@@ -292,24 +293,24 @@ body {position: relative; background-color: #faf8f8;}
         }
     }
     #start_button {
+        height: 100px;
+        width: 30vw;
         margin-top: 3vh;
-        margin-left: 30vw;
-        margin-right: 30vw;
-        height: 10vh;
+        margin-left: 35vw;
+        margin-right: 35vw;
+        border: none;
     
         display: flex;
         justify-content: center;
         background-color: #97DECE;
         border-radius: 20px;
-    
-        p {
-            display: flex;
-            align-items: center;
-            color: white;
-            font-size: 2rem;
-            font-family: 'Inter', sans-serif;
-            letter-spacing: 0.8rem;
-        }
+
+        display: flex;
+        align-items: center;
+        color: white;
+        font-size: 2rem;
+        font-family: 'Inter', sans-serif;
+        letter-spacing: 0.8rem;
     
         &:hover {
             cursor: pointer;
