@@ -67,7 +67,6 @@ function change_next_button(){
     container2.style.display = "flex"; 
 
     state++
-    console.log(state)
   }
 
   else if(state===1){
@@ -103,11 +102,6 @@ function change_next_button(){
 
     let button = document.getElementById("next_container"); 
     let button2 = document.getElementById("next_container_2"); 
-
-    let button_container = document.getElementById("other_container");
-    button_container.style.display = "none";
-
-
     
     button.classList.remove("active_button");
     button.classList.add("inactive_button");
@@ -140,7 +134,7 @@ function change_goback_button(){
   }
 
   if(state===0){
-    console.log(state)
+    console.log("no less")
   }
 
   else if(state===1){
@@ -166,7 +160,8 @@ function change_goback_button(){
     container.style.display = "flex";
 
     let container2= document.getElementById("preferenceflex_container");
-    container2.style.display = "none"; 
+    container2.style.display = "none";
+
     state--
   }
   
@@ -196,17 +191,20 @@ function change_goback_button(){
     let container2= document.getElementById("faceflex_container");
     container2.style.display = "none"; 
 
+    //Change button and hidde goback skip
+
+    let button = document.getElementById("next_container"); 
+    let button2 = document.getElementById("next_container_2"); 
+    
+    button2.classList.remove("active_button");
+    button2.classList.add("inactive_button");
+
+    console.log(button.classList)
+
+    button.classList.remove("inactive_button");
+    button.classList.add("active_button");
+
     state--;
-    console.log(state)
-
-
-    // let container= document.getElementById("preferenceflex_container");
-    // container.style.display = "none";
-    //
-    // let container2= document.getElementById("faceflex_container");
-    // container2.style.display = "flex"; 
-    // console.log("No more ")
-    // state++
   }
 }
 
