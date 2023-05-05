@@ -77,7 +77,9 @@ body {
 }
 #navbar #hamburger_content .hamburger_element .hamburger_element_eng {
   margin-left: 3vw;
+  font-family: "Inter";
   font-size: 1rem;
+  font-weight: 400;
   color: #62B6B7;
 }
 #navbar #hamburger_content .hamburger_element:hover {
@@ -90,9 +92,10 @@ body {
   position: absolute;
   height: 60px;
   top: 20px;
-  right: 40px;
+  right: 25px;
   font-size: 1.5rem;
   color: #62B6B7;
+  letter-spacing: 3px;
 }
 
 #functionbar {
@@ -172,22 +175,26 @@ body.active {
   align-items: center;
 }
 #navtab_container #text_container #style_container {
+  margin-top: 90px;
   display: flex;
   justify-content: center;
   align-items: center;
-  margin-top: 86px;
 }
 #navtab_container #text_container #style_container * {
+  margin-right: 18px;
   display: flex;
   align-items: center;
   height: 34px;
   margin-left: 50px;
-  font-family: Inter;
+  font-family: "Inter";
   font-size: 28px;
   font-weight: 400;
   line-height: 34px;
   letter-spacing: 0.5em;
   text-align: left;
+}
+#navtab_container #text_container #style_container *:nth-child(1) {
+  margin-left: 18px;
 }
 #navtab_container #text_container #style_container .active {
   color: #62B6B7;
@@ -298,7 +305,7 @@ body.active {
 
 #styleflex_container {
   height: 50vh;
-  margin-top: 10vh;
+  margin-top: 4vh;
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -325,14 +332,15 @@ body.active {
 
 #preferenceflex_container {
   height: 50vh;
-  margin-top: 10vh;
+  margin-top: 4vh;
   display: none;
   flex-direction: column;
   justify-content: center;
   align-items: center;
 }
 #preferenceflex_container #first_preference_container {
-  height: 60px;
+  width: 100%;
+  margin-top: 56px;
 }
 #preferenceflex_container #second_preference_container {
   display: flex;
@@ -349,7 +357,7 @@ body.active {
 
 #faceflex_container {
   height: 50vh;
-  margin-top: 10vh;
+  margin-top: 4vh;
   display: none;
   flex-direction: column;
   justify-content: center;
@@ -451,7 +459,7 @@ body.active {
 }
 
 #next_button_container {
-  margin-top: 10vh;
+  margin-top: 6vh;
   margin-bottom: 214px;
   display: flex;
   justify-content: center;
@@ -640,10 +648,10 @@ body.active {
 }
 
 #resultflex_container {
-  display: flex;
-  position: relative;
   height: 800px;
   top: 48px;
+  display: flex;
+  position: relative;
   flex-direction: column;
   align-items: center;
 }
@@ -660,29 +668,33 @@ body.active {
   align-items: center;
 }
 #resultflex_container #your_pic_container #your_pic_text {
-  display: flex;
   height: 39px;
-  width: 299px;
+  width: 400px;
+  display: flex;
   font-family: "Inter";
   font-size: 32px;
   font-weight: 400;
   line-height: 38.73px;
   text-align: left;
   color: #62B6B7;
+  letter-spacing: 20px;
 }
-#resultflex_container #your_pic_container #button_pic_photo {
-  display: flex;
-  background-color: #FFFFFF;
+#resultflex_container #your_pic_container #all_face_button {
   height: 65px;
   width: 65px;
+  left: 33px;
+  display: flex;
+  background-color: #FFFFFF;
   border-radius: 50px;
   border: 1px solid #ffffff;
   background: rgba(255, 255, 255, 0.2);
   box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
-  left: 33px;
   background-image: url("../src/material-symbols_face.png");
   background-repeat: no-repeat;
   background-position: center;
+}
+#resultflex_container #your_pic_container #all_face_button:hover {
+  cursor: pointer;
 }
 #resultflex_container #button_pic {
   display: flex;

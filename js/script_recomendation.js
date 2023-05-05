@@ -227,13 +227,22 @@ function go_to_video(){
       button_1.classList.remove("active_button");
       button_1.classList.add("inactive_button");
 
+      // setTimeout(() => {
+      //   let button_2 = document.getElementById("next_container_3");
+      //   button_2.classList.remove("inactive_button");
+      //   button_2.classList.add("active_button");
+      //   let container_button = document.getElementById("next_button_container");
+      //   container_button.classList.add("container_result");
+      // }, 10000);
+
+      //for faster developing
       setTimeout(() => {
         let button_2 = document.getElementById("next_container_3");
         button_2.classList.remove("inactive_button");
         button_2.classList.add("active_button");
         let container_button = document.getElementById("next_button_container");
         container_button.classList.add("container_result");
-      }, 10000);
+      }, 1000);
     }
 }
 

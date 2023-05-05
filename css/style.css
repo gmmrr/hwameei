@@ -77,7 +77,9 @@ body {
 }
 #navbar #hamburger_content .hamburger_element .hamburger_element_eng {
   margin-left: 3vw;
+  font-family: "Inter";
   font-size: 1rem;
+  font-weight: 400;
   color: #62B6B7;
 }
 #navbar #hamburger_content .hamburger_element:hover {
@@ -85,6 +87,15 @@ body {
 }
 #navbar #hamburger_content #hamburger_element_homepage {
   margin-top: 15vh;
+}
+#navbar #you_are_in_element {
+  position: absolute;
+  height: 60px;
+  top: 20px;
+  right: 25px;
+  font-size: 1.5rem;
+  color: #62B6B7;
+  letter-spacing: 3px;
 }
 
 #functionbar {
