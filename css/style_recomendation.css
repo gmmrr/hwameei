@@ -90,8 +90,8 @@ body {
   position: absolute;
   height: 60px;
   top: 20px;
-  right: 10px;
-  font-size: 2rem;
+  right: 40px;
+  font-size: 1.5rem;
   color: #62B6B7;
 }
 
@@ -274,6 +274,7 @@ body.active {
 
 #styleflex_container {
   height: 50vh;
+  margin-top: 10vh;
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -372,6 +373,7 @@ body.active {
 
 #preferenceflex_container {
   height: 50vh;
+  margin-top: 10vh;
   display: none;
   flex-direction: column;
   justify-content: center;
@@ -440,6 +442,7 @@ body.active {
 
 #faceflex_container {
   height: 50vh;
+  margin-top: 10vh;
   display: none;
   flex-direction: column;
   justify-content: center;
@@ -541,7 +544,7 @@ body.active {
 }
 
 #next_button_container {
-  margin-top: 30px;
+  margin-top: 10vh;
   margin-bottom: 214px;
   display: flex;
   justify-content: center;
