@@ -68,7 +68,7 @@ body {
   margin-left: 10vw;
   display: flex;
   align-items: center;
-  margin-top: 13vh;
+  margin-top: 10vh;
 }
 #navbar #hamburger_content .hamburger_element .hamburger_element_zsh {
   font-size: 2rem;
@@ -135,6 +135,28 @@ body {
 }
 #functionbar #info_func:hover {
   cursor: pointer;
+}
+
+footer {
+  margin-top: 10vh;
+  bottom: 0;
+  height: 10vh;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  background-color: #439A97;
+}
+footer #footer_brand_name {
+  margin-left: 20vw;
+}
+footer #footer_brand_name p {
+  font-size: 1.5rem;
+}
+footer #footer_fax {
+  margin-right: 20vw;
+}
+footer p {
+  color: white;
 }
 
 #scrollbar #scroll_icon {
@@ -301,28 +323,6 @@ body {
 }
 #start_banner #start_button:hover {
   cursor: pointer;
-}
-
-footer {
-  margin-top: 10vh;
-  bottom: 0;
-  height: 10vh;
-  display: flex;
-  justify-content: space-around;
-  align-items: center;
-  background-color: #439A97;
-}
-footer #footer_brand_name {
-  margin-left: 20vw;
-}
-footer #footer_brand_name p {
-  font-size: 1.5rem;
-}
-footer #footer_fax {
-  margin-right: 20vw;
-}
-footer p {
-  color: white;
 }
 
 /*# sourceMappingURL=style.css.map */

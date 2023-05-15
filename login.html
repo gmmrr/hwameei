@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta content="width=device-width, initial-scale=1" name="viewport" />
+    <title>Hwameei</title>
+    <link href="./css/style_login.css" rel="stylesheet" type="text/css" />
+
+    <!-- jquery for only -->
+    <!-- <script src="https://code.jquery.com/jquery-3.3.1.min.js"></script> -->
+
+    <!-- font -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Inter&display=swap" rel="stylesheet" />
+  </head>
+
+  <body>
+    <!-- absolute position bar -->
+    <div id="navbar">
+      <div id="hamburger_icon" onclick="show_hamburger_content()"></div>
+      <div id="hamburger_content_shadow" onclick="show_hamburger_content()"></div>
+      <div id="hamburger_content" class="hamburger_switch">
+        <div id="hamburger_close" onclick="show_hamburger_content()"></div>
+        <div class="hamburger_element" id="hamburger_element_homepage" onclick="window.location.href='./index.html'">
+          <p class="hamburger_element_zsh">首頁</p>
+          <p class="hamburger_element_eng">homepage</p>
+        </div>
+        <div class="hamburger_element" onclick="window.location.href='./recomendation.html'">
+          <p class="hamburger_element_zsh">個人化推薦</p>
+          <p class="hamburger_element_eng">personalized recommendation</p>
+        </div>
+        <div class="hamburger_element" onclick="window.location.href='./product.html'">
+          <p class="hamburger_element_zsh">商品一覽</p>
+          <p class="hamburger_element_eng">product list</p>
+        </div>
+        <div class="hamburger_element" onclick="window.location.href='./shop.html'">
+          <p class="hamburger_element_zsh">門市介紹</p>
+          <p class="hamburger_element_eng">shop introduction</p>
+        </div>
+        <div class="hamburger_element" onclick="window.location.href='./login.html'">
+          <p class="hamburger_element_zsh">登入/註冊</p>
+          <p class="hamburger_element_eng">Log in/Sign up</p>
+        </div>
+      </div>
+      <div id="you_are_in_element">
+        <p>You are in 登入/註冊</p>
+      </div>
+    </div>
+    <div id="functionbar">
+      <div id="cart_func" onclick="window.location.href='./index.html'"></div>
+      <div id="line_func" onclick="window.location.href='./index.html'"></div>
+      <div id="info_func" onclick="window.location.href='./index.html'"></div>
+    </div>
+
+    <div id="login_function">
+      <div id="login_banner">
+        <div id="login_banner_left_line"></div>
+        <p>登入</p>
+        <div id="login_banner_right_line"></div>
+      </div>
+
+      <div id="login_form">
+        <form>
+          <p>電子信箱</p>
+          <input type="text" name="account" /><br />
+          <p>密碼</p>
+          <input type="text" name="password" /><br />
+        </form>
+      </div>
+
+      <div id="login_button_container">
+        <button id="login_button">登入</button>
+        <div id="change_to_signup">
+          <div id="still_not_signup">還沒有註冊嗎？</div>
+          <button id="change_to_signup_button" onclick="function_switching()">註冊</button>
+        </div>
+      </div>
+    </div>
+
+    <div id="signup_function">
+      <div id="signup_banner">
+        <div id="signup_banner_left_line"></div>
+        <p>註冊</p>
+        <div id="signup_banner_right_line"></div>
+      </div>
+
+      <div id="signup_form">
+        <form>
+          <p>電子信箱</p>
+          <input type="text" name="account" /><br />
+          <p>密碼</p>
+          <input type="text" name="password" /><br />
+          <p>再次輸入密碼</p>
+          <input type="text" name="password_again" /><br />
+        </form>
+      </div>
+
+      <div id="signup_button_container">
+        <button id="signup_button">註冊</button>
+        <div id="change_to_login">
+          <div id="still_not_login">已有帳號了嗎？</div>
+          <button id="change_to_login_button" onclick="function_switching()">登入</button>
+        </div>
+      </div>
+    </div>
+
+    <footer>
+      <div id="footer_brand_name">
+        <p>華美光學</p>
+      </div>
+      <div id="footer_address">
+        <p>地址:臺南市安定區中沙里沙崙30號</p>
+      </div>
+      <div id="footer_tel">
+        <p>TEL:065937597</p>
+      </div>
+      <div id="footer_fax">
+        <p>FAX:065937597</p>
+      </div>
+    </footer>
+
+    <script src="./js/anime.min.js"></script>
+    <script src="./js/script_login.js"></script>
+  </body>
+</html>

@@ -1,3 +1,4 @@
+//-------------------- general ---------------------//
 * { margin: 0; padding: 0; }
 html { width: 100vw;overflow-x: hidden;}
 body {position: relative; background-color: #faf8f8;}
@@ -67,7 +68,7 @@ body {position: relative; background-color: #faf8f8;}
             margin-left: 10vw;
             display: flex;
             align-items: center;
-            margin-top: 13vh;
+            margin-top: 10vh;
   
             .hamburger_element_zsh {
                 font-size: 2rem;
@@ -81,10 +82,10 @@ body {position: relative; background-color: #faf8f8;}
                 font-weight: 400;
                 color: #62B6B7;
             }
-  
-        }
-        .hamburger_element:hover {
-            cursor: pointer;
+            
+            &:hover {
+                cursor: pointer;
+            }
         }
         
         #hamburger_element_homepage {
@@ -142,6 +143,37 @@ body {position: relative; background-color: #faf8f8;}
     }
 }
 
+footer {
+    margin-top: 10vh;
+    bottom: 0;
+    height: 10vh;
+
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+
+    background-color: #439A97;
+    ;
+
+    #footer_brand_name {
+        margin-left: 20vw;
+        p {
+            font-size: 1.5rem;
+        }
+    }
+    #footer_fax {
+        margin-right: 20vw;
+    }
+
+    p {
+        color: white;
+    }
+
+}
+//--------------------------------------------------//
+
+
+
 #scrollbar {
     #scroll_icon {
         position: absolute;
@@ -168,10 +200,6 @@ body {position: relative; background-color: #faf8f8;}
         border-color: transparent transparent #faf8f8 transparent;
     }
 }
-
-
-
-
 
 
 #homepage_background_frame {
@@ -335,33 +363,7 @@ body {position: relative; background-color: #faf8f8;}
 }
 
 
-footer {
-    margin-top: 10vh;
-    bottom: 0;
-    height: 10vh;
 
-    display: flex;
-    justify-content: space-around;
-    align-items: center;
-
-    background-color: #439A97;
-    ;
-
-    #footer_brand_name {
-        margin-left: 20vw;
-        p {
-            font-size: 1.5rem;
-        }
-    }
-    #footer_fax {
-        margin-right: 20vw;
-    }
-
-    p {
-        color: white;
-    }
-
-}
 
 
 

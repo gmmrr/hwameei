@@ -1,6 +1,5 @@
 //-------------------- general ---------------------//
 var first_time = 1;
-let state= 0;
 var first_time_hamburger_icon = 1;
 function show_hamburger_content() {
     var hamburger_content = document.getElementById("hamburger_content");
@@ -22,7 +21,10 @@ function show_hamburger_content() {
 }
 //--------------------------------------------------//
 
+let state= 0;
 
+
+//---------------- next page button ----------------//
 function change_next_button(){
   let tab_arr = [];
   let div_arr = [];
@@ -115,7 +117,7 @@ function change_next_button(){
   }
   
   else if((state===2)){
-    console.log("No more ")
+    window.location.href = './recomendation.html';    //actually change to recommended page
   }
 }
 
@@ -207,7 +209,10 @@ function change_goback_button(){
     state--;
   }
 }
+//--------------------------------------------------//
 
+
+//------------------- go to video ------------------//
 function go_to_video(){
 
     if(state===2){
@@ -243,7 +248,10 @@ function go_to_video(){
       }, 1000);
     }
 }
+//--------------------------------------------------//
 
+
+//------------------ go to result ------------------//
 function go_to_result(){
 
   let videoEl = document.getElementById("video_popup_container");
@@ -264,3 +272,5 @@ function go_to_result(){
   button.classList.toggle("inactive_button");
   pic.classList.toggle("result_inactive");
 }
+//--------------------------------------------------//
+  

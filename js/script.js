@@ -22,6 +22,8 @@ function show_hamburger_content() {
 }
 //--------------------------------------------------//
 
+
+//--------------- homepage switching ---------------//
 var first_time_homepage_switching = 1;
 let homepage_switching = anime({
     targets: '#homepage_background',
@@ -47,3 +49,4 @@ function homepage_change(){
     first_time_homepage_switching = 0;
 }
 setInterval(homepage_change,5000);
+//--------------------------------------------------//

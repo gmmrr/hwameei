@@ -17,7 +17,7 @@
   <body>
     <div id="navbar">
       <div id="hamburger_icon" onclick="show_hamburger_content()"></div>
-      <div id="hamburger_content_shadow"></div>
+      <div id="hamburger_content_shadow" onclick="show_hamburger_content()"></div>
       <div id="hamburger_content" class="hamburger_switch">
         <div id="hamburger_close" onclick="show_hamburger_content()"></div>
         <div class="hamburger_element" id="hamburger_element_homepage" onclick="window.location.href='./index.html'">
@@ -28,26 +28,27 @@
           <p class="hamburger_element_zsh">個人化推薦</p>
           <p class="hamburger_element_eng">personalized recommendation</p>
         </div>
-        <div class="hamburger_element" onclick="window.location.href='./index.html'">
+        <div class="hamburger_element" onclick="window.location.href='./product.html'">
           <p class="hamburger_element_zsh">商品一覽</p>
           <p class="hamburger_element_eng">product list</p>
         </div>
-        <div class="hamburger_element" onclick="window.location.href='./index.html'">
+        <div class="hamburger_element" onclick="window.location.href='./shop.html'">
           <p class="hamburger_element_zsh">門市介紹</p>
           <p class="hamburger_element_eng">shop introduction</p>
         </div>
-      </div>
-      <div id="functionbar">
-        <div id="cart_func" onclick="window.location.href='./index.html'"></div>
-        <div id="line_func" onclick="window.location.href='./index.html'"></div>
-        <div id="info_func" onclick="window.location.href='./index.html'"></div>
-      </div>
-      <div id="scrollbar">
-        <div id="scroll_icon"></div>
+        <div class="hamburger_element" onclick="window.location.href='./login.html'">
+          <p class="hamburger_element_zsh">登入/註冊</p>
+          <p class="hamburger_element_eng">Log in/Sign up</p>
+        </div>
       </div>
       <div id="you_are_in_element">
         <p>You are in 個人化推薦</p>
       </div>
+    </div>
+    <div id="functionbar">
+      <div id="cart_func" onclick="window.location.href='./index.html'"></div>
+      <div id="line_func" onclick="window.location.href='./index.html'"></div>
+      <div id="info_func" onclick="window.location.href='./index.html'"></div>
     </div>
 
     <!-- Tab Choose Recomendation Component-->

@@ -1,108 +1,108 @@
+//-------------------- general ---------------------//
 * { margin: 0; padding: 0; }
 html { width: 100vw;overflow-x: hidden;}
 body {position: relative; background-color: #faf8f8;}
 
-
 #navbar {
-  position: relative;
+    position: relative;
+    
+    #hamburger_icon {
+        position: absolute;
+        width: 60px;
+        height: 60px;
+        top: 15px;
+        left: 25px;
+        z-index: 3;
   
-  #hamburger_icon {
+        background-image: url("../src/hamburger_icon.png");
+        background-position: center;
+        background-size: contain;
+        background-repeat: no-repeat;
+  
+    }
+    #hamburger_icon:hover {
+        cursor: pointer;
+    }
+  
+    #hamburger_content_shadow {
+        display: none;
+        position: fixed;
+        height: 100vh;
+        width: 100vw;
+  
+        background-color: black;
+        opacity: 0.7;
+        z-index: 4;
+    }
+    #hamburger_content {
+        position: fixed;
+        display: none;
+        left: 0;
+        height: 100vh;
+        width: 65vw;
+        z-index: 10;
+  
+        background-color: white;
+        user-select: none;
+        
+  
+        #hamburger_close {
+            position: absolute;
+            top: 12px;
+            left: 19.5px;
+            width: 70px;
+            height: 70px;
+  
+  
+            background-image: url("../src/hamburger_close.png");
+            background-position: center;
+            background-size: cover;
+            background-repeat: no-repeat;
+        }
+        #hamburger_close:hover {
+            cursor: pointer;
+        }
+  
+        .hamburger_element {
+            
+            margin-left: 10vw;
+            display: flex;
+            align-items: center;
+            margin-top: 10vh;
+  
+            .hamburger_element_zsh {
+                font-size: 2rem;
+                color: #62B6B7;
+                letter-spacing: 1.5rem;
+            }
+            .hamburger_element_eng {
+                margin-left: 3vw;
+                font-family: "Inter";
+                font-size: 1rem;
+                font-weight: 400;
+                color: #62B6B7;
+            }
+            
+            &:hover {
+                cursor: pointer;
+            }
+        }
+        
+        #hamburger_element_homepage {
+            margin-top: 15vh;
+        }
+    }
+    #you_are_in_element {
       position: absolute;
-      width: 60px;
       height: 60px;
-      top: 15px;
-      left: 25px;
-      z-index: 3;
-
-      background-image: url("../src/hamburger_icon.png");
-      background-position: center;
-      background-size: contain;
-      background-repeat: no-repeat;
-
-  }
-  #hamburger_icon:hover {
-      cursor: pointer;
-  }
-
-  #hamburger_content_shadow {
-      display: none;
-      position: fixed;
-      height: 100vh;
-      width: 100vw;
-
-      background-color: black;
-      opacity: 0.7;
-      z-index: 4;
-  }
-  #hamburger_content {
-      position: fixed;
-      display: none;
-      left: 0;
-      height: 100vh;
-      width: 65vw;
-      z-index: 10;
-
-      background-color: white;
-      user-select: none;
-      
-
-      #hamburger_close {
-          position: absolute;
-          top: 12px;
-          left: 19.5px;
-          width: 70px;
-          height: 70px;
-
-
-          background-image: url("../src/hamburger_close.png");
-          background-position: center;
-          background-size: cover;
-          background-repeat: no-repeat;
-      }
-      #hamburger_close:hover {
-          cursor: pointer;
-      }
-
-      .hamburger_element {
-          
-          margin-left: 10vw;
-          display: flex;
-          align-items: center;
-          margin-top: 13vh;
-
-          .hamburger_element_zsh {
-              font-size: 2rem;
-              color: #62B6B7;
-              letter-spacing: 1.5rem;
-          }
-          .hamburger_element_eng {
-              margin-left: 3vw;
-              font-family: "Inter";
-              font-size: 1rem;
-              font-weight: 400;
-              color: #62B6B7;
-          }
-
-      }
-      .hamburger_element:hover {
-          cursor: pointer;
-      }
-      
-      #hamburger_element_homepage {
-          margin-top: 15vh;
-      }
-  }
-  #you_are_in_element {
-    position: absolute;
-    height: 60px;
-    top: 20px;
-    right: 25px;
-    font-size: 1.5rem;
-    color: #62B6B7;
-    letter-spacing: 3px;
-  }
+      top: 20px;
+      right: 25px;
+      font-size: 1.5rem;
+      color: #62B6B7;
+      letter-spacing: 3px;
+    }
 }
-
+  
 #functionbar {
     position: fixed;
     top: 65vh;
@@ -143,32 +143,37 @@ body {position: relative; background-color: #faf8f8;}
     }
 }
 
-#scrollbar {
-    #scroll_icon {
-        position: absolute;
-        top: 86vh;
-        right: 1.5vw;
-        width: 10px;
-        height: 10vh;
-        z-index: 2;
+footer {
+    margin-top: 10vh;
+    bottom: 0;
+    height: 10vh;
 
-        background-image: url(../src/scrollbar.png);
-        background-size: cover;
-        background-position: center;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+
+    background-color: #439A97;
+    ;
+
+    #footer_brand_name {
+        margin-left: 20vw;
+        p {
+            font-size: 1.5rem;
+        }
     }
-    #tri_after_bar{
-        position: absolute;
-        top: 81vh;
-        width: 0;
-        height: 0;
-        z-index: 1;
-
-
-        border-style: solid;
-        border-width: 0 0 19vh 100vw;
-        border-color: transparent transparent #faf8f8 transparent;
+    #footer_fax {
+        margin-right: 20vw;
     }
+
+    p {
+        color: white;
+    }
+
 }
+
+
+//--------------------------------------------------//
+
 
 
 
@@ -810,33 +815,3 @@ body.active {
 }
 
 
-
-
-
-footer {
-    margin-top: 10vh;
-    bottom: 0;
-    height: 10vh;
-
-    display: flex;
-    justify-content: space-around;
-    align-items: center;
-
-    background-color: #439A97;
-    ;
-
-    #footer_brand_name {
-        margin-left: 20vw;
-        p {
-            font-size: 1.5rem;
-        }
-    }
-    #footer_fax {
-        margin-right: 20vw;
-    }
-
-    p {
-        color: white;
-    }
-
-}
