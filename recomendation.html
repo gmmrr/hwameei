@@ -1,190 +1,193 @@
 <!DOCTYPE html>
 <html>
-  <head>
-    <meta charset="utf-8" />
-    <meta content="width=device-width, initial-scale=1" name="viewport" />
-    <title>Hwameei</title>
+    <head>
+        <meta charset="utf-8" />
+        <meta content="width=device-width, initial-scale=1" name="viewport" />
+        <title>Hwameei</title>
 
-    <link href="./css/style_recomendation.css" rel="stylesheet" type="text/css" />
-    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet" />
+        <link href="./css/style_recomendation.css" rel="stylesheet" type="text/css" />
+        <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet" />
 
-    <!-- font -->
-    <link rel="preconnect" href="https://fonts.googleapis.com" />
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <link href="https://fonts.googleapis.com/css2?family=Inter&display=swap" rel="stylesheet" />
-  </head>
+        <!-- font -->
+        <link rel="preconnect" href="https://fonts.googleapis.com" />
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+        <link href="https://fonts.googleapis.com/css2?family=Inter&display=swap" rel="stylesheet" />
+    </head>
 
-  <body>
-    <div id="navbar">
-      <div id="hamburger_icon" onclick="show_hamburger_content()"></div>
-      <div id="hamburger_content_shadow" onclick="show_hamburger_content()"></div>
-      <div id="hamburger_content" class="hamburger_switch">
-        <div id="hamburger_close" onclick="show_hamburger_content()"></div>
-        <div class="hamburger_element" id="hamburger_element_homepage" onclick="window.location.href='./index.html'">
-          <p class="hamburger_element_zsh">首頁</p>
-          <p class="hamburger_element_eng">homepage</p>
+    <body>
+        <div id="navbar">
+            <div id="hamburger_icon" onclick="show_hamburger_content()"></div>
+            <div id="hamburger_content_shadow" onclick="show_hamburger_content()"></div>
+            <div id="hamburger_content" class="hamburger_switch">
+                <div id="hamburger_close" onclick="show_hamburger_content()"></div>
+                <div
+                    class="hamburger_element"
+                    id="hamburger_element_homepage"
+                    onclick="window.location.href='./index.html'"
+                >
+                    <p class="hamburger_element_zsh">首頁</p>
+                    <p class="hamburger_element_eng">homepage</p>
+                </div>
+                <div class="hamburger_element" onclick="window.location.href='./recomendation.html'">
+                    <p class="hamburger_element_zsh">個人化推薦</p>
+                    <p class="hamburger_element_eng">personalized recommendation</p>
+                </div>
+                <div class="hamburger_element" onclick="window.location.href='./product.html'">
+                    <p class="hamburger_element_zsh">商品一覽</p>
+                    <p class="hamburger_element_eng">product list</p>
+                </div>
+                <div class="hamburger_element" onclick="window.location.href='./shop.html'">
+                    <p class="hamburger_element_zsh">門市介紹</p>
+                    <p class="hamburger_element_eng">shop introduction</p>
+                </div>
+                <div class="hamburger_element" onclick="window.location.href='./login.html'">
+                    <p class="hamburger_element_zsh">登入/註冊</p>
+                    <p class="hamburger_element_eng">Log in/Sign up</p>
+                </div>
+            </div>
+            <div id="you_are_in_element">
+                <p>You are in 個人化推薦</p>
+            </div>
         </div>
-        <div class="hamburger_element" onclick="window.location.href='./recomendation.html'">
-          <p class="hamburger_element_zsh">個人化推薦</p>
-          <p class="hamburger_element_eng">personalized recommendation</p>
+        <div id="functionbar">
+            <div id="cart_func" onclick="window.location.href='./index.html'"></div>
+            <div id="line_func" onclick="window.location.href='./index.html'"></div>
+            <div id="info_func" onclick="window.location.href='./index.html'"></div>
         </div>
-        <div class="hamburger_element" onclick="window.location.href='./product.html'">
-          <p class="hamburger_element_zsh">商品一覽</p>
-          <p class="hamburger_element_eng">product list</p>
+
+        <!-- Tab Choose Recomendation Component-->
+
+        <div id="navtab_container">
+            <div id="text_container">
+                <ul id="style_container">
+                    <li id="style_title_element_1" class="active">1.風格篩選</li>
+                    <li id="style_title_element_2" class="inactive">2.喜好篩選</li>
+                    <li id="style_title_element_3" class="inactive">3.臉型篩選</li>
+                </ul>
+            </div>
+
+            <div id="divider_container">
+                <div id="divider_1" class="active"></div>
+                <div id="divider_2" class="inactive"></div>
+                <div id="divider_3" class="inactive"></div>
+            </div>
         </div>
-        <div class="hamburger_element" onclick="window.location.href='./shop.html'">
-          <p class="hamburger_element_zsh">門市介紹</p>
-          <p class="hamburger_element_eng">shop introduction</p>
+
+        <div id="styleflex_container">
+            <div id="first_style_container">
+                <button class="description_button">流線型</button>
+                <button class="description_button">速度感</button>
+            </div>
+            <div id="second_style_container">
+                <button class="description_button">時尚</button>
+                <button class="description_button">簡約</button>
+
+                <button class="description_button">復古</button>
+                <button class="description_button">前衛</button>
+
+                <button class="description_button">奢華</button>
+                <button class="description_button">貓眼</button>
+            </div>
+            <div id="third_style_container">
+                <button class="description_button">黑</button>
+                <button class="description_button">白</button>
+
+                <button class="description_button">金</button>
+                <button class="description_button">銀</button>
+
+                <button class="description_button">米</button>
+                <button class="description_button">藍</button>
+                <button class="description_button">粉</button>
+            </div>
+            <div data-aos="slide-left" class="background_container">
+                <div class="style_background_text">STYLE</div>
+            </div>
         </div>
-        <div class="hamburger_element" onclick="window.location.href='./login.html'">
-          <p class="hamburger_element_zsh">登入/註冊</p>
-          <p class="hamburger_element_eng">Log in/Sign up</p>
+
+        <div id="preferenceflex_container">
+            <div id="first_preference_container"></div>
+            <div id="second_preference_container">
+                <button class="description_button">跑步</button>
+                <button class="description_button">騎行</button>
+                <button class="description_button">鐵人三項</button>
+            </div>
+            <div id="third_preference_container">
+                <button class="description_button">室內</button>
+                <button class="description_button">閱讀</button>
+                <button class="description_button">休閒</button>
+            </div>
+            <div data-aos="slide-left" class="background_container">
+                <div class="preference_background_text">PREFERENCE</div>
+            </div>
         </div>
-      </div>
-      <div id="you_are_in_element">
-        <p>You are in 個人化推薦</p>
-      </div>
-    </div>
-    <div id="functionbar">
-      <div id="cart_func" onclick="window.location.href='./index.html'"></div>
-      <div id="line_func" onclick="window.location.href='./index.html'"></div>
-      <div id="info_func" onclick="window.location.href='./index.html'"></div>
-    </div>
 
-    <!-- Tab Choose Recomendation Component-->
+        <div id="faceflex_container">
+            <div id="do_you_know_what_kinds_of_face">您知道自己的臉型屬於哪一種的嗎?</div>
+            <div id="try_facial_scanning">來試試臉部偵測</div>
+            <div id="eigth_row_container">
+                <div id="camera_img"></div>
+            </div>
+        </div>
 
-    <div id="navtab_container">
-      <div id="text_container">
-        <ul id="style_container">
-          <li id="style_title_element_1" class="active">1.風格篩選</li>
-          <li id="style_title_element_2" class="inactive">2.喜好篩選</li>
-          <li id="style_title_element_3" class="inactive">3.臉型篩選</li>
-        </ul>
-      </div>
+        <div id="video_popup_container">
+            <video id="camera_stream" autoplay></video>
+        </div>
 
-      <div id="divider_container">
-        <div id="divider_1" class="active"></div>
-        <div id="divider_2" class="inactive"></div>
-        <div id="divider_3" class="inactive"></div>
-      </div>
-    </div>
+        <div id="resultflex_container" class="result_inactive">
+            <div id="image_result_container">
+                <img src="src/recognition_pic.png" alt="Pic Result" height="413px" width="430px" />
+            </div>
 
-    <div id="styleflex_container">
-      <div id="first_style_container">
-        <button class="description_button">流線型</button>
-        <button class="description_button">速度感</button>
-      </div>
-      <div id="second_style_container">
-        <button class="description_button">時尚</button>
-        <button class="description_button">簡約</button>
+            <div id="your_pic_container">
+                <div id="your_pic_text">您的臉型是...</div>
+                <div id="all_face_button"></div>
+                <div id="all_face"></div>
+            </div>
+            <button id="button_pic">橢圓臉</button>
+        </div>
 
-        <button class="description_button">復古</button>
-        <button class="description_button">前衛</button>
+        <div id="next_button_container">
+            <div id="next_container" class="active_button">
+                <button id="next_button" onclick="change_next_button()">下一步</button>
+            </div>
+            <div id="next_container_2" class="inactive_button">
+                <button id="next_button_2" onclick="open_camera()">開啟攝像鏡頭</button>
+            </div>
+            <div id="next_container_3" class="inactive_button">
+                <button id="next_button_3" onclick="go_to_result()">下一步</button>
+            </div>
 
-        <button class="description_button">奢華</button>
-        <button class="description_button">貓眼</button>
-      </div>
-      <div id="third_style_container">
-        <button class="description_button">黑</button>
-        <button class="description_button">白</button>
+            <div id="succed" class="inactive_succed">選擇完成了嗎?</div>
+            <div id="next_container_4" class="inactive_button">
+                <button id="next_button_4" onclick="window.location.href='./recomendation.html'">開始推薦</button>
+            </div>
 
-        <button class="description_button">金</button>
-        <button class="description_button">銀</button>
+            <div id="other_container">
+                <button id="go_back_button" class="active_button" onclick="change_goback_button()">返回</button>
+                <button id="skip_button" onclick="change_next_button()">略過</button>
+            </div>
+        </div>
 
-        <button class="description_button">米</button>
-        <button class="description_button">藍</button>
-        <button class="description_button">粉</button>
-      </div>
-      <div data-aos="slide-left" class="background_container">
-        <div class="style_background_text">STYLE</div>
-      </div>
-    </div>
+        <footer>
+            <div id="footer_brand_name">
+                <p>華美光學</p>
+            </div>
+            <div id="footer_address">
+                <p>地址:臺南市安定區中沙里沙崙30號</p>
+            </div>
+            <div id="footer_tel">
+                <p>TEL:065937597</p>
+            </div>
+            <div id="footer_fax">
+                <p>FAX:065937597</p>
+            </div>
+        </footer>
 
-    <div id="preferenceflex_container">
-      <div id="first_preference_container"></div>
-      <div id="second_preference_container">
-        <button class="description_button">跑步</button>
-        <button class="description_button">騎行</button>
-        <button class="description_button">鐵人三項</button>
-      </div>
-      <div id="third_preference_container">
-        <button class="description_button">室內</button>
-        <button class="description_button">閱讀</button>
-        <button class="description_button">休閒</button>
-      </div>
-      <div data-aos="slide-left" class="background_container">
-        <div class="preference_background_text">PREFERENCE</div>
-      </div>
-    </div>
-
-    <div id="faceflex_container">
-      <div id="do_you_know_what_kinds_of_face">您知道自己的臉型屬於哪一種的嗎?</div>
-      <div id="try_facial_scanning">來試試臉部偵測</div>
-      <div id="eigth_row_container">
-        <div id="camera_img"></div>
-      </div>
-    </div>
-
-    <div id="video_popup_container">
-      <video id="img" loop muted autoplay="autoplay">
-        <source src="src/face_recognition_video_conv.avi" />
-      </video>
-    </div>
-
-    <div id="resultflex_container" class="result_inactive">
-      <div id="image_result_container">
-        <img src="src/recognition_pic.png" alt="Pic Result" height="413px" width="430px" />
-      </div>
-
-      <div id="your_pic_container">
-        <div id="your_pic_text">您的臉型是...</div>
-        <div id="all_face_button"></div>
-        <div id="all_face"></div>
-      </div>
-      <button id="button_pic">橢圓臉</button>
-    </div>
-
-    <div id="next_button_container">
-      <div id="next_container" class="active_button">
-        <button id="next_button" onclick="change_next_button()">下一步</button>
-      </div>
-      <div id="next_container_2" class="inactive_button">
-        <button id="next_button_2" onclick="go_to_video()">開啟攝像鏡頭</button>
-      </div>
-      <div id="next_container_3" class="inactive_button">
-        <button id="next_button_3" onclick="go_to_result()">下一步</button>
-      </div>
-
-      <div id="succed" class="inactive_succed">選擇完成了嗎?</div>
-      <div id="next_container_4" class="inactive_button">
-        <button id="next_button_4" onclick="window.location.href='./recomendation.html'">開始推薦</button>
-      </div>
-
-      <div id="other_container">
-        <button id="go_back_button" class="active_button" onclick="change_goback_button()">返回</button>
-        <button id="skip_button" onclick="change_next_button()">略過</button>
-      </div>
-    </div>
-
-    <footer>
-      <div id="footer_brand_name">
-        <p>華美光學</p>
-      </div>
-      <div id="footer_address">
-        <p>地址:臺南市安定區中沙里沙崙30號</p>
-      </div>
-      <div id="footer_tel">
-        <p>TEL:065937597</p>
-      </div>
-      <div id="footer_fax">
-        <p>FAX:065937597</p>
-      </div>
-    </footer>
-
-    <script src="./js/script_recomendation.js"></script>
-    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
-    <script>
-      AOS.init();
-    </script>
-  </body>
+        <script src="./js/script_recomendation.js"></script>
+        <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+        <script>
+            AOS.init();
+        </script>
+        <script src="face-api.js"></script>
+    </body>
 </html>

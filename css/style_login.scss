@@ -1,11 +1,20 @@
 //-------------------- general ---------------------//
-* { margin: 0; padding: 0; }
-html { width: 100vw;overflow-x: hidden;}
-body {position: relative; background-color: #faf8f8;}
+* {
+    margin: 0;
+    padding: 0;
+}
+html {
+    width: 100vw;
+    overflow-x: hidden;
+}
+body {
+    position: relative;
+    background-color: #faf8f8;
+}
 
 #navbar {
     position: relative;
-    
+
     #hamburger_icon {
         position: absolute;
         width: 60px;
@@ -13,23 +22,22 @@ body {position: relative; background-color: #faf8f8;}
         top: 15px;
         left: 25px;
         z-index: 3;
-  
+
         background-image: url("../src/hamburger_icon.png");
         background-position: center;
         background-size: contain;
         background-repeat: no-repeat;
-  
     }
     #hamburger_icon:hover {
         cursor: pointer;
     }
-  
+
     #hamburger_content_shadow {
         display: none;
         position: fixed;
         height: 100vh;
         width: 100vw;
-  
+
         background-color: black;
         opacity: 0.7;
         z-index: 4;
@@ -41,19 +49,17 @@ body {position: relative; background-color: #faf8f8;}
         height: 100vh;
         width: 65vw;
         z-index: 10;
-  
+
         background-color: white;
         user-select: none;
-        
-  
+
         #hamburger_close {
             position: absolute;
             top: 12px;
             left: 19.5px;
             width: 70px;
             height: 70px;
-  
-  
+
             background-image: url("../src/hamburger_close.png");
             background-position: center;
             background-size: cover;
@@ -62,17 +68,16 @@ body {position: relative; background-color: #faf8f8;}
         #hamburger_close:hover {
             cursor: pointer;
         }
-  
+
         .hamburger_element {
-            
             margin-left: 10vw;
             display: flex;
             align-items: center;
             margin-top: 10vh;
-  
+
             .hamburger_element_zsh {
                 font-size: 2rem;
-                color: #62B6B7;
+                color: #62b6b7;
                 letter-spacing: 1.5rem;
             }
             .hamburger_element_eng {
@@ -80,14 +85,14 @@ body {position: relative; background-color: #faf8f8;}
                 font-family: "Inter";
                 font-size: 1rem;
                 font-weight: 400;
-                color: #62B6B7;
+                color: #62b6b7;
             }
-            
+
             &:hover {
                 cursor: pointer;
             }
         }
-        
+
         #hamburger_element_homepage {
             margin-top: 15vh;
         }
@@ -99,11 +104,11 @@ body {position: relative; background-color: #faf8f8;}
         top: 20px;
         right: 25px;
         font-size: 1.5rem;
-        color: #62B6B7;
+        color: #62b6b7;
         letter-spacing: 3px;
     }
 }
-  
+
 #functionbar {
     position: fixed;
     top: 65vh;
@@ -153,9 +158,7 @@ footer {
     justify-content: space-around;
     align-items: center;
 
-    background-color: #439A97;
-    ;
-
+    background-color: #439a97;
     #footer_brand_name {
         margin-left: 20vw;
         p {
@@ -169,16 +172,12 @@ footer {
     p {
         color: white;
     }
-
 }
-
-
-
-
 
 //--------------------------------------------------//
 
 #login_function {
+    display: block;
     padding-top: 100px;
 
     #login_banner {
@@ -189,18 +188,18 @@ footer {
         #login_banner_left_line {
             height: 5px;
             width: 145px;
-            background-color: #62B6B7;
+            background-color: #62b6b7;
             margin-right: 70px;
         }
         p {
-            color: #62B6B7;
+            color: #62b6b7;
             font-size: 2.5rem;
-            font-family: 'Inter', sans-serif;
+            font-family: "Inter", sans-serif;
         }
         #login_banner_right_line {
             height: 5px;
             width: 145px;
-            background-color: #62B6B7;
+            background-color: #62b6b7;
             margin-left: 70px;
         }
     }
@@ -214,20 +213,35 @@ footer {
             p {
                 margin-top: 40px;
                 margin-bottom: 20px;
-                color: #62B6B7;
+                color: #62b6b7;
                 font-size: 1.5rem;
-
             }
             input {
+                box-sizing: border-box;
+                padding-left: 30px;
                 width: 100%;
                 height: 4vw;
 
-                background: #FFFFFF;
-                border: 1px solid #62B6B7;
+                background: #ffffff;
+                border: 1px solid #62b6b7;
                 border-radius: 30px;
+
+                color: black;
+                font-size: 1.4rem;
+                letter-spacing: 0.2rem;
+            }
+            #login_password_protection {
+                position: relative;
+                #login_password_visible_button {
+                    position: absolute;
+                    right: 1.5vw;
+                    top: 1vw;
+                    height: 2vw;
+                    width: 2vw;
+                    background-color: green;
+                }
             }
         }
-
     }
 
     #login_button_container {
@@ -239,7 +253,7 @@ footer {
             width: 100%;
             height: 7vw;
 
-            background: #97DECE;
+            background: #97dece;
             box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
             border-radius: 20px;
             border: none;
@@ -248,9 +262,8 @@ footer {
             font-size: 2.5rem;
             letter-spacing: 1rem;
             padding-left: 1rem;
-
         }
-    
+
         #change_to_signup {
             display: flex;
             justify-content: center;
@@ -263,12 +276,11 @@ footer {
                 color: #979797;
                 font-size: 1.3rem;
                 letter-spacing: 0.7rem;
-
             }
             #change_to_signup_button {
                 height: 3vw;
                 width: 50%;
-                background: #D9D9D9;
+                background: #d9d9d9;
                 box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
                 border-radius: 20px;
                 border: none;
@@ -277,16 +289,14 @@ footer {
                 font-size: 2rem;
                 letter-spacing: 1rem;
                 padding-left: 1rem;
-
             }
         }
     }
-    
 }
 
 #signup_function {
-    padding-top: 100px;
     display: none;
+    padding-top: 100px;
 
     #signup_banner {
         display: flex;
@@ -296,18 +306,18 @@ footer {
         #signup_banner_left_line {
             height: 5px;
             width: 145px;
-            background-color: #62B6B7;
+            background-color: #62b6b7;
             margin-right: 70px;
         }
         p {
-            color: #62B6B7;
+            color: #62b6b7;
             font-size: 2.5rem;
-            font-family: 'Inter', sans-serif;
+            font-family: "Inter", sans-serif;
         }
         #signup_banner_right_line {
             height: 5px;
             width: 145px;
-            background-color: #62B6B7;
+            background-color: #62b6b7;
             margin-left: 70px;
         }
     }
@@ -322,19 +332,45 @@ footer {
             p {
                 margin-top: 40px;
                 margin-bottom: 20px;
-                color: #62B6B7;
+                color: #62b6b7;
                 font-size: 1.5rem;
             }
             input {
+                box-sizing: border-box;
+                padding-left: 30px;
                 width: 100%;
                 height: 4vw;
 
-                background: #FFFFFF;
-                border: 1px solid #62B6B7;
+                background: #ffffff;
+                border: 1px solid #62b6b7;
                 border-radius: 30px;
+
+                color: black;
+                font-size: 1.4rem;
+                letter-spacing: 0.2rem;
+            }
+            .signup_password_protection {
+                position: relative;
+                .signup_password_visible_button {
+                    position: absolute;
+                    right: 1.5vw;
+                    top: 1vw;
+                    height: 2vw;
+                    width: 2vw;
+                    background-color: green;
+                }
+            }
+            #password_incorresponding_minder {
+                display: flex;
+                justify-content: flex-end;
+                p {
+                    margin-right: 40px;
+                    margin-top: 7px;
+                    color: #62b6b7;
+                    font-size: 1.3rem;
+                }
             }
         }
-
     }
 
     #signup_button_container {
@@ -346,7 +382,7 @@ footer {
             width: 100%;
             height: 7vw;
 
-            background: #97DECE;
+            background: #97dece;
             box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
             border-radius: 20px;
             border: none;
@@ -355,9 +391,8 @@ footer {
             font-size: 2.5rem;
             letter-spacing: 1rem;
             padding-left: 1rem;
-
         }
-    
+
         #change_to_login {
             display: flex;
             justify-content: center;
@@ -374,7 +409,7 @@ footer {
             #change_to_login_button {
                 height: 3vw;
                 width: 50%;
-                background: #D9D9D9;
+                background: #d9d9d9;
                 box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
                 border-radius: 20px;
                 border: none;
@@ -383,9 +418,7 @@ footer {
                 font-size: 2rem;
                 letter-spacing: 1rem;
                 padding-left: 1rem;
-
             }
         }
-    }   
-
+    }
 }

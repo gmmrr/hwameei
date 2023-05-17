@@ -72,7 +72,7 @@ body {
 }
 #navbar #hamburger_content .hamburger_element .hamburger_element_zsh {
   font-size: 2rem;
-  color: #62B6B7;
+  color: #62b6b7;
   letter-spacing: 1.5rem;
 }
 #navbar #hamburger_content .hamburger_element .hamburger_element_eng {
@@ -80,7 +80,7 @@ body {
   font-family: "Inter";
   font-size: 1rem;
   font-weight: 400;
-  color: #62B6B7;
+  color: #62b6b7;
 }
 #navbar #hamburger_content .hamburger_element:hover {
   cursor: pointer;
@@ -94,7 +94,7 @@ body {
   top: 20px;
   right: 25px;
   font-size: 1.5rem;
-  color: #62B6B7;
+  color: #62b6b7;
   letter-spacing: 3px;
 }
 
@@ -144,7 +144,7 @@ footer {
   display: flex;
   justify-content: space-around;
   align-items: center;
-  background-color: #439A97;
+  background-color: #439a97;
 }
 footer #footer_brand_name {
   margin-left: 20vw;
@@ -160,6 +160,7 @@ footer p {
 }
 
 #login_function {
+  display: block;
   padding-top: 100px;
 }
 #login_function #login_banner {
@@ -170,18 +171,18 @@ footer p {
 #login_function #login_banner #login_banner_left_line {
   height: 5px;
   width: 145px;
-  background-color: #62B6B7;
+  background-color: #62b6b7;
   margin-right: 70px;
 }
 #login_function #login_banner p {
-  color: #62B6B7;
+  color: #62b6b7;
   font-size: 2.5rem;
   font-family: "Inter", sans-serif;
 }
 #login_function #login_banner #login_banner_right_line {
   height: 5px;
   width: 145px;
-  background-color: #62B6B7;
+  background-color: #62b6b7;
   margin-left: 70px;
 }
 #login_function #login_form {
@@ -194,15 +195,31 @@ footer p {
 #login_function #login_form form p {
   margin-top: 40px;
   margin-bottom: 20px;
-  color: #62B6B7;
+  color: #62b6b7;
   font-size: 1.5rem;
 }
 #login_function #login_form form input {
+  box-sizing: border-box;
+  padding-left: 30px;
   width: 100%;
   height: 4vw;
-  background: #FFFFFF;
-  border: 1px solid #62B6B7;
+  background: #ffffff;
+  border: 1px solid #62b6b7;
   border-radius: 30px;
+  color: black;
+  font-size: 1.4rem;
+  letter-spacing: 0.2rem;
+}
+#login_function #login_form form #login_password_protection {
+  position: relative;
+}
+#login_function #login_form form #login_password_protection #login_password_visible_button {
+  position: absolute;
+  right: 1.5vw;
+  top: 1vw;
+  height: 2vw;
+  width: 2vw;
+  background-color: green;
 }
 #login_function #login_button_container {
   margin-left: 32vw;
@@ -212,7 +229,7 @@ footer p {
   margin-top: 20vh;
   width: 100%;
   height: 7vw;
-  background: #97DECE;
+  background: #97dece;
   box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
   border-radius: 20px;
   border: none;
@@ -236,7 +253,7 @@ footer p {
 #login_function #login_button_container #change_to_signup #change_to_signup_button {
   height: 3vw;
   width: 50%;
-  background: #D9D9D9;
+  background: #d9d9d9;
   box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
   border-radius: 20px;
   border: none;
@@ -247,8 +264,8 @@ footer p {
 }
 
 #signup_function {
-  padding-top: 100px;
   display: none;
+  padding-top: 100px;
 }
 #signup_function #signup_banner {
   display: flex;
@@ -258,18 +275,18 @@ footer p {
 #signup_function #signup_banner #signup_banner_left_line {
   height: 5px;
   width: 145px;
-  background-color: #62B6B7;
+  background-color: #62b6b7;
   margin-right: 70px;
 }
 #signup_function #signup_banner p {
-  color: #62B6B7;
+  color: #62b6b7;
   font-size: 2.5rem;
   font-family: "Inter", sans-serif;
 }
 #signup_function #signup_banner #signup_banner_right_line {
   height: 5px;
   width: 145px;
-  background-color: #62B6B7;
+  background-color: #62b6b7;
   margin-left: 70px;
 }
 #signup_function #signup_form {
@@ -282,15 +299,41 @@ footer p {
 #signup_function #signup_form form p {
   margin-top: 40px;
   margin-bottom: 20px;
-  color: #62B6B7;
+  color: #62b6b7;
   font-size: 1.5rem;
 }
 #signup_function #signup_form form input {
+  box-sizing: border-box;
+  padding-left: 30px;
   width: 100%;
   height: 4vw;
-  background: #FFFFFF;
-  border: 1px solid #62B6B7;
+  background: #ffffff;
+  border: 1px solid #62b6b7;
   border-radius: 30px;
+  color: black;
+  font-size: 1.4rem;
+  letter-spacing: 0.2rem;
+}
+#signup_function #signup_form form .signup_password_protection {
+  position: relative;
+}
+#signup_function #signup_form form .signup_password_protection .signup_password_visible_button {
+  position: absolute;
+  right: 1.5vw;
+  top: 1vw;
+  height: 2vw;
+  width: 2vw;
+  background-color: green;
+}
+#signup_function #signup_form form #password_incorresponding_minder {
+  display: flex;
+  justify-content: flex-end;
+}
+#signup_function #signup_form form #password_incorresponding_minder p {
+  margin-right: 40px;
+  margin-top: 7px;
+  color: #62b6b7;
+  font-size: 1.3rem;
 }
 #signup_function #signup_button_container {
   margin-left: 32vw;
@@ -300,7 +343,7 @@ footer p {
   margin-top: 10vh;
   width: 100%;
   height: 7vw;
-  background: #97DECE;
+  background: #97dece;
   box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
   border-radius: 20px;
   border: none;
@@ -324,7 +367,7 @@ footer p {
 #signup_function #signup_button_container #change_to_login #change_to_login_button {
   height: 3vw;
   width: 50%;
-  background: #D9D9D9;
+  background: #d9d9d9;
   box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
   border-radius: 20px;
   border: none;
