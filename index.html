@@ -1,110 +1,114 @@
 <!DOCTYPE html>
 <html>
-  <head>
-    <meta charset="utf-8" />
-    <meta content="width=device-width, initial-scale=1" name="viewport" />
-    <title>Hwameei</title>
-    <link href="./css/style.css" rel="stylesheet" type="text/css" />
+    <head>
+        <meta charset="utf-8" />
+        <meta content="width=device-width, initial-scale=1" name="viewport" />
+        <title>Hwameei</title>
+        <link href="./css/style.css" rel="stylesheet" type="text/css" />
 
-    <!-- jquery for only -->
-    <!-- <script src="https://code.jquery.com/jquery-3.3.1.min.js"></script> -->
+        <!-- jquery for only -->
+        <!-- <script src="https://code.jquery.com/jquery-3.3.1.min.js"></script> -->
 
-    <!-- font -->
-    <link rel="preconnect" href="https://fonts.googleapis.com" />
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <link href="https://fonts.googleapis.com/css2?family=Inter&display=swap" rel="stylesheet" />
-  </head>
+        <!-- font -->
+        <link rel="preconnect" href="https://fonts.googleapis.com" />
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+        <link href="https://fonts.googleapis.com/css2?family=Inter&display=swap" rel="stylesheet" />
+    </head>
 
-  <body>
-    <!-- absolute position bar -->
-    <div id="navbar">
-      <div id="hamburger_icon" onclick="show_hamburger_content()"></div>
-      <div id="hamburger_content_shadow" onclick="show_hamburger_content()"></div>
-      <div id="hamburger_content" class="hamburger_switch">
-        <div id="hamburger_close" onclick="show_hamburger_content()"></div>
-        <div class="hamburger_element" id="hamburger_element_homepage" onclick="window.location.href='./index.html'">
-          <p class="hamburger_element_zsh">首頁</p>
-          <p class="hamburger_element_eng">homepage</p>
+    <body>
+        <!-- absolute position bar -->
+        <div id="navbar">
+            <div id="hamburger_icon" onclick="show_hamburger_content()"></div>
+            <div id="hamburger_content_shadow" onclick="show_hamburger_content()"></div>
+            <div id="hamburger_content" class="hamburger_switch">
+                <div id="hamburger_close" onclick="show_hamburger_content()"></div>
+                <div
+                    class="hamburger_element"
+                    id="hamburger_element_homepage"
+                    onclick="window.location.href='./index.html'"
+                >
+                    <p class="hamburger_element_zsh">首頁</p>
+                    <p class="hamburger_element_eng">homepage</p>
+                </div>
+                <div class="hamburger_element" onclick="window.location.href='./recomendation.html'">
+                    <p class="hamburger_element_zsh">個人化推薦</p>
+                    <p class="hamburger_element_eng">personalized recommendation</p>
+                </div>
+                <div class="hamburger_element" onclick="window.location.href='./product.html'">
+                    <p class="hamburger_element_zsh">商品一覽</p>
+                    <p class="hamburger_element_eng">product list</p>
+                </div>
+                <div class="hamburger_element" onclick="window.location.href='./shop.html'">
+                    <p class="hamburger_element_zsh">門市介紹</p>
+                    <p class="hamburger_element_eng">shop introduction</p>
+                </div>
+                <div class="hamburger_element" onclick="window.location.href='./login.html'">
+                    <p class="hamburger_element_zsh">登入/註冊</p>
+                    <p class="hamburger_element_eng">Log in/Sign up</p>
+                </div>
+            </div>
         </div>
-        <div class="hamburger_element" onclick="window.location.href='./recomendation.html'">
-          <p class="hamburger_element_zsh">個人化推薦</p>
-          <p class="hamburger_element_eng">personalized recommendation</p>
+        <div id="functionbar">
+            <div id="cart_func" onclick="window.location.href='./index.html'"></div>
+            <div id="line_func" onclick="window.location.href='./index.html'"></div>
+            <div id="info_func" onclick="window.location.href='./test.html'"></div>
         </div>
-        <div class="hamburger_element" onclick="window.location.href='./product.html'">
-          <p class="hamburger_element_zsh">商品一覽</p>
-          <p class="hamburger_element_eng">product list</p>
+        <div id="scrollbar">
+            <div id="scroll_icon"></div>
+            <div id="tri_after_bar"></div>
         </div>
-        <div class="hamburger_element" onclick="window.location.href='./shop.html'">
-          <p class="hamburger_element_zsh">門市介紹</p>
-          <p class="hamburger_element_eng">shop introduction</p>
-        </div>
-        <div class="hamburger_element" onclick="window.location.href='./login.html'">
-          <p class="hamburger_element_zsh">登入/註冊</p>
-          <p class="hamburger_element_eng">Log in/Sign up</p>
-        </div>
-      </div>
-    </div>
-    <div id="functionbar">
-      <div id="cart_func" onclick="window.location.href='./index.html'"></div>
-      <div id="line_func" onclick="window.location.href='./index.html'"></div>
-      <div id="info_func" onclick="window.location.href='./index.html'"></div>
-    </div>
-    <div id="scrollbar">
-      <div id="scroll_icon"></div>
-      <div id="tri_after_bar"></div>
-    </div>
 
-    <!-- homepage -->
-    <div id="homepage_background_frame">
-      <div id="homepage_background">
-        <!-- as lazy loading -->
-        <img src="./src/homepage_backgnd1.jpg" style="display: none" />
-        <img src="./src/homepage_backgnd2.jpg" style="display: none" />
-        <img src="./src/homepage_backgnd3.jpg" style="display: none" />
-      </div>
-    </div>
-    <div id="homepage_banner"></div>
-    <div id="personalized_recommend_banner">
-      <div id="personalized_recommend">
-        <div id="personalized_recommend_left_line"></div>
-        <p>PERSONALIZED RECOMMENDATION</p>
-        <div id="personalized_recommend_right_line"></div>
-      </div>
-      <div id="personalized_recommend_zsh">
-        <p>個人化推薦</p>
-      </div>
-      <div id="choose_your_own_glasses">
-        <p>挑選你的專屬眼鏡</p>
-      </div>
-    </div>
-    <div id="cards">
-      <div></div>
-      <div></div>
-      <div></div>
-    </div>
-    <div id="start_banner">
-      <div id="start_your_personalized_recommendation">
-        <p>開始嘗試個人化推薦吧</p>
-      </div>
-      <button id="start_button" onclick="window.location.href='./recomendation.html'">START</button>
-    </div>
+        <!-- homepage -->
+        <div id="homepage_background_frame">
+            <div id="homepage_background">
+                <!-- as lazy loading -->
+                <img src="./src/homepage_backgnd1.jpg" style="display: none" />
+                <img src="./src/homepage_backgnd2.jpg" style="display: none" />
+                <img src="./src/homepage_backgnd3.jpg" style="display: none" />
+            </div>
+        </div>
+        <div id="homepage_banner"></div>
+        <div id="personalized_recommend_banner">
+            <div id="personalized_recommend">
+                <div id="personalized_recommend_left_line"></div>
+                <p>PERSONALIZED RECOMMENDATION</p>
+                <div id="personalized_recommend_right_line"></div>
+            </div>
+            <div id="personalized_recommend_zsh">
+                <p>個人化推薦</p>
+            </div>
+            <div id="choose_your_own_glasses">
+                <p>挑選你的專屬眼鏡</p>
+            </div>
+        </div>
+        <div id="cards">
+            <div></div>
+            <div></div>
+            <div></div>
+        </div>
+        <div id="start_banner">
+            <div id="start_your_personalized_recommendation">
+                <p>開始嘗試個人化推薦吧</p>
+            </div>
+            <button id="start_button" onclick="window.location.href='./recomendation.html'">START</button>
+        </div>
 
-    <footer>
-      <div id="footer_brand_name">
-        <p>華美光學</p>
-      </div>
-      <div id="footer_address">
-        <p>地址:臺南市安定區中沙里沙崙30號</p>
-      </div>
-      <div id="footer_tel">
-        <p>TEL:065937597</p>
-      </div>
-      <div id="footer_fax">
-        <p>FAX:065937597</p>
-      </div>
-    </footer>
+        <footer>
+            <div id="footer_brand_name">
+                <p>華美光學</p>
+            </div>
+            <div id="footer_address">
+                <p>地址:臺南市安定區中沙里沙崙30號</p>
+            </div>
+            <div id="footer_tel">
+                <p>TEL:065937597</p>
+            </div>
+            <div id="footer_fax">
+                <p>FAX:065937597</p>
+            </div>
+        </footer>
 
-    <script src="./js/anime.min.js"></script>
-    <script src="./js/script.js"></script>
-  </body>
+        <script src="./js/anime.min.js"></script>
+        <script src="./js/script.js"></script>
+    </body>
 </html>
