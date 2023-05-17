@@ -137,40 +137,25 @@ body {
   cursor: pointer;
 }
 
-footer {
-  margin-top: 10vh;
-  bottom: 0;
-  height: 10vh;
-  display: flex;
-  justify-content: space-around;
-  align-items: center;
-  background-color: #439a97;
-}
-footer #footer_brand_name {
-  margin-left: 20vw;
-}
-footer #footer_brand_name p {
-  font-size: 1.5rem;
-}
-footer #footer_fax {
-  margin-right: 20vw;
-}
-footer p {
-  color: white;
-}
-
-#blank {
-  padding-top: 10vh;
-  height: 0;
+#face_api {
+  position: relative;
+  padding-top: 20vh;
   width: 100vw;
+  height: 60vh;
+  transform: scaleX(-1);
+  overflow: hidden;
 }
-
-#video {
-  margin-top: 10vh;
-}
-
-canvas {
+#face_api #face_api_video {
   position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+#face_api #face_api_canvas {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
 }
 
 /*# sourceMappingURL=style_test.css.map */

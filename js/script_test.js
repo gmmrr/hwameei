@@ -21,30 +21,11 @@ function show_hamburger_content() {
 }
 //--------------------------------------------------//
 
-function openCamera() {
-    if (navigator.mediaDevices && navigator.mediaDevices.getUserMedia) {
-        navigator.mediaDevices
-            .getUserMedia({ video: true })
-            .then(function (stream) {
-                var videoElement = document.getElementById("videoElement");
-                // 將媒體流指派給 video 元素的 srcObject 屬性
-                videoElement.srcObject = stream;
-            })
-            .catch(function (error) {
-                console.error("無法取得相機影像: ", error);
-            });
-    } else {
-        console.error("瀏覽器不支援 getUserMedia API");
-    }
-}
-
-const video = document.getElementById("video");
+let video = document.getElementById("face_api_video");
 
 Promise.all([
-    faceapi.nets.tinyFaceDetector.loadFromUri("/models"),
-    // faceapi.nets.faceLandmark68Net.loadFromUri("/models"),
-    // faceapi.nets.faceRecognitionNet.loadFromUri("/models"),
-    // faceapi.nets.faceExpressionNet.loadFromUri("/models"),
+    faceapi.nets.tinyFaceDetector.loadFromUri("/models/tiny_face_detector"),
+    faceapi.nets.faceLandmark68TinyNet.loadFromUri("/models/tiny_face_landmark_68"),
 ]).then(startVideo());
 
 function startVideo() {
@@ -55,21 +36,35 @@ function startVideo() {
     );
 }
 
-video.addEventListener("play", () => {
-    const canvas = faceapi.createCanvasFromMedia(video);
-    document.body.append(canvas);
-    const displaySize = { width: video.width, height: video.height };
-    faceapi.matchDimensions(canvas, displaySize);
-    setInterval(async () => {
-        const detections = await faceapi
-            .detectAllFaces(video, new faceapi.TinyFaceDetectorOptions())
-            .withFaceLandmarks()
-            .withFaceExpressions();
-        console.log(detections);
-        const resizedDetections = faceapi.resizeResults(detections, displaySize);
-        canvas.getContext("2d").clearRect(0, 0, canvas.width, canvas.height);
-        faceapi.draw.drawDetections(canvas, resizedDetections);
-        faceapi.draw.drawFaceLandmarks(canvas, resizedDetections);
-        faceapi.draw.drawFaceExpressions(canvas, resizedDetections);
-    }, 100);
+document.addEventListener("DOMContentLoaded", function () {
+    video.addEventListener("play", () => {
+        let canvas = faceapi.createCanvasFromMedia(video);
+        let canvas_container = document.getElementById("face_api");
+
+        canvas.setAttribute("id", "face_api_canvas");
+        canvas_container.appendChild(canvas);
+
+        const displaySize = { width: video.videoWidth, height: video.videoHeight };
+        faceapi.matchDimensions(canvas, displaySize);
+
+        let output_landmark = 0;
+        setInterval(async () => {
+            const useTinyModel = true;
+            const detections = await faceapi
+                .detectAllFaces(video, new faceapi.TinyFaceDetectorOptions())
+                .withFaceLandmarks(useTinyModel);
+            const resizedDetections = faceapi.resizeResults(detections, displaySize);
+            if (output_landmark == 0) {
+                resizedDetections.forEach((detection) => {
+                    const landmarks = detection.landmarks;
+                    landmarks.positions.forEach((point) => {
+                        console.log(`X: ${point.x}, Y: ${point.y}`);
+                    });
+                });
+                output_landmark = 1;
+            }
+            canvas.getContext("2d").clearRect(0, 0, canvas.width, canvas.height);
+            faceapi.draw.drawFaceLandmarks(canvas, resizedDetections);
+        }, 200);
+    });
 });

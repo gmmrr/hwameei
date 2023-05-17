@@ -4,9 +4,7 @@
         <meta charset="utf-8" />
         <meta content="width=device-width, initial-scale=1" name="viewport" />
         <title>Hwameei</title>
-        <link href="./css/style_login.css" rel="stylesheet" type="text/css" />
-        <script src="js/face-api.min.js"></script>
-        <script src="./js/script_test.js"></script>
+        <link href="./css/style_test.css" rel="stylesheet" type="text/css" />
 
         <!-- jquery for only -->
         <!-- <script src="https://code.jquery.com/jquery-3.3.1.min.js"></script> -->
@@ -15,6 +13,10 @@
         <link rel="preconnect" href="https://fonts.googleapis.com" />
         <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
         <link href="https://fonts.googleapis.com/css2?family=Inter&display=swap" rel="stylesheet" />
+
+        <!-- script -->
+        <script defer src="./js/face-api.min.js"></script>
+        <script defer src="./js/script_test.js"></script>
     </head>
 
     <body>
@@ -61,11 +63,10 @@
         <div id="blank"></div>
 
         <!-- //////////////////////////////////////////// -->
-
-        <button onclick="openCamera()">Open Camera</button>
-        <video id="videoElement" autoplay muted></video>
-
-        <video id="video" autoplay muted></video>
+        <div id="face_api">
+            <video id="face_api_video" autoplay muted></video>
+            <!-- canvas added here -->
+        </div>
 
         <!-- //////////////////////////////////////////// -->
     </body>
