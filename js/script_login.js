@@ -119,7 +119,6 @@ document.addEventListener("DOMContentLoaded", function () {
                 var data = xhr.response;
                 console.log(data);
                 if (data === "incorresponding password") {
-                    console.log("incorresponding password");
                     var minder = document.getElementById("password_incorresponding_minder");
                     minder.innerHTML = `<p>輸入密碼不相符</p>`;
                 }

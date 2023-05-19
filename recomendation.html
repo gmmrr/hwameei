@@ -8,10 +8,16 @@
         <link href="./css/style_recomendation.css" rel="stylesheet" type="text/css" />
         <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet" />
 
+        <script defer src="./js/face-api.min.js"></script>
+
         <!-- font -->
         <link rel="preconnect" href="https://fonts.googleapis.com" />
         <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
         <link href="https://fonts.googleapis.com/css2?family=Inter&display=swap" rel="stylesheet" />
+
+        <!-- script -->
+        <script defer src="./js/face-api.min.js"></script>
+        <script defer src="./js/script_recomendation.js"></script>
     </head>
 
     <body>
@@ -28,19 +34,31 @@
                     <p class="hamburger_element_zsh">首頁</p>
                     <p class="hamburger_element_eng">homepage</p>
                 </div>
-                <div class="hamburger_element" onclick="window.location.href='./recomendation.html'">
+                <div
+                    class="hamburger_element"
+                    id="hamburger_element_recommendation"
+                    onclick="window.location.href='./recomendation.html'"
+                >
                     <p class="hamburger_element_zsh">個人化推薦</p>
                     <p class="hamburger_element_eng">personalized recommendation</p>
                 </div>
-                <div class="hamburger_element" onclick="window.location.href='./product.html'">
+                <div
+                    class="hamburger_element"
+                    id="hamburger_element_product"
+                    onclick="window.location.href='./product.html'"
+                >
                     <p class="hamburger_element_zsh">商品一覽</p>
                     <p class="hamburger_element_eng">product list</p>
                 </div>
-                <div class="hamburger_element" onclick="window.location.href='./shop.html'">
+                <div class="hamburger_element" id="hamburger_element_shop" onclick="window.location.href='./shop.html'">
                     <p class="hamburger_element_zsh">門市介紹</p>
                     <p class="hamburger_element_eng">shop introduction</p>
                 </div>
-                <div class="hamburger_element" onclick="window.location.href='./login.html'">
+                <div
+                    class="hamburger_element"
+                    id="hamburger_element_login"
+                    onclick="window.location.href='./login.html'"
+                >
                     <p class="hamburger_element_zsh">登入/註冊</p>
                     <p class="hamburger_element_eng">Log in/Sign up</p>
                 </div>
@@ -75,29 +93,25 @@
 
         <div id="styleflex_container">
             <div id="first_style_container">
-                <button class="description_button">流線型</button>
-                <button class="description_button">速度感</button>
+                <button class="description_button" onclick="choose_button(0)">流線型</button>
+                <button class="description_button" onclick="choose_button(1)">速度感</button>
             </div>
             <div id="second_style_container">
-                <button class="description_button">時尚</button>
-                <button class="description_button">簡約</button>
-
-                <button class="description_button">復古</button>
-                <button class="description_button">前衛</button>
-
-                <button class="description_button">奢華</button>
-                <button class="description_button">貓眼</button>
+                <button class="description_button" onclick="choose_button(2)">時尚</button>
+                <button class="description_button" onclick="choose_button(3)">簡約</button>
+                <button class="description_button" onclick="choose_button(4)">復古</button>
+                <button class="description_button" onclick="choose_button(5)">前衛</button>
+                <button class="description_button" onclick="choose_button(6)">奢華</button>
+                <button class="description_button" onclick="choose_button(7)">貓眼</button>
             </div>
             <div id="third_style_container">
-                <button class="description_button">黑</button>
-                <button class="description_button">白</button>
-
-                <button class="description_button">金</button>
-                <button class="description_button">銀</button>
-
-                <button class="description_button">米</button>
-                <button class="description_button">藍</button>
-                <button class="description_button">粉</button>
+                <button class="description_button" onclick="choose_button(8)">黑</button>
+                <button class="description_button" onclick="choose_button(9)">白</button>
+                <button class="description_button" onclick="choose_button(10)">金</button>
+                <button class="description_button" onclick="choose_button(11)">銀</button>
+                <button class="description_button" onclick="choose_button(12)">米</button>
+                <button class="description_button" onclick="choose_button(13)">藍</button>
+                <button class="description_button" onclick="choose_button(14)">粉</button>
             </div>
             <div data-aos="slide-left" class="background_container">
                 <div class="style_background_text">STYLE</div>
@@ -107,14 +121,14 @@
         <div id="preferenceflex_container">
             <div id="first_preference_container"></div>
             <div id="second_preference_container">
-                <button class="description_button">跑步</button>
-                <button class="description_button">騎行</button>
-                <button class="description_button">鐵人三項</button>
+                <button class="description_button" onclick="choose_button(15)">跑步</button>
+                <button class="description_button" onclick="choose_button(16)">騎行</button>
+                <button class="description_button" onclick="choose_button(17)">鐵人三項</button>
             </div>
             <div id="third_preference_container">
-                <button class="description_button">室內</button>
-                <button class="description_button">閱讀</button>
-                <button class="description_button">休閒</button>
+                <button class="description_button" onclick="choose_button(18)">室內</button>
+                <button class="description_button" onclick="choose_button(19)">閱讀</button>
+                <button class="description_button" onclick="choose_button(20)">休閒</button>
             </div>
             <div data-aos="slide-left" class="background_container">
                 <div class="preference_background_text">PREFERENCE</div>
@@ -130,7 +144,8 @@
         </div>
 
         <div id="video_popup_container">
-            <video id="camera_stream" autoplay></video>
+            <video id="camera_stream" autoplay muted></video>
+            <!-- canvas added here -->
         </div>
 
         <div id="resultflex_container" class="result_inactive">
@@ -140,8 +155,11 @@
 
             <div id="your_pic_container">
                 <div id="your_pic_text">您的臉型是...</div>
-                <div id="all_face_button"></div>
-                <div id="all_face"></div>
+                <div id="all_face_button" onclick="all_facetype_showing()"></div>
+                <div id="all_face_container">
+                    <div id="all_face_leftpart"></div>
+                    <div id="all_face_rightpart"></div>
+                </div>
             </div>
             <button id="button_pic">橢圓臉</button>
         </div>
@@ -159,7 +177,7 @@
 
             <div id="succed" class="inactive_succed">選擇完成了嗎?</div>
             <div id="next_container_4" class="inactive_button">
-                <button id="next_button_4" onclick="window.location.href='./recomendation.html'">開始推薦</button>
+                <button id="next_button_4">開始推薦</button>
             </div>
 
             <div id="other_container">
@@ -183,11 +201,9 @@
             </div>
         </footer>
 
-        <script src="./js/script_recomendation.js"></script>
         <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
         <script>
             AOS.init();
         </script>
-        <script src="face-api.js"></script>
     </body>
 </html>

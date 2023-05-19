@@ -241,6 +241,12 @@ body.active {
   justify-content: center;
   align-items: center;
 }
+#video_popup_container #face_api_canvas {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
 
 #video_popup_container.active {
   display: flex;
@@ -274,6 +280,12 @@ body.active {
   text-align: left;
 }
 .description_button:hover {
+  background-color: #62b6b7;
+  color: #ffffff;
+  transition: 0.5s;
+}
+
+.chosen_button {
   background-color: #62b6b7;
   color: #ffffff;
   transition: 0.5s;
@@ -695,6 +707,33 @@ body.active {
 }
 #resultflex_container #your_pic_container #all_face_button:hover {
   cursor: pointer;
+}
+#resultflex_container #your_pic_container #all_face_container {
+  display: none;
+  align-items: center;
+  justify-content: space-around;
+  position: absolute;
+  margin-top: 20vh;
+  padding-bottom: 5vh;
+  height: 130vh;
+  width: 50vw;
+  background-color: #ffffff;
+}
+#resultflex_container #your_pic_container #all_face_container #all_face_leftpart {
+  background-image: url("../src/all_face_leftpart.png");
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-position: left;
+  height: 100%;
+  width: 40%;
+}
+#resultflex_container #your_pic_container #all_face_container #all_face_rightpart {
+  background-image: url("../src/all_face_rightpart.png");
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-position: right;
+  height: 100%;
+  width: 40%;
 }
 #resultflex_container #button_pic {
   display: flex;

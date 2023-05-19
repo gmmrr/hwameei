@@ -23,26 +23,31 @@ import fs from "fs";
 const jsonPath = "./json/userprofile.json";
 
 //------------- define the website url -------------//
-app.get("/", (req, res) => {
-    res.sendFile(__dirname + "/index.html");
-});
-
-app.get("/recommendation", (req, res) => {
-    res.sendFile(__dirname + "/recommendation.html");
-});
-
-app.get("/login", (req, res) => {
-    res.sendFile(__dirname + "/login.html");
-});
-
-app.get("/product", (req, res) => {
-    res.sendFile(__dirname + "/product.html");
-});
-
-app.get("/shop", (req, res) => {
-    res.sendFile(__dirname + "/shop.html");
+app.get("/fetch/user_data", (req, res) => {
+    res.send();
 });
 //--------------------------------------------------//
+
+app.post("/recommendation/sendtag", (req, res) => {
+    const chosen_tag = req.body;
+
+    console.log(chosen_tag);
+    res.send("nice");
+
+    // fs.readFile(jsonPath, "utf8", (err, data) => {
+    //     const data_obj = JSON.parse(data);
+    //     if (err) {
+    //         console.error(err);
+    //         return;
+    //     } else {
+    //         if (data_obj.hasOwnProperty(account)) {
+    //             res.send(data_obj[account]);
+    //         } else {
+    //             console.log("no such id");
+    //         }
+    //     }
+    // });
+});
 
 app.post("/login/login", (req, res) => {
     const account = req.body.account;

@@ -24,8 +24,8 @@ function show_hamburger_content() {
 let video = document.getElementById("face_api_video");
 
 Promise.all([
-    faceapi.nets.tinyFaceDetector.loadFromUri("/models/tiny_face_detector"),
-    faceapi.nets.faceLandmark68TinyNet.loadFromUri("/models/tiny_face_landmark_68"),
+    // faceapi.nets.tinyFaceDetector.loadFromUri("/models/tiny_face_detector"),
+    // faceapi.nets.faceLandmark68TinyNet.loadFromUri("/models/tiny_face_landmark_68"),
 ]).then(startVideo());
 
 function startVideo() {

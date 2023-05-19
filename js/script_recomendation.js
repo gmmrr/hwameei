@@ -19,6 +19,49 @@ function show_hamburger_content() {
         first_time_hamburger_icon = !first_time_hamburger_icon;
     }
 }
+
+function initial_page() {
+    if (!isAuthenticated()) {
+        window.location.href = "/login.html";
+    }
+}
+initial_page();
+
+function isAuthenticated() {
+    const token = localStorage.getItem("token");
+    return token !== null;
+}
+
+function initLogin() {
+    const loginForm = document.getElementById("loginForm");
+    loginForm.addEventListener("submit", handleLogin);
+}
+
+function handleLogin(event) {
+    event.preventDefault();
+
+    const username = document.getElementById("username").value;
+    const password = document.getElementById("password").value;
+
+    fetch("/login", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({ username, password }),
+    })
+        .then((response) => response.json())
+        .then((data) => {
+            if (data.success) {
+                localStorage.setItem("token", data.token);
+                window.location.href = "/index.html";
+            } else {
+                alert("Login failed. Please try again.");
+            }
+        })
+        .catch((error) => {
+            console.error("Login error:", error);
+        });
+}
+
 //--------------------------------------------------//
 
 let state = 0;
@@ -37,8 +80,6 @@ function change_next_button() {
             div_arr.push(div);
         }
     }
-    console.log(state);
-    console.log(div_arr);
 
     if (state === 0) {
         // Make first Tab Inactive
@@ -46,18 +87,14 @@ function change_next_button() {
         tab_arr[state].classList.add("inactive");
 
         tab_arr[state + 1].classList.remove("inactive");
-        console.log(tab_arr[state + 1].classList);
         tab_arr[state + 1].classList.add("active");
-        console.log(tab_arr[state + 1].classList);
 
         //Make first divider Inactive
         div_arr[state].classList.remove("active");
         div_arr[state].classList.add("inactive");
 
         div_arr[state + 1].classList.remove("inactive");
-        console.log(div_arr[state + 1].classList);
         div_arr[state + 1].classList.add("active");
-        console.log(div_arr[state + 1].classList);
 
         let container = document.getElementById("styleflex_container");
         container.style.display = "none";
@@ -71,18 +108,14 @@ function change_next_button() {
         tab_arr[state].classList.add("inactive");
 
         tab_arr[state + 1].classList.remove("inactive");
-        console.log(tab_arr[state + 1].classList);
         tab_arr[state + 1].classList.add("active");
-        console.log(tab_arr[state + 1].classList);
 
         //Make first divider Inactive
         div_arr[state].classList.remove("active");
         div_arr[state].classList.add("inactive");
 
         div_arr[state + 1].classList.remove("inactive");
-        console.log(div_arr[state + 1].classList);
         div_arr[state + 1].classList.add("active");
-        console.log(div_arr[state + 1].classList);
 
         let container = document.getElementById("preferenceflex_container");
         container.style.display = "none";
@@ -97,8 +130,6 @@ function change_next_button() {
 
         button.classList.remove("active_button");
         button.classList.add("inactive_button");
-
-        console.log(button.classList);
 
         button2.classList.remove("inactive_button");
         button2.classList.add("active_button");
@@ -131,18 +162,14 @@ function change_goback_button() {
         tab_arr[state].classList.add("inactive");
 
         tab_arr[state - 1].classList.remove("inactive");
-        console.log(tab_arr[state - 1].classList);
         tab_arr[state - 1].classList.add("active");
-        console.log(tab_arr[state - 1].classList);
 
         //Make first divider Inactive
         div_arr[state].classList.remove("active");
         div_arr[state].classList.add("inactive");
 
         div_arr[state - 1].classList.remove("inactive");
-        console.log(div_arr[state - 1].classList);
         div_arr[state - 1].classList.add("active");
-        console.log(div_arr[state - 1].classList);
 
         let container = document.getElementById("styleflex_container");
         container.style.display = "flex";
@@ -157,18 +184,14 @@ function change_goback_button() {
         tab_arr[state].classList.add("inactive");
 
         tab_arr[state - 1].classList.remove("inactive");
-        console.log(tab_arr[state - 1].classList);
         tab_arr[state - 1].classList.add("active");
-        console.log(tab_arr[state - 1].classList);
 
         //Make first divider Inactive
         div_arr[state].classList.remove("active");
         div_arr[state].classList.add("inactive");
 
         div_arr[state - 1].classList.remove("inactive");
-        console.log(div_arr[state - 1].classList);
         div_arr[state - 1].classList.add("active");
-        console.log(div_arr[state - 1].classList);
 
         let container = document.getElementById("preferenceflex_container");
         container.style.display = "flex";
@@ -183,8 +206,6 @@ function change_goback_button() {
 
         button2.classList.remove("active_button");
         button2.classList.add("inactive_button");
-
-        console.log(button.classList);
 
         button.classList.remove("inactive_button");
         button.classList.add("active_button");
@@ -271,4 +292,113 @@ function go_to_result() {
     button.classList.toggle("inactive_button");
     pic.classList.toggle("result_inactive");
 }
+//--------------------------------------------------//
+
+//---------------- show all face type --------------//
+function all_facetype_showing() {
+    let all_face_container = document.getElementById("all_face_container");
+    let body = document.body;
+    body.classList.toggle("active");
+    if (all_face_container.style.display === "none" || all_face_container.style.display === "") {
+        all_face_container.style.display = "flex";
+    } else {
+        all_face_container.style.display = "none";
+    }
+}
+//--------------------------------------------------//
+
+//--------- change the chosen button color ---------//
+var chosen_tag = new Array(21);
+for (let i = 0; i < chosen_tag.length; i++) {
+    chosen_tag[i] = false;
+}
+
+function choose_button(i) {
+    if (chosen_tag[i] === false) {
+        chosen_tag[i] = true;
+    } else {
+        chosen_tag[i] = false;
+    }
+    chosen_button = document.getElementsByClassName("description_button");
+    chosen_button[i].classList.toggle("chosen_button");
+}
+//--------------------------------------------------//
+
+//--------- change the chosen button color ---------//
+let video = document.getElementById("camera_stream");
+
+Promise.all([
+    faceapi.nets.tinyFaceDetector.loadFromUri("/models/tiny_face_detector"),
+    faceapi.nets.faceLandmark68TinyNet.loadFromUri("/models/tiny_face_landmark_68"),
+]).then(startVideo());
+
+function startVideo() {
+    navigator.getUserMedia(
+        { video: {} },
+        (stream) => (video.srcObject = stream),
+        (err) => console.error(err)
+    );
+}
+
+document.addEventListener("DOMContentLoaded", function () {
+    video.addEventListener("play", () => {
+        let canvas = faceapi.createCanvasFromMedia(video);
+        let canvas_container = document.getElementById("video_popup_container");
+
+        canvas.setAttribute("id", "face_api_canvas");
+        canvas_container.appendChild(canvas);
+
+        const displaySize = { width: video.videoWidth, height: video.videoHeight };
+        faceapi.matchDimensions(canvas, displaySize);
+
+        let output_landmark = 0;
+        setInterval(async () => {
+            const useTinyModel = true;
+            const detections = await faceapi
+                .detectAllFaces(video, new faceapi.TinyFaceDetectorOptions())
+                .withFaceLandmarks(useTinyModel);
+            const resizedDetections = faceapi.resizeResults(detections, displaySize);
+            if (output_landmark == 0) {
+                resizedDetections.forEach((detection) => {
+                    const landmarks = detection.landmarks;
+                    landmarks.positions.forEach((point) => {
+                        console.log(`X: ${point.x}, Y: ${point.y}`);
+                    });
+                });
+                output_landmark = 1;
+            }
+            canvas.getContext("2d").clearRect(0, 0, canvas.width, canvas.height);
+            faceapi.draw.drawFaceLandmarks(canvas, resizedDetections);
+        }, 200);
+    });
+});
+
+//-------------------- backend ---------------------//
+document.addEventListener("DOMContentLoaded", function () {
+    let complete_button = document.getElementById("next_button_4");
+
+    complete_button.addEventListener("click", function (event) {
+        event.preventDefault();
+
+        var xhr = new XMLHttpRequest();
+        xhr.open("POST", "/recommendation/sendtag", true);
+        xhr.setRequestHeader("Content-Type", "application/json");
+        xhr.responseType = "text";
+
+        xhr.onload = function () {
+            if (xhr.status === 200) {
+                var data = xhr.response;
+                console.log(data);
+            } else {
+                console.log("request failed");
+            }
+        };
+
+        xhr.onerror = function () {
+            console.log("request error");
+        };
+
+        xhr.send(JSON.stringify(chosen_tag));
+    });
+});
 //--------------------------------------------------//
