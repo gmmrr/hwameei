@@ -72,7 +72,7 @@ body {
 }
 #navbar #hamburger_content .hamburger_element .hamburger_element_zsh {
   font-size: 2rem;
-  color: #62B6B7;
+  color: #62b6b7;
   letter-spacing: 1.5rem;
 }
 #navbar #hamburger_content .hamburger_element .hamburger_element_eng {
@@ -80,7 +80,7 @@ body {
   font-family: "Inter";
   font-size: 1rem;
   font-weight: 400;
-  color: #62B6B7;
+  color: #62b6b7;
 }
 #navbar #hamburger_content .hamburger_element:hover {
   cursor: pointer;
@@ -88,13 +88,19 @@ body {
 #navbar #hamburger_content #hamburger_element_homepage {
   margin-top: 15vh;
 }
+#navbar #hamburger_content #hamburger_element_login {
+  display: flex;
+}
+#navbar #hamburger_content #hamburger_element_logout {
+  display: none;
+}
 #navbar #you_are_in_element {
   position: absolute;
   height: 60px;
   top: 20px;
   right: 25px;
   font-size: 1.5rem;
-  color: #62B6B7;
+  color: #62b6b7;
   letter-spacing: 3px;
 }
 
@@ -144,7 +150,7 @@ footer {
   display: flex;
   justify-content: space-around;
   align-items: center;
-  background-color: #439A97;
+  background-color: #439a97;
 }
 footer #footer_brand_name {
   margin-left: 20vw;
@@ -219,18 +225,18 @@ footer p {
 #personalized_recommend_banner #personalized_recommend #personalized_recommend_left_line {
   height: 5px;
   width: 100px;
-  background-color: #62B6B7;
+  background-color: #62b6b7;
   margin-right: 50px;
 }
 #personalized_recommend_banner #personalized_recommend p {
-  color: #62B6B7;
+  color: #62b6b7;
   font-size: 2.5rem;
   font-family: "Inter", sans-serif;
 }
 #personalized_recommend_banner #personalized_recommend #personalized_recommend_right_line {
   height: 5px;
   width: 100px;
-  background-color: #62B6B7;
+  background-color: #62b6b7;
   margin-left: 50px;
 }
 #personalized_recommend_banner #personalized_recommend_zsh {
@@ -240,7 +246,7 @@ footer p {
 }
 #personalized_recommend_banner #personalized_recommend_zsh p {
   font-size: 2.3rem;
-  color: #62B6B7;
+  color: #62b6b7;
   font-family: "Inter", sans-serif;
   letter-spacing: 1.5rem;
   padding-left: 1.5rem;
@@ -251,7 +257,7 @@ footer p {
 }
 #personalized_recommend_banner #choose_your_own_glasses p {
   font-size: 1.5rem;
-  color: #62B6B7;
+  color: #62b6b7;
   font-family: "Inter", sans-serif;
   letter-spacing: 0.8rem;
   padding-left: 0.8rem;
@@ -299,7 +305,7 @@ footer p {
 }
 #start_banner #start_your_personalized_recommendation p {
   font-size: 1.5rem;
-  color: #97DECE;
+  color: #97dece;
   font-family: "Inter", sans-serif;
   letter-spacing: 0.8rem;
 }
@@ -312,7 +318,7 @@ footer p {
   border: none;
   display: flex;
   justify-content: center;
-  background-color: #97DECE;
+  background-color: #97dece;
   border-radius: 20px;
   display: flex;
   align-items: center;

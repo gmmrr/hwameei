@@ -96,6 +96,14 @@ body {
         #hamburger_element_homepage {
             margin-top: 15vh;
         }
+
+        #hamburger_element_login {
+            display: flex;
+        }
+
+        #hamburger_element_logout {
+            display: none;
+        }
     }
 
     #you_are_in_element {
@@ -242,6 +250,16 @@ footer {
                     background-size: cover;
                 }
             }
+            #login_minder {
+                display: flex;
+                justify-content: flex-end;
+                p {
+                    margin-right: 40px;
+                    margin-top: 7px;
+                    color: #62b6b7;
+                    font-size: 1.3rem;
+                }
+            }
         }
     }
 
@@ -362,7 +380,7 @@ footer {
                     background-size: cover;
                 }
             }
-            #password_incorresponding_minder {
+            #signup_minder {
                 display: flex;
                 justify-content: flex-end;
                 p {

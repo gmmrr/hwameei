@@ -22,12 +22,6 @@ app.use(express.static(__dirname));
 import fs from "fs";
 const jsonPath = "./json/userprofile.json";
 
-//------------- define the website url -------------//
-app.get("/fetch/user_data", (req, res) => {
-    res.send();
-});
-//--------------------------------------------------//
-
 app.post("/recommendation/sendtag", (req, res) => {
     const chosen_tag = req.body;
 
@@ -62,10 +56,24 @@ app.post("/login/login", (req, res) => {
             console.error(err);
             return;
         } else {
-            if (data_obj.hasOwnProperty(account)) {
-                res.send(data_obj[account]);
+            let hasAccount = false;
+            let account_index = -1;
+            for (let i = 0; i < data_obj.length; i++) {
+                if (data_obj[i].account === account) {
+                    hasAccount = true;
+                    account_index = i;
+                    break;
+                }
+            }
+            if (hasAccount) {
+                if (data_obj[account_index].password != password) {
+                    res.send("wrong password");
+                    return;
+                } else {
+                    res.send("has this id");
+                }
             } else {
-                console.log("no such id");
+                res.send("no such id");
             }
         }
     });
@@ -88,22 +96,63 @@ app.post("/login/signup", (req, res) => {
             password: password,
             cart: [""],
         };
-
         fs.readFile(jsonPath, "utf8", (err, data) => {
             let data_obj = JSON.parse(data);
             if (err) {
                 console.error(err);
                 return;
             } else {
-                data_obj.push(new_user);
-                fs.writeFile(jsonPath, JSON.stringify(data_obj), "utf8", (err) => {
-                    if (err) {
-                        console.error("Error writing JSON file:", err);
-                        return;
+                let hasAccount = false;
+                let account_index = -1;
+                for (let i = 0; i < data_obj.length; i++) {
+                    if (data_obj[i].account === account) {
+                        hasAccount = true;
+                        account_index = i;
+                        break;
                     }
-                });
-                res.send("sign up success");
+                }
+                if (hasAccount) {
+                    res.send("account exist already");
+                    return;
+                } else {
+                    data_obj.push(new_user);
+                    fs.writeFile(jsonPath, JSON.stringify(data_obj), "utf8", (err) => {
+                        if (err) {
+                            console.error("Error writing JSON file:", err);
+                            return;
+                        }
+                    });
+                    res.send("sign up success");
+                }
             }
         });
     }
+});
+
+app.post("/login/data", (req, res) => {
+    const account = req.body.account;
+    const password = req.body.password;
+
+    console.log(account);
+    console.log(password);
+
+    console.log("here");
+
+    fs.readFile(jsonPath, "utf8", (err, data) => {
+        const data_obj = JSON.parse(data);
+        if (err) {
+            console.error(err);
+            return;
+        } else {
+            let account_index = -1;
+            for (let i = 0; i < data_obj.length; i++) {
+                if (data_obj[i].account === account) {
+                    account_index = i;
+                    break;
+                }
+            }
+            console.log(data_obj[account_index]);
+            res.send(data_obj[account_index]);
+        }
+    });
 });

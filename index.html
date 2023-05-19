@@ -42,23 +42,31 @@
                     <p class="hamburger_element_zsh">門市介紹</p>
                     <p class="hamburger_element_eng">shop introduction</p>
                 </div>
-                <div class="hamburger_element" onclick="window.location.href='./login.html'">
+                <div
+                    class="hamburger_element"
+                    id="hamburger_element_login"
+                    onclick="window.location.href='./login.html'"
+                >
                     <p class="hamburger_element_zsh">登入/註冊</p>
                     <p class="hamburger_element_eng">Log in/Sign up</p>
+                </div>
+                <div class="hamburger_element" id="hamburger_element_logout" onclick="to_logout()">
+                    <p class="hamburger_element_zsh">登出</p>
+                    <p class="hamburger_element_eng">Log out</p>
                 </div>
             </div>
         </div>
         <div id="functionbar">
             <div id="cart_func" onclick="window.location.href='./index.html'"></div>
             <div id="line_func" onclick="window.location.href='./index.html'"></div>
-            <div id="info_func" onclick="window.location.href='./test.html'"></div>
+            <div id="info_func" onclick="window.location.href='./index.html'"></div>
         </div>
+
+        <!-- homepage -->
         <div id="scrollbar">
             <div id="scroll_icon"></div>
             <div id="tri_after_bar"></div>
         </div>
-
-        <!-- homepage -->
         <div id="homepage_background_frame">
             <div id="homepage_background">
                 <!-- as lazy loading -->

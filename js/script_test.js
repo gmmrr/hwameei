@@ -19,6 +19,33 @@ function show_hamburger_content() {
         first_time_hamburger_icon = !first_time_hamburger_icon;
     }
 }
+
+function check_login() {
+    if (localStorage.getItem("account") != null && localStorage.getItem("password") != null) {
+        login_logout_switching();
+    }
+}
+check_login();
+
+function to_logout() {
+    localStorage.removeItem("account");
+    localStorage.removeItem("password");
+    localStorage.removeItem("cart");
+    window.location.href = "/index.html";
+}
+
+function login_logout_switching() {
+    let login_block = document.getElementById("hamburger_element_login");
+    let logout_block = document.getElementById("hamburger_element_logout");
+
+    if (login_block.style.display === "flex" || login_block.style.display === "") {
+        login_block.style.display = "none";
+        logout_block.style.display = "flex";
+    } else {
+        login_block.style.display = "flex";
+        logout_block.style.display = "none";
+    }
+}
 //--------------------------------------------------//
 
 let video = document.getElementById("face_api_video");

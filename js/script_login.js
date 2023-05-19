@@ -19,6 +19,33 @@ function show_hamburger_content() {
         first_time_hamburger_icon = !first_time_hamburger_icon;
     }
 }
+
+function check_login() {
+    if (localStorage.getItem("account") != null && localStorage.getItem("password") != null) {
+        login_logout_switching();
+    }
+}
+check_login();
+
+function to_logout() {
+    localStorage.removeItem("account");
+    localStorage.removeItem("password");
+    localStorage.removeItem("cart");
+    window.location.href = "/index.html";
+}
+
+function login_logout_switching() {
+    let login_block = document.getElementById("hamburger_element_login");
+    let logout_block = document.getElementById("hamburger_element_logout");
+
+    if (login_block.style.display === "flex" || login_block.style.display === "") {
+        login_block.style.display = "none";
+        logout_block.style.display = "flex";
+    } else {
+        login_block.style.display = "flex";
+        logout_block.style.display = "none";
+    }
+}
 //--------------------------------------------------//
 
 //---------------- change_function -----------------//
@@ -36,6 +63,7 @@ function function_switching() {
 }
 //--------------------------------------------------//
 
+//-------------- password visibility ---------------//
 function login_password_visible() {
     var password = document.getElementById("login_password");
     var button = document.getElementById("login_password_visible_button");
@@ -65,8 +93,9 @@ function signup_password_visible() {
         button[1].style.backgroundImage = 'url("../src/password_invisible.png")';
     }
 }
+//--------------------------------------------------//
 
-//-------------------- backend ----------------------//
+//-------------------- backend ---------------------//
 document.addEventListener("DOMContentLoaded", function () {
     var login_button = document.getElementById("login_button");
     var login_account = document.querySelector("#login_form input[name=account]");
@@ -78,12 +107,24 @@ document.addEventListener("DOMContentLoaded", function () {
         var xhr = new XMLHttpRequest();
         xhr.open("POST", "/login/login", true);
         xhr.setRequestHeader("Content-Type", "application/json");
-        xhr.responseType = "json";
+        xhr.responseType = "text";
 
         xhr.onload = function () {
             if (xhr.status === 200) {
-                var data = xhr.response;
+                const data = xhr.response;
                 console.log(data);
+                var minder = document.getElementById("login_minder");
+                if (data === "has this id") {
+                    set_local_storage(login_account, login_password);
+                    login_logout_switching();
+                    window.location.href = "/index.html";
+                } else if (data === "wrong password") {
+                    minder.innerHTML = `<p>密碼錯誤</p>`;
+                } else if (data === "no such id") {
+                    minder.innerHTML = `<p>不存在此帳號</p>`;
+                } else {
+                    console.log("unknown response");
+                }
             } else {
                 console.log("request failed");
             }
@@ -118,9 +159,14 @@ document.addEventListener("DOMContentLoaded", function () {
             if (xhr.status === 200) {
                 var data = xhr.response;
                 console.log(data);
+                var minder = document.getElementById("signup_minder");
                 if (data === "incorresponding password") {
-                    var minder = document.getElementById("password_incorresponding_minder");
-                    minder.innerHTML = `<p>輸入密碼不相符</p>`;
+                    minder.innerHTML = `<p>兩次密碼不相同</p>`;
+                } else if (data === "account exist already") {
+                    minder.innerHTML = `<p>已存在帳號</p>`;
+                } else {
+                    set_local_storage(signup_account, signup_password);
+                    window.location.href = "/index.html";
                 }
             } else {
                 console.log("request failed");
@@ -131,13 +177,55 @@ document.addEventListener("DOMContentLoaded", function () {
             console.log("request error");
         };
 
-        var requestData = {
+        const requestData = {
             account: signup_account.value,
             password: signup_password.value,
             password_again: signup_password_again.value,
         };
 
-        xhr.send(JSON.stringify(requestData));
+        xhr.send(JSON.parse(requestData));
     });
 });
+
+function set_local_storage(login_account, login_password) {
+    var xhr = new XMLHttpRequest();
+    xhr.open("POST", "/login/data", true);
+    xhr.setRequestHeader("Content-Type", "application/json");
+    xhr.responseType = "json";
+
+    xhr.onload = function () {
+        if (xhr.status === 200) {
+            console.log("request success");
+            const data = xhr.response;
+            console.log(data);
+            localStorage.setItem("account", login_account.value);
+            localStorage.setItem("password", login_password.value);
+            localStorage.setItem("cart", JSON.stringify(data.cart));
+        } else {
+            console.log("request failed");
+        }
+    };
+
+    xhr.onerror = function () {
+        console.log("request error");
+    };
+
+    const requestData = {
+        account: login_account.value,
+        password: login_password.value,
+    };
+
+    xhr.send(JSON.stringify(requestData));
+}
+
 //--------------------------------------------------//
+
+function print_local_storage() {
+    const account = localStorage.getItem("account");
+    const password = localStorage.getItem("password");
+    const cart = localStorage.getItem("cart");
+
+    console.log(account);
+    console.log(password);
+    console.log(cart);
+}

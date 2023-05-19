@@ -88,6 +88,12 @@ body {
 #navbar #hamburger_content #hamburger_element_homepage {
   margin-top: 15vh;
 }
+#navbar #hamburger_content #hamburger_element_login {
+  display: flex;
+}
+#navbar #hamburger_content #hamburger_element_logout {
+  display: none;
+}
 #navbar #you_are_in_element {
   position: absolute;
   height: 60px;

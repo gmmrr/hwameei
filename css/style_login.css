@@ -88,6 +88,12 @@ body {
 #navbar #hamburger_content #hamburger_element_homepage {
   margin-top: 15vh;
 }
+#navbar #hamburger_content #hamburger_element_login {
+  display: flex;
+}
+#navbar #hamburger_content #hamburger_element_logout {
+  display: none;
+}
 #navbar #you_are_in_element {
   position: absolute;
   height: 60px;
@@ -222,6 +228,16 @@ footer p {
   background-image: url("../src/password_invisible.png");
   background-size: cover;
 }
+#login_function #login_form form #login_minder {
+  display: flex;
+  justify-content: flex-end;
+}
+#login_function #login_form form #login_minder p {
+  margin-right: 40px;
+  margin-top: 7px;
+  color: #62b6b7;
+  font-size: 1.3rem;
+}
 #login_function #login_button_container {
   margin-left: 32vw;
   width: 36vw;
@@ -327,11 +343,11 @@ footer p {
   background-image: url("../src/password_invisible.png");
   background-size: cover;
 }
-#signup_function #signup_form form #password_incorresponding_minder {
+#signup_function #signup_form form #signup_minder {
   display: flex;
   justify-content: flex-end;
 }
-#signup_function #signup_form form #password_incorresponding_minder p {
+#signup_function #signup_form form #signup_minder p {
   margin-right: 40px;
   margin-top: 7px;
   color: #62b6b7;

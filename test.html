@@ -46,13 +46,21 @@
                     <p class="hamburger_element_zsh">門市介紹</p>
                     <p class="hamburger_element_eng">shop introduction</p>
                 </div>
-                <div class="hamburger_element" onclick="window.location.href='./login.html'">
+                <div
+                    class="hamburger_element"
+                    id="hamburger_element_login"
+                    onclick="window.location.href='./login.html'"
+                >
                     <p class="hamburger_element_zsh">登入/註冊</p>
                     <p class="hamburger_element_eng">Log in/Sign up</p>
                 </div>
+                <div class="hamburger_element" id="hamburger_element_logout" onclick="to_logout()">
+                    <p class="hamburger_element_zsh">登出</p>
+                    <p class="hamburger_element_eng">Log out</p>
+                </div>
             </div>
             <div id="you_are_in_element">
-                <p>You are in hidden area for testing. Have a nice day :)</p>
+                <p>You are in 登入/註冊</p>
             </div>
         </div>
         <div id="functionbar">

@@ -96,6 +96,14 @@ body {
         #hamburger_element_homepage {
             margin-top: 15vh;
         }
+
+        #hamburger_element_login {
+            display: flex;
+        }
+
+        #hamburger_element_logout {
+            display: none;
+        }
     }
     #you_are_in_element {
         position: absolute;

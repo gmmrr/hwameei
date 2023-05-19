@@ -42,9 +42,17 @@
                     <p class="hamburger_element_zsh">門市介紹</p>
                     <p class="hamburger_element_eng">shop introduction</p>
                 </div>
-                <div class="hamburger_element" onclick="window.location.href='./login.html'">
+                <div
+                    class="hamburger_element"
+                    id="hamburger_element_login"
+                    onclick="window.location.href='./login.html'"
+                >
                     <p class="hamburger_element_zsh">登入/註冊</p>
                     <p class="hamburger_element_eng">Log in/Sign up</p>
+                </div>
+                <div class="hamburger_element" id="hamburger_element_logout" onclick="to_logout()">
+                    <p class="hamburger_element_zsh">登出</p>
+                    <p class="hamburger_element_eng">Log out</p>
                 </div>
             </div>
             <div id="you_are_in_element">
@@ -56,6 +64,8 @@
             <div id="line_func" onclick="window.location.href='./index.html'"></div>
             <div id="info_func" onclick="window.location.href='./index.html'"></div>
         </div>
+
+        <button onclick="print_local_storage()">localStorage</button>
 
         <div id="login_function">
             <div id="login_banner">
@@ -73,6 +83,7 @@
                         <input id="login_password" type="password" name="password" /><br />
                         <div id="login_password_visible_button" onclick="login_password_visible()"></div>
                     </div>
+                    <div id="login_minder"></div>
                 </form>
             </div>
 
@@ -106,7 +117,7 @@
                         <input class="signup_password" type="password" name="password_again" /><br />
                         <div class="signup_password_visible_button" onclick="signup_password_visible()"></div>
                     </div>
-                    <div id="password_incorresponding_minder"></div>
+                    <div id="signup_minder"></div>
                 </form>
             </div>
 

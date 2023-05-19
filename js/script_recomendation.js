@@ -20,48 +20,32 @@ function show_hamburger_content() {
     }
 }
 
-function initial_page() {
-    if (!isAuthenticated()) {
-        window.location.href = "/login.html";
+function check_login() {
+    if (localStorage.getItem("account") != null && localStorage.getItem("password") != null) {
+        login_logout_switching();
     }
 }
-initial_page();
+check_login();
 
-function isAuthenticated() {
-    const token = localStorage.getItem("token");
-    return token !== null;
+function to_logout() {
+    localStorage.removeItem("account");
+    localStorage.removeItem("password");
+    localStorage.removeItem("cart");
+    window.location.href = "/index.html";
 }
 
-function initLogin() {
-    const loginForm = document.getElementById("loginForm");
-    loginForm.addEventListener("submit", handleLogin);
+function login_logout_switching() {
+    let login_block = document.getElementById("hamburger_element_login");
+    let logout_block = document.getElementById("hamburger_element_logout");
+
+    if (login_block.style.display === "flex" || login_block.style.display === "") {
+        login_block.style.display = "none";
+        logout_block.style.display = "flex";
+    } else {
+        login_block.style.display = "flex";
+        logout_block.style.display = "none";
+    }
 }
-
-function handleLogin(event) {
-    event.preventDefault();
-
-    const username = document.getElementById("username").value;
-    const password = document.getElementById("password").value;
-
-    fetch("/login", {
-        method: "POST",
-        headers: { "Content-Type": "application/json" },
-        body: JSON.stringify({ username, password }),
-    })
-        .then((response) => response.json())
-        .then((data) => {
-            if (data.success) {
-                localStorage.setItem("token", data.token);
-                window.location.href = "/index.html";
-            } else {
-                alert("Login failed. Please try again.");
-            }
-        })
-        .catch((error) => {
-            console.error("Login error:", error);
-        });
-}
-
 //--------------------------------------------------//
 
 let state = 0;
