@@ -219,7 +219,8 @@ footer p {
   top: 1vw;
   height: 2vw;
   width: 2vw;
-  background-color: green;
+  background-image: url("../src/password_invisible.png");
+  background-size: cover;
 }
 #login_function #login_button_container {
   margin-left: 32vw;
@@ -323,7 +324,8 @@ footer p {
   top: 1vw;
   height: 2vw;
   width: 2vw;
-  background-color: green;
+  background-image: url("../src/password_invisible.png");
+  background-size: cover;
 }
 #signup_function #signup_form form #password_incorresponding_minder {
   display: flex;

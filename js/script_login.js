@@ -42,10 +42,10 @@ function login_password_visible() {
 
     if (password.type == "password") {
         password.setAttribute("type", "text");
-        button.style.backgroundColor = "red";
+        button.style.backgroundImage = 'url("../src/password_visible.png")';
     } else {
         password.setAttribute("type", "password");
-        button.style.backgroundColor = "green";
+        button.style.backgroundImage = 'url("../src/password_invisible.png")';
     }
 }
 
@@ -56,13 +56,13 @@ function signup_password_visible() {
     if (password[0].type == "password" && password[1].type == "password") {
         password[0].setAttribute("type", "text");
         password[1].setAttribute("type", "text");
-        button[0].style.backgroundColor = "red";
-        button[1].style.backgroundColor = "red";
+        button[0].style.backgroundImage = 'url("../src/password_visible.png")';
+        button[1].style.backgroundImage = 'url("../src/password_visible.png")';
     } else {
         password[0].setAttribute("type", "password");
         password[1].setAttribute("type", "password");
-        button[0].style.backgroundColor = "green";
-        button[1].style.backgroundColor = "green";
+        button[0].style.backgroundImage = 'url("../src/password_invisible.png")';
+        button[1].style.backgroundImage = 'url("../src/password_invisible.png")';
     }
 }
 
@@ -119,7 +119,7 @@ document.addEventListener("DOMContentLoaded", function () {
                 var data = xhr.response;
                 console.log(data);
                 if (data === "incorresponding password") {
-                    console.log("incorresponding password input");
+                    console.log("incorresponding password");
                     var minder = document.getElementById("password_incorresponding_minder");
                     minder.innerHTML = `<p>輸入密碼不相符</p>`;
                 }
