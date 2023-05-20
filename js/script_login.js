@@ -134,7 +134,7 @@ document.addEventListener("DOMContentLoaded", function () {
             console.log("request error");
         };
 
-        const requestData = {
+        let requestData = {
             account: login_account.value,
             password: login_password.value,
         };
@@ -177,13 +177,13 @@ document.addEventListener("DOMContentLoaded", function () {
             console.log("request error");
         };
 
-        const requestData = {
+        let requestData = {
             account: signup_account.value,
             password: signup_password.value,
             password_again: signup_password_again.value,
         };
 
-        xhr.send(JSON.parse(requestData));
+        xhr.send(JSON.stringify(requestData));
     });
 });
 
@@ -220,12 +220,12 @@ function set_local_storage(login_account, login_password) {
 
 //--------------------------------------------------//
 
-function print_local_storage() {
-    const account = localStorage.getItem("account");
-    const password = localStorage.getItem("password");
-    const cart = localStorage.getItem("cart");
+// function print_local_storage() {
+//     const account = localStorage.getItem("account");
+//     const password = localStorage.getItem("password");
+//     const cart = localStorage.getItem("cart");
 
-    console.log(account);
-    console.log(password);
-    console.log(cart);
-}
+//     console.log(account);
+//     console.log(password);
+//     console.log(cart);
+// }

@@ -22,6 +22,22 @@ app.use(express.static(__dirname));
 import fs from "fs";
 const jsonPath = "./json/userprofile.json";
 
+app.get("/", (req, res) => {
+    res.sendFile(__dirname + "/index.html");
+});
+app.get("/recommendation", (req, res) => {
+    res.sendFile(__dirname + "/recomendation.html");
+});
+app.get("/login", (req, res) => {
+    res.sendFile(__dirname + "/login.html");
+});
+app.get("/product", (req, res) => {
+    res.sendFile(__dirname + "/product.html");
+});
+app.get("/shop", (req, res) => {
+    res.sendFile(__dirname + "/shop.html");
+});
+
 app.post("/recommendation/sendtag", (req, res) => {
     const chosen_tag = req.body;
 
@@ -59,7 +75,7 @@ app.post("/login/login", (req, res) => {
             let hasAccount = false;
             let account_index = -1;
             for (let i = 0; i < data_obj.length; i++) {
-                if (data_obj[i].account === account) {
+                if (data_obj[i].account == account) {
                     hasAccount = true;
                     account_index = i;
                     break;
@@ -123,6 +139,7 @@ app.post("/login/signup", (req, res) => {
                         }
                     });
                     res.send("sign up success");
+                    window.location.href = "/index.html";
                 }
             }
         });
