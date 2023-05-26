@@ -132,6 +132,7 @@ app.post("/login/signup", (req, res) => {
                     return;
                 } else {
                     data_obj.push(new_user);
+                    console.log(data_obj);
                     fs.writeFile(jsonPath, JSON.stringify(data_obj), "utf8", (err) => {
                         if (err) {
                             console.error("Error writing JSON file:", err);
@@ -139,7 +140,6 @@ app.post("/login/signup", (req, res) => {
                         }
                     });
                     res.send("sign up success");
-                    window.location.href = "/index.html";
                 }
             }
         });

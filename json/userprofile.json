@@ -1,7 +1,5 @@
 [
-    {
-        "account": "df",
-        "password": "df",
-        "cart": [""]
-    }
+    { "account": "df", "password": "df", "cart": [""] },
+    { "account": "dfg", "password": "df", "cart": [""] },
+    { "account": "rdf", "password": "df", "cart": [""] }
 ]
