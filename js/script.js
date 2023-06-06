@@ -24,6 +24,8 @@ function check_login() {
     if (localStorage.getItem("account") != null && localStorage.getItem("password") != null) {
         login_logout_switching();
     }
+    localStorage.getItem("cart");
+    console.log();
 }
 check_login();
 

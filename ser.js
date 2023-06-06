@@ -52,7 +52,6 @@ app.post("/recommendation/sendtag", (req, res) => {
     res.send("nice");
 });
 app.post("/recommended/gettag", (req, res) => {
-    console.log("here");
     res.send(chosen_tag);
 });
 

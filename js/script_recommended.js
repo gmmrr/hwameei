@@ -75,11 +75,12 @@ function get_tag() {
 }
 get_tag();
 
-let item_chosen = new Array(3);
-for (let i = 0; i < 3; i++) {
-    item_chosen[i] = i;
-}
 function choose_three_items() {
+    let item_chosen = new Array(3);
+    for (let i = 0; i < 3; i++) {
+        item_chosen[i] = i;
+    }
+
     let item_similarity = new Array(12);
     for (let i = 0; i < 12; i++) {
         item_similarity[i] = 0;
@@ -106,6 +107,8 @@ function choose_three_items() {
             }
         }
     }
+
+    console.log(item_similarity);
 
     let item_chosen_index = [];
     let sortedIndices = Array.from(item_similarity.keys()).sort((a, b) => item_similarity[b] - item_similarity[a]);
