@@ -25,7 +25,7 @@ body {
 
         background-image: url("../src/hamburger_icon.png");
         background-position: center;
-        background-size: contain;
+        background-size: cover;
         background-repeat: no-repeat;
     }
     #hamburger_icon:hover {
@@ -285,48 +285,68 @@ footer {
         margin-right: 8.3vw;
         background-image: url("../src/shop_map.png");
         background-position: right;
-        background-size: contain;
+        background-size: cover;
         background-repeat: no-repeat;
     }
 }
 
 #about {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    width: 84vw;
-    height: 376px;
-    margin-left: 7.7vw;
+    width: 86vw;
+    height: 10vh;
+    margin-left: 7vw;
+    margin-right: 7vw;
     margin-top: 5vh;
+
+    width: 100%;
+    height: 100%;
     background-image: url("../src/shop_about_glassses_shop.png");
     background-position: center;
     background-size: cover;
     overflow: hidden;
+
+    #about_header {
+        font-family: "Inter", sans-serif;
+        font-style: normal;
+        font-weight: 400;
+        font-size: 25px;
+        line-height: 30px;
+        letter-spacing: 0.5em;
+        color: #62b6b7;
+    }
+
+    #about_text {
+        text-align: center;
+        vertical-align: middle;
+        justify-content: center;
+        align-items: center;
+        background-color: #f1f0f0;
+    }
 }
 
-#equipment_frame {
+.card_frame {
     display: flex;
     width: 100vw;
     height: 215px;
     overflow: hidden;
     padding-top: 10vh;
-
-    #left_card_equipment {
-        width: 50%;
-        height: 100%;
-        margin-left: 7.7vw;
-        background-image: url("../src/shop_equipment.png");
-        background-position: left;
-        background-size: contain;
-        background-repeat: no-repeat;
-        overflow: hidden;
-    }
 }
 
-#right_card_equipment {
-    width: 56%;
+#left_card_equipment {
+    width: 50%;
     height: 100%;
-    margin-right: 8.3vw;
+    margin-left: 7vw;
+
+    background-image: url("../src/shop_equipment.png");
+    background-position: left;
+    background-size: cover;
+    background-repeat: no-repeat;
+    overflow: hidden;
+}
+#right_card_equipment {
+    width: 50%;
+    height: 100%;
+    margin-right: 7vw;
+
     display: flex;
     flex-direction: column;
     text-align: center;
@@ -355,18 +375,11 @@ footer {
     }
 }
 
-#optometrist_frame {
-    display: flex;
-    width: 100vw;
-    height: 215px;
-    overflow: hidden;
-    padding-top: 5vh;
-}
-
 #left_card_optometrist {
     width: 50%;
     height: 100%;
-    margin-left: 7.7vw;
+    margin-left: 7vw;
+
     display: flex;
     flex-direction: column;
     text-align: center;
@@ -394,41 +407,33 @@ footer {
         color: rgba(0, 0, 0, 0.54);
     }
 }
-
 #right_card_optometrist {
-    width: 40%;
+    width: 50%;
     height: 100%;
-    margin-right: 8.3vw;
+    margin-right: 7vw;
     background-image: url("../src/shop_optometrist.png");
     background-position: left;
-    background-size: contain;
+    background-size: cover;
     background-repeat: no-repeat;
     overflow: hidden;
 }
 
-#warranty_frame {
-    display: flex;
-    width: 100vw;
-    height: 215px;
-    overflow: hidden;
-    padding-top: 5vh;
-
-    #left_card_warranty {
-        width: 50%;
-        height: 100%;
-        margin-left: 7.7vw;
-        background-image: url("../src/shop_warranty.png");
-        background-position: left;
-        background-size: contain;
-        background-repeat: no-repeat;
-        overflow: hidden;
-    }
-}
-
-#right_card_warranty {
-    width: 56%;
+#left_card_warranty {
+    width: 50%;
     height: 100%;
-    margin-right: 8.3vw;
+    margin-left: 7vw;
+
+    background-image: url("../src/shop_warranty.png");
+    background-position: left;
+    background-size: cover;
+    background-repeat: no-repeat;
+    overflow: hidden;
+}
+#right_card_warranty {
+    width: 50%;
+    height: 100%;
+    margin-right: 7vw;
+
     display: flex;
     flex-direction: column;
     text-align: center;
@@ -457,18 +462,11 @@ footer {
     }
 }
 
-#glasses_frame {
-    display: flex;
-    width: 100vw;
-    height: 215px;
-    overflow: hidden;
-    padding-top: 5vh;
-}
-
 #left_card_glasses {
     width: 50%;
     height: 100%;
-    margin-left: 7.7vw;
+    margin-left: 7vw;
+
     display: flex;
     flex-direction: column;
     text-align: center;
@@ -496,41 +494,34 @@ footer {
         color: rgba(0, 0, 0, 0.54);
     }
 }
-
 #right_card_glasses {
-    width: 40%;
+    width: 50%;
     height: 100%;
-    margin-right: 8.3vw;
+    margin-right: 7vw;
+
     background-image: url("../src/shop_glasses.png");
     background-position: left;
-    background-size: contain;
+    background-size: cover;
     background-repeat: no-repeat;
     overflow: hidden;
 }
 
-#personalize_frame {
-    display: flex;
-    width: 100vw;
-    height: 215px;
-    overflow: hidden;
-    padding-top: 5vh;
-
-    #left_card_personalize {
-        width: 50%;
-        height: 100%;
-        margin-left: 7.7vw;
-        background-image: url("../src/shop_personalize.png");
-        background-position: left;
-        background-size: contain;
-        background-repeat: no-repeat;
-        overflow: hidden;
-    }
-}
-
-#right_card_personalize {
-    width: 56%;
+#left_card_personalize {
+    width: 50%;
     height: 100%;
-    margin-right: 8.3vw;
+    margin-left: 7vw;
+
+    background-image: url("../src/shop_personalize.png");
+    background-position: left;
+    background-size: cover;
+    background-repeat: no-repeat;
+    overflow: hidden;
+}
+#right_card_personalize {
+    width: 50%;
+    height: 100%;
+    margin-right: 7vw;
+
     display: flex;
     flex-direction: column;
     text-align: center;

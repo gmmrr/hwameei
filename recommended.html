@@ -4,19 +4,19 @@
         <meta charset="utf-8" />
         <meta content="width=device-width, initial-scale=1" name="viewport" />
         <title>Hwameei</title>
-        <link href="./css/style.css" rel="stylesheet" type="text/css" />
 
-        <!-- jquery for only -->
-        <!-- <script src="https://code.jquery.com/jquery-3.3.1.min.js"></script> -->
+        <link href="./css/style_recommended.css" rel="stylesheet" type="text/css" />
 
         <!-- font -->
         <link rel="preconnect" href="https://fonts.googleapis.com" />
         <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
         <link href="https://fonts.googleapis.com/css2?family=Inter&display=swap" rel="stylesheet" />
+
+        <!-- script -->
+        <script defer src="./js/script_recommended.js"></script>
     </head>
 
     <body>
-        <!-- absolute position bar -->
         <div id="navbar">
             <div id="hamburger_icon" onclick="show_hamburger_content()"></div>
             <div id="hamburger_content_shadow" onclick="show_hamburger_content()"></div>
@@ -55,51 +55,34 @@
                     <p class="hamburger_element_eng">Log out</p>
                 </div>
             </div>
+            <div id="you_are_in_element">
+                <p>You are in 個人化推薦</p>
+            </div>
         </div>
         <div id="functionbar">
-            <div id="cart_func" onclick="window.location.href='./cart.html'"></div>
+            <div id="cart_func" onclick="window.location.href='./index.html'"></div>
             <div id="line_func" onclick="window.location.href='./index.html'"></div>
-            <div id="info_func" onclick="window.location.href='./recommended.html'"></div>
+            <div id="info_func" onclick="window.location.href='./index.html'"></div>
         </div>
 
-        <!-- homepage -->
-        <div id="scrollbar">
-            <div id="scroll_icon"></div>
-            <div id="tri_after_bar"></div>
+        <div id="you_choose">您選擇了</div>
+
+        <div id="button_chosen">
+            <div class="button_chosen_element">速度感</div>
+            <div class="button_chosen_element">鐵人三項</div>
+            <div class="button_chosen_element">橢圓臉</div>
         </div>
-        <div id="homepage_background_frame">
-            <div id="homepage_background">
-                <!-- as lazy loading -->
-                <img src="./src/homepage_backgnd1.jpg" style="display: none" />
-                <img src="./src/homepage_backgnd2.jpg" style="display: none" />
-                <img src="./src/homepage_backgnd3.jpg" style="display: none" />
-            </div>
+
+        <div id="these_are_what_you_chose">以下為適合您的眼鏡</div>
+
+        <div id="item_frame">
+            <div class="item_element"></div>
+            <div class="item_element"></div>
+            <div class="item_element"></div>
         </div>
-        <div id="homepage_banner"></div>
-        <div id="personalized_recommend_banner">
-            <div id="personalized_recommend">
-                <div id="personalized_recommend_left_line"></div>
-                <p>PERSONALIZED RECOMMENDATION</p>
-                <div id="personalized_recommend_right_line"></div>
-            </div>
-            <div id="personalized_recommend_zsh">
-                <p>個人化推薦</p>
-            </div>
-            <div id="choose_your_own_glasses">
-                <p>挑選你的專屬眼鏡</p>
-            </div>
-        </div>
-        <div id="cards">
-            <div></div>
-            <div></div>
-            <div></div>
-        </div>
-        <div id="start_banner">
-            <div id="start_your_personalized_recommendation">
-                <p>開始嘗試個人化推薦吧</p>
-            </div>
-            <button id="start_button" onclick="window.location.href='./recomendation.html'">START</button>
-        </div>
+
+        <div id="reselect_button" onclick="window.location.href='./recomendation.html'">重新選擇</div>
+        <div id="go_back_to_index" onclick="window.location.href='./index.html'">回首頁</div>
 
         <footer>
             <div id="footer_brand_name">
@@ -115,8 +98,5 @@
                 <p>FAX:065937597</p>
             </div>
         </footer>
-
-        <script src="./js/anime.min.js"></script>
-        <script src="./js/script.js"></script>
     </body>
 </html>

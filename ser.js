@@ -28,6 +28,9 @@ app.get("/", (req, res) => {
 app.get("/recommendation", (req, res) => {
     res.sendFile(__dirname + "/recomendation.html");
 });
+app.get("/recommended", (req, res) => {
+    res.sendFile(__dirname + "/recommended.html");
+});
 app.get("/login", (req, res) => {
     res.sendFile(__dirname + "/login.html");
 });
@@ -38,25 +41,19 @@ app.get("/shop", (req, res) => {
     res.sendFile(__dirname + "/shop.html");
 });
 
+let chosen_tag = new Array(21);
+for (let i = 0; i < 21; i++) {
+    chosen_tag[i] = 0;
+}
 app.post("/recommendation/sendtag", (req, res) => {
-    const chosen_tag = req.body;
+    chosen_tag = req.body;
 
     console.log(chosen_tag);
     res.send("nice");
-
-    // fs.readFile(jsonPath, "utf8", (err, data) => {
-    //     const data_obj = JSON.parse(data);
-    //     if (err) {
-    //         console.error(err);
-    //         return;
-    //     } else {
-    //         if (data_obj.hasOwnProperty(account)) {
-    //             res.send(data_obj[account]);
-    //         } else {
-    //             console.log("no such id");
-    //         }
-    //     }
-    // });
+});
+app.post("/recommended/gettag", (req, res) => {
+    console.log("here");
+    res.send(chosen_tag);
 });
 
 app.post("/login/login", (req, res) => {
@@ -94,7 +91,6 @@ app.post("/login/login", (req, res) => {
         }
     });
 });
-
 app.post("/login/signup", (req, res) => {
     const account = req.body.account;
     const password = req.body.password;
@@ -145,7 +141,6 @@ app.post("/login/signup", (req, res) => {
         });
     }
 });
-
 app.post("/login/data", (req, res) => {
     const account = req.body.account;
     const password = req.body.password;

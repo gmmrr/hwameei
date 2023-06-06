@@ -105,7 +105,6 @@ body {
             display: none;
         }
     }
-
     #you_are_in_element {
         position: absolute;
         height: 60px;
@@ -181,80 +180,65 @@ footer {
         color: white;
     }
 }
+
 //--------------------------------------------------//
 
-#scrollbar #scroll_icon {
-    position: absolute;
-    top: 86vh;
-    right: 1.5vw;
-    width: 10px;
-    height: 10vh;
-    z-index: 2;
-    background-image: url(../src/scrollbar.png);
-    background-size: cover;
-    background-position: center;
-}
-
-#slide_frame {
+#you_choose {
     display: flex;
-    justify-content: center;
     align-items: center;
-    width: 100vw;
-    height: 376px;
-    overflow: hidden;
-    padding-top: 5vh;
-
-    #slide {
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        width: 83vw;
-        height: 376px;
-        left: 16vw;
-        margin-top: 127px;
-        background-image: url("../src/product_backgnd1");
-        background-position: center;
-        background-size: cover;
-        overflow: hidden;
-    }
-}
-
-#product_banner {
-    display: flex;
     justify-content: center;
-    align-items: center;
-    margin-top: 5vh;
+
+    padding-top: 15vh;
 
     font-family: "Inter", sans-serif;
     font-style: normal;
     font-weight: 400;
-    font-size: 28px;
-    line-height: 34px;
+    font-size: 25px;
+    line-height: 30px;
     letter-spacing: 0.5em;
+    color: #62b6b7;
+}
 
-    color: #439a97;
+#button_chosen {
+    display: flex;
+    align-items: center;
+    justify-content: center;
 
-    #product_banner_left_line {
-        height: 5px;
-        width: 100px;
+    .button_chosen_element {
+        padding-left: 20px;
+        letter-spacing: 20px;
+        height: 60px;
+
+        display: flex;
+        justify-content: center;
+        align-items: center;
+
+        border-radius: 10px;
         background-color: #62b6b7;
-        margin-right: 50px;
-    }
-    #product_banner_right_line {
-        height: 5px;
-        width: 100px;
-        background-color: #62b6b7;
-        margin-left: 50px;
+        color: #ffffff;
+        border: 2px solid #62b6b7;
+
+        font-family: "Inter";
+        font-size: 28px;
+        font-weight: 400;
+        line-height: 34px;
+        text-align: left;
     }
 }
 
-#product_container {
+#these_are_what_you_chose {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+#item_frame {
     display: flex;
     justify-content: center;
     align-items: center;
     flex-wrap: wrap;
 
-    .product_element {
+    .item_element {
         width: 350px;
         height: 440px;
         margin-left: 22px;
@@ -262,7 +246,19 @@ footer {
         margin-top: 10vh;
         background: #ffffff;
         box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
-        display: flex;
-        justify-content: center;
     }
+}
+
+#reselect_button {
+    width: 36vw;
+    margin-left: 32vw;
+    margin-right: 32vw;
+    margin-top: 10vh;
+}
+
+#go_back_to_index {
+    width: 36vw;
+    margin-left: 32vw;
+    margin-right: 32vw;
+    margin-top: 10vh;
 }
