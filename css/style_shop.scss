@@ -1,12 +1,13 @@
-//-------------------- general ---------------------//
 * {
     margin: 0;
     padding: 0;
 }
+
 html {
     width: 100vw;
     overflow-x: hidden;
 }
+
 body {
     position: relative;
     background-color: #faf8f8;
@@ -22,14 +23,14 @@ body {
         top: 15px;
         left: 25px;
         z-index: 3;
-
         background-image: url("../src/hamburger_icon.png");
         background-position: center;
         background-size: contain;
         background-repeat: no-repeat;
-    }
-    #hamburger_icon:hover {
-        cursor: pointer;
+
+        &:hover {
+            cursor: pointer;
+        }
     }
 
     #hamburger_content_shadow {
@@ -37,11 +38,11 @@ body {
         position: fixed;
         height: 100vh;
         width: 100vw;
-
         background-color: black;
         opacity: 0.7;
         z-index: 4;
     }
+
     #hamburger_content {
         position: fixed;
         display: none;
@@ -49,7 +50,6 @@ body {
         height: 100vh;
         width: 65vw;
         z-index: 10;
-
         background-color: white;
         user-select: none;
 
@@ -59,14 +59,14 @@ body {
             left: 19.5px;
             width: 70px;
             height: 70px;
-
             background-image: url("../src/hamburger_close.png");
             background-position: center;
             background-size: cover;
             background-repeat: no-repeat;
-        }
-        #hamburger_close:hover {
-            cursor: pointer;
+
+            &:hover {
+                cursor: pointer;
+            }
         }
 
         .hamburger_element {
@@ -77,12 +77,16 @@ body {
 
             .hamburger_element_zsh {
                 font-size: 2rem;
+                font-family: "Inter", sans-serif;
+                font-style: normal;
                 color: #62b6b7;
                 letter-spacing: 1.5rem;
             }
+
             .hamburger_element_eng {
                 margin-left: 3vw;
-                font-family: "Inter";
+                font-family: "Inter", sans-serif;
+                font-style: normal;
                 font-size: 1rem;
                 font-weight: 400;
                 color: #62b6b7;
@@ -111,6 +115,8 @@ body {
         height: 60px;
         top: 20px;
         right: 25px;
+        font-family: "Inter", sans-serif;
+        font-style: normal;
         font-size: 1.5rem;
         color: #62b6b7;
         letter-spacing: 3px;
@@ -129,10 +135,12 @@ body {
         background-image: url("../src/funcbar_cart.png");
         background-position: center;
         background-size: cover;
+
+        &:hover {
+            cursor: pointer;
+        }
     }
-    #cart_func:hover {
-        cursor: pointer;
-    }
+
     #line_func {
         width: 4vw;
         height: 4vw;
@@ -140,10 +148,12 @@ body {
         background-image: url("../src/funcbar_line.png");
         background-position: center;
         background-size: cover;
+
+        &:hover {
+            cursor: pointer;
+        }
     }
-    #line_func:hover {
-        cursor: pointer;
-    }
+
     #info_func {
         width: 4vw;
         height: 4vw;
@@ -151,9 +161,10 @@ body {
         background-image: url("../src/funcbar_info.png");
         background-position: center;
         background-size: cover;
-    }
-    #info_func:hover {
-        cursor: pointer;
+
+        &:hover {
+            cursor: pointer;
+        }
     }
 }
 
@@ -161,20 +172,33 @@ footer {
     margin-top: 10vh;
     bottom: 0;
     height: 10vh;
-
     display: flex;
     justify-content: space-around;
     align-items: center;
-
     background-color: #439a97;
+
     #footer_brand_name {
         margin-left: 20vw;
+        font-family: "Inter", sans-serif;
+        font-style: normal;
+
         p {
             font-size: 1.5rem;
+            font-family: "Inter", sans-serif;
+            font-style: normal;
         }
     }
+
+    #footer_address,
+    #footer_tel {
+        font-family: "Inter", sans-serif;
+        font-style: normal;
+    }
+
     #footer_fax {
         margin-right: 20vw;
+        font-family: "Inter", sans-serif;
+        font-style: normal;
     }
 
     p {
@@ -182,7 +206,17 @@ footer {
     }
 }
 
-//--------------------------------------------------//
+#scrollbar #scroll_icon {
+    position: absolute;
+    top: 86vh;
+    right: 1.5vw;
+    width: 10px;
+    height: 10vh;
+    z-index: 2;
+    background-image: url(../src/scrollbar.png);
+    background-size: cover;
+    background-position: center;
+}
 
 #slide_frame {
     display: flex;
@@ -191,7 +225,7 @@ footer {
     width: 100vw;
     height: 376px;
     overflow: hidden;
-    padding-top: 10vh;
+    padding-top: 5vh;
 
     #slide {
         display: flex;
@@ -213,13 +247,19 @@ footer {
     width: 100vw;
     height: 376px;
     overflow: hidden;
-    padding-top: 10vh;
+    padding-top: 5vh;
 
     #location_text_container {
         width: 50%;
         height: 100%;
+        display: flex;
+        flex-direction: column;
+        text-align: left;
+        vertical-align: middle;
+        justify-content: center;
+        align-items: left;
 
-        #address {
+        #address_title {
             margin-left: 10vw;
             font-family: "Inter", sans-serif;
             font-style: normal;
@@ -230,18 +270,17 @@ footer {
             color: #62b6b7;
         }
 
-        #address_text {
+        #address_content {
             margin-left: 10vw;
             font-family: "Inter", sans-serif;
             font-style: normal;
             font-weight: 400;
             font-size: 20px;
-            line-height: 34px;
-            letter-spacing: 0.5em;
-            color: #000000;
+            line-height: 24px;
+            color: rgba(0, 0, 0, 0.54);
         }
 
-        #contact {
+        #contact_title {
             margin-left: 10vw;
             font-family: "Inter", sans-serif;
             font-style: normal;
@@ -252,20 +291,293 @@ footer {
             color: #62b6b7;
         }
 
-        #contact_text {
-            margin-left: 10vw;
+        #contact_content {
             font-family: "Inter", sans-serif;
             font-style: normal;
+            margin-left: 10vw;
             font-weight: 400;
             font-size: 20px;
-            line-height: 34px;
-            letter-spacing: 0.5em;
-            color: #000000;
+            line-height: 24px;
+            color: rgba(0, 0, 0, 0.54);
         }
     }
 
     #location_map {
         width: 50%;
         height: 100%;
+        margin-right: 8.3vw;
+        background-image: url("../src/map.png");
+        background-position: right;
+        background-size: contain;
+        background-repeat: no-repeat;
+    }
+}
+
+#about {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 84vw;
+    height: 376px;
+    margin-left: 7.7vw;
+    margin-top: 5vh;
+    background-image: url("../src/about_glassses_shop.png");
+    background-position: center;
+    background-size: cover;
+    overflow: hidden;
+}
+
+#equipment_frame {
+    display: flex;
+    width: 100vw;
+    height: 215px;
+    overflow: hidden;
+    padding-top: 10vh;
+
+    #left_card_equipment {
+        width: 50%;
+        height: 100%;
+        margin-left: 7.7vw;
+        background-image: url("../src/equipment.png");
+        background-position: left;
+        background-size: contain;
+        background-repeat: no-repeat;
+        overflow: hidden;
+    }
+}
+
+#right_card_equipment {
+    width: 56%;
+    height: 100%;
+    margin-right: 8.3vw;
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+    vertical-align: middle;
+    justify-content: center;
+    align-items: center;
+    background-color: #f1f0f0;
+
+    #equipment_title {
+        font-family: "Inter", sans-serif;
+        font-style: normal;
+        font-weight: 400;
+        font-size: 25px;
+        line-height: 30px;
+        letter-spacing: 0.5em;
+        color: #62b6b7;
+    }
+
+    #equipment_content {
+        font-family: "Inter", sans-serif;
+        font-style: normal;
+        font-weight: 400;
+        font-size: 20px;
+        line-height: 24px;
+        color: rgba(0, 0, 0, 0.54);
+    }
+}
+
+#optometrist_frame {
+    display: flex;
+    width: 100vw;
+    height: 215px;
+    overflow: hidden;
+    padding-top: 5vh;
+}
+
+#left_card_optometrist {
+    width: 50%;
+    height: 100%;
+    margin-left: 7.7vw;
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+    vertical-align: middle;
+    justify-content: center;
+    align-items: center;
+    background-color: #f1f0f0;
+
+    #optometrist_title {
+        font-family: "Inter", sans-serif;
+        font-style: normal;
+        font-weight: 400;
+        font-size: 25px;
+        line-height: 30px;
+        letter-spacing: 0.5em;
+        color: #62b6b7;
+    }
+
+    #optometrist_content {
+        font-family: "Inter", sans-serif;
+        font-style: normal;
+        font-weight: 400;
+        font-size: 20px;
+        line-height: 24px;
+        color: rgba(0, 0, 0, 0.54);
+    }
+}
+
+#right_card_optometrist {
+    width: 40%;
+    height: 100%;
+    margin-right: 8.3vw;
+    background-image: url("../src/optometrist.png");
+    background-position: left;
+    background-size: contain;
+    background-repeat: no-repeat;
+    overflow: hidden;
+}
+
+#warranty_frame {
+    display: flex;
+    width: 100vw;
+    height: 215px;
+    overflow: hidden;
+    padding-top: 5vh;
+
+    #left_card_warranty {
+        width: 50%;
+        height: 100%;
+        margin-left: 7.7vw;
+        background-image: url("../src/warranty.png");
+        background-position: left;
+        background-size: contain;
+        background-repeat: no-repeat;
+        overflow: hidden;
+    }
+}
+
+#right_card_warranty {
+    width: 56%;
+    height: 100%;
+    margin-right: 8.3vw;
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+    vertical-align: middle;
+    justify-content: center;
+    align-items: center;
+    background-color: #f1f0f0;
+
+    #warranty_title {
+        font-family: "Inter", sans-serif;
+        font-style: normal;
+        font-weight: 400;
+        font-size: 25px;
+        line-height: 30px;
+        letter-spacing: 0.5em;
+        color: #62b6b7;
+    }
+
+    #warranty_content {
+        font-family: "Inter", sans-serif;
+        font-style: normal;
+        font-weight: 400;
+        font-size: 20px;
+        line-height: 24px;
+        color: rgba(0, 0, 0, 0.54);
+    }
+}
+
+#glasses_frame {
+    display: flex;
+    width: 100vw;
+    height: 215px;
+    overflow: hidden;
+    padding-top: 5vh;
+}
+
+#left_card_glasses {
+    width: 50%;
+    height: 100%;
+    margin-left: 7.7vw;
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+    vertical-align: middle;
+    justify-content: center;
+    align-items: center;
+    background-color: #f1f0f0;
+
+    #glasses_title {
+        font-family: "Inter", sans-serif;
+        font-style: normal;
+        font-weight: 400;
+        font-size: 25px;
+        line-height: 30px;
+        letter-spacing: 0.5em;
+        color: #62b6b7;
+    }
+
+    #glasses_content {
+        font-family: "Inter", sans-serif;
+        font-style: normal;
+        font-weight: 400;
+        font-size: 20px;
+        line-height: 24px;
+        color: rgba(0, 0, 0, 0.54);
+    }
+}
+
+#right_card_glasses {
+    width: 40%;
+    height: 100%;
+    margin-right: 8.3vw;
+    background-image: url("../src/glasses.png");
+    background-position: left;
+    background-size: contain;
+    background-repeat: no-repeat;
+    overflow: hidden;
+}
+
+#personalize_frame {
+    display: flex;
+    width: 100vw;
+    height: 215px;
+    overflow: hidden;
+    padding-top: 5vh;
+
+    #left_card_personalize {
+        width: 50%;
+        height: 100%;
+        margin-left: 7.7vw;
+        background-image: url("../src/personalize.png");
+        background-position: left;
+        background-size: contain;
+        background-repeat: no-repeat;
+        overflow: hidden;
+    }
+}
+
+#right_card_personalize {
+    width: 56%;
+    height: 100%;
+    margin-right: 8.3vw;
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+    vertical-align: middle;
+    justify-content: center;
+    align-items: center;
+    background-color: #f1f0f0;
+
+    #personalize_title {
+        font-family: "Inter", sans-serif;
+        font-style: normal;
+        font-weight: 400;
+        font-size: 25px;
+        line-height: 30px;
+        letter-spacing: 0.5em;
+        color: #62b6b7;
+    }
+
+    #personalize_content {
+        font-family: "Inter", sans-serif;
+        font-style: normal;
+        font-weight: 400;
+        font-size: 20px;
+        line-height: 24px;
+        color: rgba(0, 0, 0, 0.54);
     }
 }

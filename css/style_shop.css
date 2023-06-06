@@ -72,12 +72,15 @@ body {
 }
 #navbar #hamburger_content .hamburger_element .hamburger_element_zsh {
   font-size: 2rem;
+  font-family: "Inter", sans-serif;
+  font-style: normal;
   color: #62b6b7;
   letter-spacing: 1.5rem;
 }
 #navbar #hamburger_content .hamburger_element .hamburger_element_eng {
   margin-left: 3vw;
-  font-family: "Inter";
+  font-family: "Inter", sans-serif;
+  font-style: normal;
   font-size: 1rem;
   font-weight: 400;
   color: #62b6b7;
@@ -99,6 +102,8 @@ body {
   height: 60px;
   top: 20px;
   right: 25px;
+  font-family: "Inter", sans-serif;
+  font-style: normal;
   font-size: 1.5rem;
   color: #62b6b7;
   letter-spacing: 3px;
@@ -154,15 +159,38 @@ footer {
 }
 footer #footer_brand_name {
   margin-left: 20vw;
+  font-family: "Inter", sans-serif;
+  font-style: normal;
 }
 footer #footer_brand_name p {
   font-size: 1.5rem;
+  font-family: "Inter", sans-serif;
+  font-style: normal;
+}
+footer #footer_address,
+footer #footer_tel {
+  font-family: "Inter", sans-serif;
+  font-style: normal;
 }
 footer #footer_fax {
   margin-right: 20vw;
+  font-family: "Inter", sans-serif;
+  font-style: normal;
 }
 footer p {
   color: white;
+}
+
+#scrollbar #scroll_icon {
+  position: absolute;
+  top: 86vh;
+  right: 1.5vw;
+  width: 10px;
+  height: 10vh;
+  z-index: 2;
+  background-image: url(../src/scrollbar.png);
+  background-size: cover;
+  background-position: center;
 }
 
 #slide_frame {
@@ -172,7 +200,7 @@ footer p {
   width: 100vw;
   height: 376px;
   overflow: hidden;
-  padding-top: 10vh;
+  padding-top: 5vh;
 }
 #slide_frame #slide {
   display: flex;
@@ -193,13 +221,19 @@ footer p {
   width: 100vw;
   height: 376px;
   overflow: hidden;
-  padding-top: 10vh;
+  padding-top: 5vh;
 }
 #location_frame #location_text_container {
   width: 50%;
   height: 100%;
+  display: flex;
+  flex-direction: column;
+  text-align: left;
+  vertical-align: middle;
+  justify-content: center;
+  align-items: left;
 }
-#location_frame #location_text_container #address {
+#location_frame #location_text_container #address_title {
   margin-left: 10vw;
   font-family: "Inter", sans-serif;
   font-style: normal;
@@ -209,17 +243,16 @@ footer p {
   letter-spacing: 0.5em;
   color: #62b6b7;
 }
-#location_frame #location_text_container #address_text {
+#location_frame #location_text_container #address_content {
   margin-left: 10vw;
   font-family: "Inter", sans-serif;
   font-style: normal;
   font-weight: 400;
   font-size: 20px;
-  line-height: 34px;
-  letter-spacing: 0.5em;
-  color: #000000;
+  line-height: 24px;
+  color: rgba(0, 0, 0, 0.54);
 }
-#location_frame #location_text_container #contact {
+#location_frame #location_text_container #contact_title {
   margin-left: 10vw;
   font-family: "Inter", sans-serif;
   font-style: normal;
@@ -229,19 +262,279 @@ footer p {
   letter-spacing: 0.5em;
   color: #62b6b7;
 }
-#location_frame #location_text_container #contact_text {
-  margin-left: 10vw;
+#location_frame #location_text_container #contact_content {
   font-family: "Inter", sans-serif;
   font-style: normal;
+  margin-left: 10vw;
   font-weight: 400;
   font-size: 20px;
-  line-height: 34px;
-  letter-spacing: 0.5em;
-  color: #000000;
+  line-height: 24px;
+  color: rgba(0, 0, 0, 0.54);
 }
 #location_frame #location_map {
   width: 50%;
   height: 100%;
+  margin-right: 8.3vw;
+  background-image: url("../src/map.png");
+  background-position: right;
+  background-size: contain;
+  background-repeat: no-repeat;
+}
+
+#about {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 84vw;
+  height: 376px;
+  margin-left: 7.7vw;
+  margin-top: 5vh;
+  background-image: url("../src/about_glassses_shop.png");
+  background-position: center;
+  background-size: cover;
+  overflow: hidden;
+}
+
+#equipment_frame {
+  display: flex;
+  width: 100vw;
+  height: 215px;
+  overflow: hidden;
+  padding-top: 10vh;
+}
+#equipment_frame #left_card_equipment {
+  width: 50%;
+  height: 100%;
+  margin-left: 7.7vw;
+  background-image: url("../src/equipment.png");
+  background-position: left;
+  background-size: contain;
+  background-repeat: no-repeat;
+  overflow: hidden;
+}
+
+#right_card_equipment {
+  width: 56%;
+  height: 100%;
+  margin-right: 8.3vw;
+  display: flex;
+  flex-direction: column;
+  text-align: center;
+  vertical-align: middle;
+  justify-content: center;
+  align-items: center;
+  background-color: #f1f0f0;
+}
+#right_card_equipment #equipment_title {
+  font-family: "Inter", sans-serif;
+  font-style: normal;
+  font-weight: 400;
+  font-size: 25px;
+  line-height: 30px;
+  letter-spacing: 0.5em;
+  color: #62b6b7;
+}
+#right_card_equipment #equipment_content {
+  font-family: "Inter", sans-serif;
+  font-style: normal;
+  font-weight: 400;
+  font-size: 20px;
+  line-height: 24px;
+  color: rgba(0, 0, 0, 0.54);
+}
+
+#optometrist_frame {
+  display: flex;
+  width: 100vw;
+  height: 215px;
+  overflow: hidden;
+  padding-top: 5vh;
+}
+
+#left_card_optometrist {
+  width: 50%;
+  height: 100%;
+  margin-left: 7.7vw;
+  display: flex;
+  flex-direction: column;
+  text-align: center;
+  vertical-align: middle;
+  justify-content: center;
+  align-items: center;
+  background-color: #f1f0f0;
+}
+#left_card_optometrist #optometrist_title {
+  font-family: "Inter", sans-serif;
+  font-style: normal;
+  font-weight: 400;
+  font-size: 25px;
+  line-height: 30px;
+  letter-spacing: 0.5em;
+  color: #62b6b7;
+}
+#left_card_optometrist #optometrist_content {
+  font-family: "Inter", sans-serif;
+  font-style: normal;
+  font-weight: 400;
+  font-size: 20px;
+  line-height: 24px;
+  color: rgba(0, 0, 0, 0.54);
+}
+
+#right_card_optometrist {
+  width: 40%;
+  height: 100%;
+  margin-right: 8.3vw;
+  background-image: url("../src/optometrist.png");
+  background-position: left;
+  background-size: contain;
+  background-repeat: no-repeat;
+  overflow: hidden;
+}
+
+#warranty_frame {
+  display: flex;
+  width: 100vw;
+  height: 215px;
+  overflow: hidden;
+  padding-top: 5vh;
+}
+#warranty_frame #left_card_warranty {
+  width: 50%;
+  height: 100%;
+  margin-left: 7.7vw;
+  background-image: url("../src/warranty.png");
+  background-position: left;
+  background-size: contain;
+  background-repeat: no-repeat;
+  overflow: hidden;
+}
+
+#right_card_warranty {
+  width: 56%;
+  height: 100%;
+  margin-right: 8.3vw;
+  display: flex;
+  flex-direction: column;
+  text-align: center;
+  vertical-align: middle;
+  justify-content: center;
+  align-items: center;
+  background-color: #f1f0f0;
+}
+#right_card_warranty #warranty_title {
+  font-family: "Inter", sans-serif;
+  font-style: normal;
+  font-weight: 400;
+  font-size: 25px;
+  line-height: 30px;
+  letter-spacing: 0.5em;
+  color: #62b6b7;
+}
+#right_card_warranty #warranty_content {
+  font-family: "Inter", sans-serif;
+  font-style: normal;
+  font-weight: 400;
+  font-size: 20px;
+  line-height: 24px;
+  color: rgba(0, 0, 0, 0.54);
+}
+
+#glasses_frame {
+  display: flex;
+  width: 100vw;
+  height: 215px;
+  overflow: hidden;
+  padding-top: 5vh;
+}
+
+#left_card_glasses {
+  width: 50%;
+  height: 100%;
+  margin-left: 7.7vw;
+  display: flex;
+  flex-direction: column;
+  text-align: center;
+  vertical-align: middle;
+  justify-content: center;
+  align-items: center;
+  background-color: #f1f0f0;
+}
+#left_card_glasses #glasses_title {
+  font-family: "Inter", sans-serif;
+  font-style: normal;
+  font-weight: 400;
+  font-size: 25px;
+  line-height: 30px;
+  letter-spacing: 0.5em;
+  color: #62b6b7;
+}
+#left_card_glasses #glasses_content {
+  font-family: "Inter", sans-serif;
+  font-style: normal;
+  font-weight: 400;
+  font-size: 20px;
+  line-height: 24px;
+  color: rgba(0, 0, 0, 0.54);
+}
+
+#right_card_glasses {
+  width: 40%;
+  height: 100%;
+  margin-right: 8.3vw;
+  background-image: url("../src/glasses.png");
+  background-position: left;
+  background-size: contain;
+  background-repeat: no-repeat;
+  overflow: hidden;
+}
+
+#personalize_frame {
+  display: flex;
+  width: 100vw;
+  height: 215px;
+  overflow: hidden;
+  padding-top: 5vh;
+}
+#personalize_frame #left_card_personalize {
+  width: 50%;
+  height: 100%;
+  margin-left: 7.7vw;
+  background-image: url("../src/personalize.png");
+  background-position: left;
+  background-size: contain;
+  background-repeat: no-repeat;
+  overflow: hidden;
+}
+
+#right_card_personalize {
+  width: 56%;
+  height: 100%;
+  margin-right: 8.3vw;
+  display: flex;
+  flex-direction: column;
+  text-align: center;
+  vertical-align: middle;
+  justify-content: center;
+  align-items: center;
+  background-color: #f1f0f0;
+}
+#right_card_personalize #personalize_title {
+  font-family: "Inter", sans-serif;
+  font-style: normal;
+  font-weight: 400;
+  font-size: 25px;
+  line-height: 30px;
+  letter-spacing: 0.5em;
+  color: #62b6b7;
+}
+#right_card_personalize #personalize_content {
+  font-family: "Inter", sans-serif;
+  font-style: normal;
+  font-weight: 400;
+  font-size: 20px;
+  line-height: 24px;
+  color: rgba(0, 0, 0, 0.54);
 }
 
 /*# sourceMappingURL=style_shop.css.map */

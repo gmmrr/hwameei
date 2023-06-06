@@ -1,0 +1,282 @@
+* {
+    margin: 0;
+    padding: 0;
+}
+
+html {
+    width: 100vw;
+    overflow-x: hidden;
+}
+
+body {
+    position: relative;
+    background-color: #faf8f8;
+}
+
+#navbar {
+    position: relative;
+
+    #hamburger_icon {
+        position: absolute;
+        width: 60px;
+        height: 60px;
+        top: 15px;
+        left: 25px;
+        z-index: 3;
+        background-image: url("../src/hamburger_icon.png");
+        background-position: center;
+        background-size: contain;
+        background-repeat: no-repeat;
+
+        &:hover {
+            cursor: pointer;
+        }
+    }
+
+    #hamburger_content_shadow {
+        display: none;
+        position: fixed;
+        height: 100vh;
+        width: 100vw;
+        background-color: black;
+        opacity: 0.7;
+        z-index: 4;
+    }
+
+    #hamburger_content {
+        position: fixed;
+        display: none;
+        left: 0;
+        height: 100vh;
+        width: 65vw;
+        z-index: 10;
+        background-color: white;
+        user-select: none;
+
+        #hamburger_close {
+            position: absolute;
+            top: 12px;
+            left: 19.5px;
+            width: 70px;
+            height: 70px;
+            background-image: url("../src/hamburger_close.png");
+            background-position: center;
+            background-size: cover;
+            background-repeat: no-repeat;
+
+            &:hover {
+                cursor: pointer;
+            }
+        }
+
+        .hamburger_element {
+            margin-left: 10vw;
+            display: flex;
+            align-items: center;
+            margin-top: 10vh;
+
+            .hamburger_element_zsh {
+                font-size: 2rem;
+                font-family: "Inter", sans-serif;
+                font-style: normal;
+                color: #62b6b7;
+                letter-spacing: 1.5rem;
+            }
+
+            .hamburger_element_eng {
+                margin-left: 3vw;
+                font-family: "Inter", sans-serif;
+                font-style: normal;
+                font-size: 1rem;
+                font-weight: 400;
+                color: #62b6b7;
+            }
+
+            &:hover {
+                cursor: pointer;
+            }
+        }
+
+        #hamburger_element_homepage {
+            margin-top: 15vh;
+        }
+
+        #hamburger_element_login {
+            display: flex;
+        }
+
+        #hamburger_element_logout {
+            display: none;
+        }
+    }
+
+    #you_are_in_element {
+        position: absolute;
+        height: 60px;
+        top: 20px;
+        right: 25px;
+        font-family: "Inter", sans-serif;
+        font-style: normal;
+        font-size: 1.5rem;
+        color: #62b6b7;
+        letter-spacing: 3px;
+    }
+}
+
+#functionbar {
+    position: fixed;
+    top: 65vh;
+    margin-left: 1vw;
+    z-index: 3;
+
+    #cart_func {
+        width: 4vw;
+        height: 4vw;
+        background-image: url("../src/funcbar_cart.png");
+        background-position: center;
+        background-size: cover;
+
+        &:hover {
+            cursor: pointer;
+        }
+    }
+
+    #line_func {
+        width: 4vw;
+        height: 4vw;
+        margin-top: 1vh;
+        background-image: url("../src/funcbar_line.png");
+        background-position: center;
+        background-size: cover;
+
+        &:hover {
+            cursor: pointer;
+        }
+    }
+
+    #info_func {
+        width: 4vw;
+        height: 4vw;
+        margin-top: 1vh;
+        background-image: url("../src/funcbar_info.png");
+        background-position: center;
+        background-size: cover;
+
+        &:hover {
+            cursor: pointer;
+        }
+    }
+}
+
+footer {
+    margin-top: 10vh;
+    bottom: 0;
+    height: 10vh;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    background-color: #439a97;
+
+    #footer_brand_name {
+        margin-left: 20vw;
+        font-family: "Inter", sans-serif;
+        font-style: normal;
+        color: white;
+
+        p {
+            font-size: 1.5rem;
+            font-family: "Inter", sans-serif;
+            font-style: normal;
+        }
+    }
+
+    #footer_address,
+    #footer_tel {
+        font-family: "Inter", sans-serif;
+        font-style: normal;
+        color: white;
+    }
+
+    #footer_fax {
+        margin-right: 20vw;
+        font-family: "Inter", sans-serif;
+        font-style: normal;
+        color: white;
+    }
+
+    p {
+        color: white;
+    }
+}
+
+#scrollbar #scroll_icon {
+    position: absolute;
+    top: 86vh;
+    right: 1.5vw;
+    width: 10px;
+    height: 10vh;
+    z-index: 2;
+    background-image: url(../src/scrollbar.png);
+    background-size: cover;
+    background-position: center;
+}
+
+#slide_frame {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100vw;
+    height: 376px;
+    overflow: hidden;
+    padding-top: 5vh;
+
+    #slide {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        width: 83vw;
+        height: 376px;
+        left: 16vw;
+        margin-top: 127px;
+        background-image: url("../src/shop_1.png");
+        background-position: center;
+        background-size: cover;
+        overflow: hidden;
+    }
+}
+
+#product_view {
+    display: flex;
+    width: 154px;
+    height: 34px;
+    left: 44.6vw;
+    top: 19.1vh;
+
+    font-family: "Inter", sans-serif;
+    font-style: normal;
+    font-weight: 400;
+    font-size: 28px;
+    line-height: 34px;
+    letter-spacing: 0.5em;
+
+    color: #439a97;
+}
+
+#product_container {
+    display: flex;
+    width: 100vw;
+    height: 1895px;
+    margin-top: 22.4vh;
+    margin-left: 10.5vw;
+    overflow: hidden;
+}
+
+.product_button {
+    width: 350px;
+    height: 440px;
+    background: #ffffff;
+    box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+    display: flex;
+    justify-content: center;
+    margin-left: 43px;
+}
