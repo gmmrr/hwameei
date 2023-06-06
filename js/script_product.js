@@ -48,7 +48,7 @@ function login_logout_switching() {
 }
 //--------------------------------------------------//
 
-//--------------- homepage switching ---------------//
+//--------------- backgndswitching ---------------//
 var first_time_homepage_switching = 1;
 let homepage_switching = anime({
     targets: "#slide",
@@ -61,7 +61,7 @@ let homepage_switching = anime({
 var homepage_index = 1;
 function homepage_change() {
     pic = document.getElementById("slide");
-    pic.style.backgroundImage = `url("src/shop_${homepage_index}.png")`;
+    pic.style.backgroundImage = `url("src/product_backgnd${homepage_index}.png")`;
     if (!first_time_homepage_switching) {
         homepage_switching.restart();
     }

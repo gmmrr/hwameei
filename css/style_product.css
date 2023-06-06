@@ -72,15 +72,12 @@ body {
 }
 #navbar #hamburger_content .hamburger_element .hamburger_element_zsh {
   font-size: 2rem;
-  font-family: "Inter", sans-serif;
-  font-style: normal;
   color: #62b6b7;
   letter-spacing: 1.5rem;
 }
 #navbar #hamburger_content .hamburger_element .hamburger_element_eng {
   margin-left: 3vw;
-  font-family: "Inter", sans-serif;
-  font-style: normal;
+  font-family: "Inter";
   font-size: 1rem;
   font-weight: 400;
   color: #62b6b7;
@@ -102,8 +99,6 @@ body {
   height: 60px;
   top: 20px;
   right: 25px;
-  font-family: "Inter", sans-serif;
-  font-style: normal;
   font-size: 1.5rem;
   color: #62b6b7;
   letter-spacing: 3px;
@@ -159,26 +154,12 @@ footer {
 }
 footer #footer_brand_name {
   margin-left: 20vw;
-  font-family: "Inter", sans-serif;
-  font-style: normal;
-  color: white;
 }
 footer #footer_brand_name p {
   font-size: 1.5rem;
-  font-family: "Inter", sans-serif;
-  font-style: normal;
-}
-footer #footer_address,
-footer #footer_tel {
-  font-family: "Inter", sans-serif;
-  font-style: normal;
-  color: white;
 }
 footer #footer_fax {
   margin-right: 20vw;
-  font-family: "Inter", sans-serif;
-  font-style: normal;
-  color: white;
 }
 footer p {
   color: white;
@@ -213,7 +194,7 @@ footer p {
   height: 376px;
   left: 16vw;
   margin-top: 127px;
-  background-image: url("../src/shop_1.png");
+  background-image: url("../src/product_backgnd1");
   background-position: center;
   background-size: cover;
   overflow: hidden;

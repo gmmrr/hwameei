@@ -1,13 +1,12 @@
+//-------------------- general ---------------------//
 * {
     margin: 0;
     padding: 0;
 }
-
 html {
     width: 100vw;
     overflow-x: hidden;
 }
-
 body {
     position: relative;
     background-color: #faf8f8;
@@ -23,14 +22,14 @@ body {
         top: 15px;
         left: 25px;
         z-index: 3;
+
         background-image: url("../src/hamburger_icon.png");
         background-position: center;
         background-size: contain;
         background-repeat: no-repeat;
-
-        &:hover {
-            cursor: pointer;
-        }
+    }
+    #hamburger_icon:hover {
+        cursor: pointer;
     }
 
     #hamburger_content_shadow {
@@ -38,11 +37,11 @@ body {
         position: fixed;
         height: 100vh;
         width: 100vw;
+
         background-color: black;
         opacity: 0.7;
         z-index: 4;
     }
-
     #hamburger_content {
         position: fixed;
         display: none;
@@ -50,6 +49,7 @@ body {
         height: 100vh;
         width: 65vw;
         z-index: 10;
+
         background-color: white;
         user-select: none;
 
@@ -59,14 +59,14 @@ body {
             left: 19.5px;
             width: 70px;
             height: 70px;
+
             background-image: url("../src/hamburger_close.png");
             background-position: center;
             background-size: cover;
             background-repeat: no-repeat;
-
-            &:hover {
-                cursor: pointer;
-            }
+        }
+        #hamburger_close:hover {
+            cursor: pointer;
         }
 
         .hamburger_element {
@@ -77,16 +77,12 @@ body {
 
             .hamburger_element_zsh {
                 font-size: 2rem;
-                font-family: "Inter", sans-serif;
-                font-style: normal;
                 color: #62b6b7;
                 letter-spacing: 1.5rem;
             }
-
             .hamburger_element_eng {
                 margin-left: 3vw;
-                font-family: "Inter", sans-serif;
-                font-style: normal;
+                font-family: "Inter";
                 font-size: 1rem;
                 font-weight: 400;
                 color: #62b6b7;
@@ -115,8 +111,6 @@ body {
         height: 60px;
         top: 20px;
         right: 25px;
-        font-family: "Inter", sans-serif;
-        font-style: normal;
         font-size: 1.5rem;
         color: #62b6b7;
         letter-spacing: 3px;
@@ -135,12 +129,10 @@ body {
         background-image: url("../src/funcbar_cart.png");
         background-position: center;
         background-size: cover;
-
-        &:hover {
-            cursor: pointer;
-        }
     }
-
+    #cart_func:hover {
+        cursor: pointer;
+    }
     #line_func {
         width: 4vw;
         height: 4vw;
@@ -148,12 +140,10 @@ body {
         background-image: url("../src/funcbar_line.png");
         background-position: center;
         background-size: cover;
-
-        &:hover {
-            cursor: pointer;
-        }
     }
-
+    #line_func:hover {
+        cursor: pointer;
+    }
     #info_func {
         width: 4vw;
         height: 4vw;
@@ -161,10 +151,9 @@ body {
         background-image: url("../src/funcbar_info.png");
         background-position: center;
         background-size: cover;
-
-        &:hover {
-            cursor: pointer;
-        }
+    }
+    #info_func:hover {
+        cursor: pointer;
     }
 }
 
@@ -172,39 +161,27 @@ footer {
     margin-top: 10vh;
     bottom: 0;
     height: 10vh;
+
     display: flex;
     justify-content: space-around;
     align-items: center;
-    background-color: #439a97;
 
+    background-color: #439a97;
     #footer_brand_name {
         margin-left: 20vw;
-        font-family: "Inter", sans-serif;
-        font-style: normal;
-
         p {
             font-size: 1.5rem;
-            font-family: "Inter", sans-serif;
-            font-style: normal;
         }
     }
-
-    #footer_address,
-    #footer_tel {
-        font-family: "Inter", sans-serif;
-        font-style: normal;
-    }
-
     #footer_fax {
         margin-right: 20vw;
-        font-family: "Inter", sans-serif;
-        font-style: normal;
     }
 
     p {
         color: white;
     }
 }
+//--------------------------------------------------//
 
 #scrollbar #scroll_icon {
     position: absolute;
@@ -306,7 +283,7 @@ footer {
         width: 50%;
         height: 100%;
         margin-right: 8.3vw;
-        background-image: url("../src/map.png");
+        background-image: url("../src/shop_map.png");
         background-position: right;
         background-size: contain;
         background-repeat: no-repeat;
@@ -321,7 +298,7 @@ footer {
     height: 376px;
     margin-left: 7.7vw;
     margin-top: 5vh;
-    background-image: url("../src/about_glassses_shop.png");
+    background-image: url("../src/shop_about_glassses_shop.png");
     background-position: center;
     background-size: cover;
     overflow: hidden;
@@ -338,7 +315,7 @@ footer {
         width: 50%;
         height: 100%;
         margin-left: 7.7vw;
-        background-image: url("../src/equipment.png");
+        background-image: url("../src/shop_equipment.png");
         background-position: left;
         background-size: contain;
         background-repeat: no-repeat;
@@ -422,7 +399,7 @@ footer {
     width: 40%;
     height: 100%;
     margin-right: 8.3vw;
-    background-image: url("../src/optometrist.png");
+    background-image: url("../src/shop_optometrist.png");
     background-position: left;
     background-size: contain;
     background-repeat: no-repeat;
@@ -440,7 +417,7 @@ footer {
         width: 50%;
         height: 100%;
         margin-left: 7.7vw;
-        background-image: url("../src/warranty.png");
+        background-image: url("../src/shop_warranty.png");
         background-position: left;
         background-size: contain;
         background-repeat: no-repeat;
@@ -524,7 +501,7 @@ footer {
     width: 40%;
     height: 100%;
     margin-right: 8.3vw;
-    background-image: url("../src/glasses.png");
+    background-image: url("../src/shop_glasses.png");
     background-position: left;
     background-size: contain;
     background-repeat: no-repeat;
@@ -542,7 +519,7 @@ footer {
         width: 50%;
         height: 100%;
         margin-left: 7.7vw;
-        background-image: url("../src/personalize.png");
+        background-image: url("../src/shop_personalize.png");
         background-position: left;
         background-size: contain;
         background-repeat: no-repeat;

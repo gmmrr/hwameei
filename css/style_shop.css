@@ -72,15 +72,12 @@ body {
 }
 #navbar #hamburger_content .hamburger_element .hamburger_element_zsh {
   font-size: 2rem;
-  font-family: "Inter", sans-serif;
-  font-style: normal;
   color: #62b6b7;
   letter-spacing: 1.5rem;
 }
 #navbar #hamburger_content .hamburger_element .hamburger_element_eng {
   margin-left: 3vw;
-  font-family: "Inter", sans-serif;
-  font-style: normal;
+  font-family: "Inter";
   font-size: 1rem;
   font-weight: 400;
   color: #62b6b7;
@@ -102,8 +99,6 @@ body {
   height: 60px;
   top: 20px;
   right: 25px;
-  font-family: "Inter", sans-serif;
-  font-style: normal;
   font-size: 1.5rem;
   color: #62b6b7;
   letter-spacing: 3px;
@@ -159,23 +154,12 @@ footer {
 }
 footer #footer_brand_name {
   margin-left: 20vw;
-  font-family: "Inter", sans-serif;
-  font-style: normal;
 }
 footer #footer_brand_name p {
   font-size: 1.5rem;
-  font-family: "Inter", sans-serif;
-  font-style: normal;
-}
-footer #footer_address,
-footer #footer_tel {
-  font-family: "Inter", sans-serif;
-  font-style: normal;
 }
 footer #footer_fax {
   margin-right: 20vw;
-  font-family: "Inter", sans-serif;
-  font-style: normal;
 }
 footer p {
   color: white;
@@ -275,7 +259,7 @@ footer p {
   width: 50%;
   height: 100%;
   margin-right: 8.3vw;
-  background-image: url("../src/map.png");
+  background-image: url("../src/shop_map.png");
   background-position: right;
   background-size: contain;
   background-repeat: no-repeat;
@@ -289,7 +273,7 @@ footer p {
   height: 376px;
   margin-left: 7.7vw;
   margin-top: 5vh;
-  background-image: url("../src/about_glassses_shop.png");
+  background-image: url("../src/shop_about_glassses_shop.png");
   background-position: center;
   background-size: cover;
   overflow: hidden;
@@ -306,7 +290,7 @@ footer p {
   width: 50%;
   height: 100%;
   margin-left: 7.7vw;
-  background-image: url("../src/equipment.png");
+  background-image: url("../src/shop_equipment.png");
   background-position: left;
   background-size: contain;
   background-repeat: no-repeat;
@@ -385,7 +369,7 @@ footer p {
   width: 40%;
   height: 100%;
   margin-right: 8.3vw;
-  background-image: url("../src/optometrist.png");
+  background-image: url("../src/shop_optometrist.png");
   background-position: left;
   background-size: contain;
   background-repeat: no-repeat;
@@ -403,7 +387,7 @@ footer p {
   width: 50%;
   height: 100%;
   margin-left: 7.7vw;
-  background-image: url("../src/warranty.png");
+  background-image: url("../src/shop_warranty.png");
   background-position: left;
   background-size: contain;
   background-repeat: no-repeat;
@@ -482,7 +466,7 @@ footer p {
   width: 40%;
   height: 100%;
   margin-right: 8.3vw;
-  background-image: url("../src/glasses.png");
+  background-image: url("../src/shop_glasses.png");
   background-position: left;
   background-size: contain;
   background-repeat: no-repeat;
@@ -500,7 +484,7 @@ footer p {
   width: 50%;
   height: 100%;
   margin-left: 7.7vw;
-  background-image: url("../src/personalize.png");
+  background-image: url("../src/shop_personalize.png");
   background-position: left;
   background-size: contain;
   background-repeat: no-repeat;
