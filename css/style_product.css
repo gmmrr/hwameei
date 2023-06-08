@@ -74,6 +74,7 @@ body {
   font-size: 2rem;
   color: #62b6b7;
   letter-spacing: 1.5rem;
+  font-family: "Inter", sans-serif;
 }
 #navbar #hamburger_content .hamburger_element .hamburger_element_eng {
   margin-left: 3vw;
@@ -81,6 +82,7 @@ body {
   font-size: 1rem;
   font-weight: 400;
   color: #62b6b7;
+  font-family: "Inter", sans-serif;
 }
 #navbar #hamburger_content .hamburger_element:hover {
   cursor: pointer;
@@ -102,6 +104,7 @@ body {
   font-size: 1.5rem;
   color: #62b6b7;
   letter-spacing: 3px;
+  font-family: "Inter", sans-serif;
 }
 
 #functionbar {
@@ -242,6 +245,77 @@ footer p {
   box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
   display: flex;
   justify-content: center;
+  flex-wrap: wrap;
+  overflow: hidden;
+}
+
+.glasses_pic {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap;
+  object-fit: cover; /* Scale the image so it covers whole area, thus will likely crop */
+  object-position: center;
+  width: 350px;
+  height: 200px;
+  margin-top: 37px;
+  overflow: hidden;
+}
+
+.glasses_text_container {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  width: 100%;
+  height: 161px;
+}
+
+.glasses_name {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  height: 29px;
+  font-family: "Inter", sans-serif;
+  font-style: normal;
+  font-weight: 700;
+  font-size: 24px;
+  line-height: 29px;
+  letter-spacing: 0.1em;
+  color: #000000;
+  opacity: 0.8;
+}
+
+.glasses_description {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  width: 100%;
+  height: 82px;
+  font-family: "Inter", sans-serif;
+  font-style: normal;
+  font-weight: 400;
+  font-size: 24px;
+  line-height: 29px;
+  /* identical to box height */
+  letter-spacing: 0.1em;
+  color: #000000;
+  opacity: 0.8;
+}
+
+.cart_icon {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap;
+  object-fit: cover; /* Scale the image so it covers whole area, thus will likely crop */
+  object-position: center;
+  width: 44px;
+  height: 44px;
+  margin-left: 303px;
+  margin-top: 0px;
+  overflow: hidden;
 }
 
 /*# sourceMappingURL=style_product.css.map */
