@@ -290,6 +290,16 @@ footer {
     h1 {
         margin-left: 10vw;
         margin-right: 10vw;
+
+        color: rgba(0, 0, 0, 0.7);
+        opacity: 0.8;
+
+        font-family: "Inter";
+        font-style: normal;
+        font-weight: 700;
+        font-size: 24px;
+        line-height: 29px;
+        letter-spacing: 0.1em;
     }
     #item_price {
         margin-top: 3vh;
@@ -297,6 +307,16 @@ footer {
         margin-right: 10vw;
         display: flex;
         justify-content: space-between;
+
+        color: rgba(0, 0, 0, 0.54);
+        opacity: 0.8;
+
+        font-family: "Inter";
+        font-style: normal;
+        font-weight: 400;
+        font-size: 20px;
+        line-height: 24px;
+        letter-spacing: 0.1em;
     }
     #shipping_fee {
         margin-top: 1vh;
@@ -304,6 +324,16 @@ footer {
         margin-right: 10vw;
         display: flex;
         justify-content: space-between;
+
+        color: rgba(0, 0, 0, 0.54);
+        opacity: 0.8;
+
+        font-family: "Inter";
+        font-style: normal;
+        font-weight: 400;
+        font-size: 20px;
+        line-height: 24px;
+        letter-spacing: 0.1em;
     }
     #total_price {
         margin-top: 5vh;
@@ -311,6 +341,16 @@ footer {
         margin-right: 10vw;
         display: flex;
         justify-content: space-between;
+
+        color: rgba(0, 0, 0, 0.54);
+        opacity: 0.8;
+
+        font-family: "Inter";
+        font-style: normal;
+        font-weight: 400;
+        font-size: 20px;
+        line-height: 24px;
+        letter-spacing: 0.1em;
     }
     #button_container {
         margin-top: 5vh;
@@ -318,14 +358,63 @@ footer {
         flex-direction: column;
         align-items: center;
         #order_button {
-            width: 50%;
             margin-left: 10vw;
             margin-right: 10vw;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+
+            width: 50%;
+            height: 5vw;
+            border-radius: 20px;
+            background-color: #97dece;
+            box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+            border: 2px solid #97dece;
+
+            font-family: "Inter";
+            font-style: normal;
+            font-weight: 400;
+            font-size: 29px;
+            padding-left: 0.5em;
+            letter-spacing: 0.5em;
+            color: #ffffff;
+
+            &:hover {
+                background-color: #faf8f8;
+                color: #ffffff;
+                transition: 0.5s;
+                font-family: "Inter";
+                font-style: normal;
+                font-weight: 400;
+
+                letter-spacing: 0.5em;
+                color: #97dece;
+            }
         }
         #problem_button {
-            width: 50%;
+            margin-top: 3vh;
             margin-left: 10vw;
             margin-right: 10vw;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+
+            width: 50%;
+            height: 5vw;
+            background-color: #faf8f8;
+            color: #ffffff;
+            transition: 0.5s;
+            border: 1px solid #97dece;
+            box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+            border-radius: 20px;
+
+            font-family: "Inter";
+            font-style: normal;
+            font-weight: 400;
+            font-size: 29px;
+            letter-spacing: 0.5em;
+            padding-left: 0.5em;
+            color: #97dece;
         }
     }
     #payment_type {
@@ -339,8 +428,7 @@ footer {
         font-style: normal;
         font-weight: 700;
         font-size: 24px;
-        line-height: 29px;
-        letter-spacing: 0.2em;
+        letter-spacing: 0.1em;
     }
     #credit_card {
         margin-left: 10vw;
