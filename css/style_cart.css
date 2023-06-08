@@ -268,16 +268,22 @@ footer p {
   margin-top: 3vh;
   margin-left: 10vw;
   margin-right: 10vw;
+  display: flex;
+  justify-content: space-between;
 }
 #right_container #shipping_fee {
   margin-top: 1vh;
   margin-left: 10vw;
   margin-right: 10vw;
+  display: flex;
+  justify-content: space-between;
 }
 #right_container #total_price {
   margin-top: 5vh;
   margin-left: 10vw;
   margin-right: 10vw;
+  display: flex;
+  justify-content: space-between;
 }
 #right_container #button_container {
   margin-top: 5vh;
@@ -298,13 +304,19 @@ footer p {
 #right_container #payment_type {
   margin-top: 5vh;
   margin-left: 10vw;
-  margin-right: 10vw;
+  color: rgba(0, 0, 0, 0.7);
+  opacity: 0.8;
+  font-family: "Inter";
+  font-style: normal;
+  font-weight: 700;
+  font-size: 24px;
+  line-height: 29px;
+  letter-spacing: 0.2em;
 }
-#right_container #credit_card_img {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  width: 100%;
+#right_container #credit_card {
+  margin-left: 10vw;
+  margin-top: 10px;
+  width: 10vw;
 }
 
 /*# sourceMappingURL=style_cart.css.map */
