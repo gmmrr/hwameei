@@ -167,3 +167,10 @@ app.post("/login/data", (req, res) => {
         }
     });
 });
+
+app.post("/cart/add", (req, res) => {
+}
+app.post("/cart/delete", (req, res) => {
+}
+app.post("/cart/get", (req, res) => {
+}
