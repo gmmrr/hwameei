@@ -76,13 +76,14 @@ body {
             margin-top: 10vh;
 
             .hamburger_element_zsh {
+                font-family: "Inter", sans-serif;
                 font-size: 2rem;
                 color: #62b6b7;
                 letter-spacing: 1.5rem;
             }
             .hamburger_element_eng {
                 margin-left: 3vw;
-                font-family: "Inter";
+                font-family: "Inter", sans-serif;
                 font-size: 1rem;
                 font-weight: 400;
                 color: #62b6b7;
@@ -114,6 +115,7 @@ body {
         font-size: 1.5rem;
         color: #62b6b7;
         letter-spacing: 3px;
+        font-family: "Inter", sans-serif;
     }
 }
 
@@ -183,3 +185,158 @@ footer {
 }
 
 //--------------------------------------------------//
+
+#main_container {
+    display: flex;
+    padding-top: 10vh;
+}
+
+#left_container {
+    width: 60vw;
+    padding-top: 10vh;
+
+    #section_container {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-wrap: wrap;
+        overflow: hidden;
+        width: 100%;
+    }
+
+    #product_container {
+        display: flex;
+        justify-content: center;
+        align-items: top;
+        flex-wrap: wrap;
+        width: 90%;
+        margin-left: 10%;
+
+        .product_element {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            width: 100%;
+            height: 20vh;
+            background: #ffffff;
+
+            .glasses_pic {
+                width: 25%;
+                object-fit: cover; /* Scale the image so it covers whole area, thus will likely crop */
+                object-position: center;
+            }
+            .glasses_text {
+                width: 25%;
+
+                .glasses_name {
+                    color: #000000;
+                    opacity: 0.8;
+
+                    font-family: "Inter", sans-serif;
+                    font-style: normal;
+                    font-weight: 700;
+                    font-size: 24px;
+                    letter-spacing: 0.1em;
+                }
+                .glasses_description {
+                    color: #000000;
+                    opacity: 0.8;
+
+                    font-family: "Inter", sans-serif;
+                    font-style: normal;
+                    font-weight: 400;
+                    font-size: 24px;
+                    letter-spacing: 0.1em;
+                }
+            }
+            .glasses_price {
+                width: 25%;
+
+                color: #000000;
+                opacity: 0.8;
+
+                font-family: "Inter", sans-serif;
+                font-style: normal;
+                font-weight: 400;
+                font-size: 24px;
+                letter-spacing: 0.1em;
+            }
+            .delete_icon {
+                width: 25%;
+                object-fit: cover;
+                object-position: center;
+            }
+        }
+    }
+    #keyin_container {
+        display: flex;
+        align-items: top;
+        flex-wrap: wrap;
+        width: 90%;
+        margin-left: 10%;
+    }
+    #complete_container {
+        display: flex;
+        align-items: top;
+        flex-wrap: wrap;
+        width: 90%;
+        margin-left: 10%;
+    }
+}
+
+#right_container {
+    width: 40vw;
+    padding-top: 10vh;
+    h1 {
+        margin-left: 10vw;
+        margin-right: 10vw;
+    }
+    #item_price {
+        margin-top: 3vh;
+        margin-left: 10vw;
+        margin-right: 10vw;
+    }
+    #shipping_fee {
+        margin-top: 1vh;
+        margin-left: 10vw;
+        margin-right: 10vw;
+    }
+    #total_price {
+        margin-top: 5vh;
+        margin-left: 10vw;
+        margin-right: 10vw;
+    }
+    #button_container {
+        margin-top: 5vh;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        #order_button {
+            width: 50%;
+            margin-left: 10vw;
+            margin-right: 10vw;
+        }
+        #problem_button {
+            width: 50%;
+            margin-left: 10vw;
+            margin-right: 10vw;
+        }
+    }
+    #payment_type {
+        margin-top: 5vh;
+        margin-left: 10vw;
+        margin-right: 10vw;
+    }
+    #credit_card_img {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        width: 100%;
+        #visa_img {
+        }
+        #mastercard_img {
+        }
+        #jcb_image {
+        }
+    }
+}

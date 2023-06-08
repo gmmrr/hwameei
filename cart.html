@@ -4,7 +4,7 @@
         <meta charset="utf-8" />
         <meta content="width=device-width, initial-scale=1" name="viewport" />
         <title>Hwameei</title>
-        <link href="./css/style_login.css" rel="stylesheet" type="text/css" />
+        <link href="./css/style_cart.css" rel="stylesheet" type="text/css" />
 
         <!-- font -->
         <link rel="preconnect" href="https://fonts.googleapis.com" />
@@ -62,14 +62,57 @@
             <div id="info_func" onclick="window.location.href='./index.html'"></div>
         </div>
 
-        <div id="section_container">
-            <div id="section_1">
-                <div class="section_left_line"></div>
-                <p></p>
-                <div class="section_right_line"></div>
+        <div id="main_container">
+            <div id="left_container">
+                <div id="section_container">
+                    <div id="section_1">
+                        <div class="section_left_line"></div>
+                        <p></p>
+                        <div class="section_right_line"></div>
+                    </div>
+                    <div id="section_2"></div>
+                    <div id="section_3"></div>
+                </div>
+
+                <div id="product_container">
+                    <div class="product_element">
+                        <img class="glasses_pic" src="./src/glasses_vseries_black.jpg" />
+                        <div class="glasses_text">
+                            <div class="glasses_name">v系列_黑</div>
+                            <div class="glasses_description">B411-1-PCPL</div>
+                        </div>
+                        <div class="glasses_price">$3980</div>
+                        <img class="delete_icon" src="./src/delete_icon.png" />
+                    </div>
+                </div>
+
+                <div id="keyin_container">keyin_container</div>
+                <div id="complete_container">complete_container</div>
             </div>
-            <div id="section_2"></div>
-            <div id="section_3"></div>
+
+            <div id="right_container">
+                <h1>合計金額</h1>
+                <div id="item_price">
+                    <p id="item_price">商品金額</p>
+                </div>
+                <div id="shipping_fee">
+                    <p id="shipping_fee">運費</p>
+                </div>
+                <div id="total_price">
+                    <p id="total_price">合計</p>
+                </div>
+
+                <div id="button_container">
+                    <button id="order_button">結帳</button>
+                    <button id="problem_button">驗光師諮詢</button>
+                </div>
+                <p id="payment_type">付款方式/接受的付款類型</p>
+                <div id="credit_card_img">
+                    <div id="visa_img"></div>
+                    <div id="mastercard_img"></div>
+                    <div id="jcb_image"></div>
+                </div>
+            </div>
         </div>
 
         <footer>
