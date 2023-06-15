@@ -1,5 +1,1 @@
-[
-    { "account": "df", "password": "df", "cart": [""] },
-    { "account": "dfg", "password": "df", "cart": [""] },
-    { "account": "rdf", "password": "df", "cart": [""] }
-]
+[{"account":"df","password":"df","cart":[2,3,1,2]},{"account":"dfg","password":"df","cart":[]},{"account":"rdf","password":"df","cart":[]},{"account":"dfe","password":"df","cart":[""]}]

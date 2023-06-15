@@ -46,6 +46,16 @@ function login_logout_switching() {
         logout_block.style.display = "none";
     }
 }
+
+const QRCodeEl = document.getElementById("QR-codeWrapper");
+//-------------------- Toogle QRCode//
+function showQRCode() {
+    QRCodeEl.classList.toggle("inactive");
+}
+//-------------------- Close QRCode//
+function closeQRCode() {
+    QRCodeEl.classList.toggle("inactive");
+}
 //--------------------------------------------------//
 
 let button_chosen_array = new Array(21);
@@ -151,17 +161,80 @@ function choose_three_items() {
     }
 
     console.log(item_chosen_index);
+    show_recommended_items(item_chosen_index);
 }
 
-// let glasses_artemis = [0, 0, 0, 0, 1, 1, 1, 1, 0, 0, 1, 0, 0, 0, 0, 0, 0, 0, 1, 1, 0];
-// let glasses_caelum = [0, 0, 1, 1, 1, 0, 0, 0, 0, 0, 1, 0, 0, 0, 0, 0, 0, 0, 1, 1, 0];
-// let glasses_dogma_ocean = [1, 0, 0, 0, 0, 0, 0, 0, 1, 0, 0, 0, 0, 0, 0, 0, 1, 0, 1, 0, 1];
-// let glasses_echo_black = [0, 0, 0, 1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 0, 1];
-// let glasses_kamikaze = [1, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 0, 0, 1, 1, 0, 0, 0];
-// let glasses_ode_ocean = [0, 0, 0, 1, 0, 0, 0, 0, 0, 1, 0, 0, 0, 0, 0, 0, 0, 0, 1, 0, 1];
-// let glasses_vseries_black = [1, 1, 0, 0, 0, 0, 0, 0, 1, 0, 0, 0, 0, 0, 0, 1, 1, 1, 0, 0, 0];
-// let glasses_vseries_planet_silver = [0, 0, 0, 0, 0, 1, 1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 0, 0, 1, 0, 1];
-// let glasses_vseries_white = [1, 1, 0, 0, 0, 0, 0, 0, 0, 1, 0, 0, 0, 0, 0, 1, 1, 1, 0, 0, 0];
-// let glasses_wi6970 = [0, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 0, 0, 1, 1, 0, 0, 0, 0];
-// let glasses_kilmer = [0, 0, 1, 0, 0, 0, 0, 0, 0, 1, 0, 0, 0, 0, 0, 0, 0, 0, 1, 0, 1];
-// let glasses_magnus = [0, 0, 0, 1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 0, 1];
+function show_recommended_items(item_chosen_index) {
+    let frame = document.getElementById("item_frame");
+    for (let i = 0; i < 3; i++) {
+        get_item(item_chosen_index[i], function (item) {
+            console.log(item);
+            frame.innerHTML += `<div class="item_element">
+                <img class="glasses_pic" src="${item.img}" />
+                <div class="glasses_text">
+                    <div class="glasses_name">${item.name}</div>
+                    <div class="glasses_description">${item.description}</div>
+                </div>
+                <div class="glasses_price">$${item.price}</div>
+                <img class="cart_icon" src="./src/add_to_cart.png " onclick="add_to_cart(${item_chosen_index[i]})"/>
+            </div>
+            `;
+        });
+    }
+}
+
+function get_item(id, callback) {
+    var xhr = new XMLHttpRequest();
+    xhr.open("POST", "/cart/getbyid", true);
+    xhr.setRequestHeader("Content-Type", "application/json");
+    xhr.responseType = "json";
+
+    xhr.onload = function () {
+        if (xhr.status === 200) {
+            const data = xhr.response;
+            console.log(data);
+            callback(data);
+        } else {
+            console.log("request failed");
+        }
+    };
+
+    xhr.onerror = function () {
+        console.log("request error");
+    };
+
+    let request_data = {
+        id: id,
+    };
+
+    xhr.send(JSON.stringify(request_data));
+}
+
+function add_to_cart(id) {
+    console.log(id);
+
+    var xhr = new XMLHttpRequest();
+    xhr.open("POST", "/cart/add", true);
+    xhr.setRequestHeader("Content-Type", "application/json");
+    xhr.responseType = "json";
+
+    xhr.onload = function () {
+        if (xhr.status === 200) {
+            const data = xhr.response;
+            console.log(data);
+        } else {
+            console.log("request failed");
+        }
+    };
+
+    xhr.onerror = function () {
+        console.log("request error");
+    };
+
+    let req_data = {
+        id: id,
+        account: localStorage.getItem("account"),
+    };
+
+    xhr.send(JSON.stringify(req_data));
+}

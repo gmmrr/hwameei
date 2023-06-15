@@ -79,6 +79,7 @@ body {
                 font-size: 2rem;
                 color: #62b6b7;
                 letter-spacing: 1.5rem;
+                font-family: "Inter", sans-serif;
             }
             .hamburger_element_eng {
                 margin-left: 3vw;
@@ -86,6 +87,7 @@ body {
                 font-size: 1rem;
                 font-weight: 400;
                 color: #62b6b7;
+                font-family: "Inter", sans-serif;
             }
 
             &:hover {
@@ -105,6 +107,7 @@ body {
             display: none;
         }
     }
+
     #you_are_in_element {
         position: absolute;
         height: 60px;
@@ -113,6 +116,7 @@ body {
         font-size: 1.5rem;
         color: #62b6b7;
         letter-spacing: 3px;
+        font-family: "Inter", sans-serif;
     }
 }
 
@@ -123,6 +127,26 @@ body {
     z-index: 3;
 
     #cart_func {
+        #counter_cart {
+            position: absolute;
+            width: 29px;
+            height: 29px;
+            left: 52px;
+            border-radius: 50%;
+            background: #97dece;
+            #text_counter {
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                font-family: "Inter";
+                font-style: normal;
+                font-weight: 700;
+                font-size: 24px;
+                line-height: 29px;
+                letter-spacing: 0.1em;
+                color: #ffffff;
+            }
+        }
         width: 4vw;
         height: 4vw;
         background-image: url("../src/funcbar_cart.png");
@@ -131,6 +155,8 @@ body {
     }
     #cart_func:hover {
         cursor: pointer;
+        transform: scale(1.1);
+        transition: 0.4s;
     }
     #line_func {
         width: 4vw;
@@ -142,6 +168,8 @@ body {
     }
     #line_func:hover {
         cursor: pointer;
+        transform: scale(1.1);
+        transition: 0.4s;
     }
     #info_func {
         width: 4vw;
@@ -153,6 +181,8 @@ body {
     }
     #info_func:hover {
         cursor: pointer;
+        transform: scale(1.1);
+        transition: 0.4s;
     }
 }
 
@@ -180,7 +210,115 @@ footer {
         color: white;
     }
 }
+
+#QR-codeWrapper {
+    position: fixed;
+    background-color: blue;
+    top: 100px;
+    bottom: 4rem;
+    background: rgba(250, 248, 248, 0.5);
+    border: 1px solid #ffffff;
+    box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+    backdrop-filter: blur(7.5px);
+    border-radius: 42px;
+    bottom: 1rem;
+    left: 8rem;
+    width: 372px;
+    height: 474px;
+    z-index: 4;
+    #QR-content {
+        display: flex;
+        height: 100%;
+        width: 100%;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        #closeQRCode {
+            position: absolute;
+            width: 12.25px;
+            height: 12.25px;
+            top: 26.46px;
+            left: 329.46px;
+            background-image: url("../src/Vector.png");
+            background-position: center;
+            background-size: contain;
+            background-repeat: no-repeat;
+        }
+        #closeQRCode:hover {
+            cursor: pointer;
+        }
+        #title {
+            position: absolute;
+            top: 64px;
+            font-family: "Inter";
+            font-style: normal;
+            font-weight: 700;
+            font-size: 28px;
+            line-height: 34px;
+            /* identical to box height */
+            letter-spacing: 0.5em;
+            color: #439a97;
+        }
+        #subtitle {
+            position: absolute;
+            top: 110px;
+            font-family: "Inter";
+            font-style: normal;
+            font-weight: 700;
+            font-size: 16px;
+            line-height: 19px;
+            letter-spacing: 0.5em;
+
+            color: #62b6b7;
+        }
+        #QRCodeImage {
+            position: absolute;
+            top: 144px;
+            width: 200px;
+            height: 200px;
+            background-image: url("https://qr-official.line.me/gs/M_736wdmqa_BW.png");
+            background-position: center;
+            background-size: contain;
+            background-repeat: no-repeat;
+        }
+        #Text_1 {
+            position: absolute;
+            top: 362px;
+            font-family: "Inter";
+            font-style: normal;
+            font-weight: 700;
+            font-size: 16px;
+            line-height: 19px;
+            text-align: center;
+            letter-spacing: 0.5em;
+
+            color: #62b6b7;
+        }
+        #Text_2 {
+            position: absolute;
+            top: 392px;
+            font-family: "Inter";
+            font-style: normal;
+            font-weight: 400;
+            font-size: 14px;
+            line-height: 17px;
+            /* identical to box height */
+
+            text-align: center;
+            letter-spacing: 0.2em;
+
+            color: #62b6b7;
+        }
+    }
+}
+#QR-codeWrapper.inactive {
+    display: none;
+}
 //--------------------------------------------------//
+
+#you_are_in_element {
+    display: none;
+}
 
 #scrollbar {
     #scroll_icon {

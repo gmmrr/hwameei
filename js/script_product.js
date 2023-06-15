@@ -46,7 +46,18 @@ function login_logout_switching() {
         logout_block.style.display = "none";
     }
 }
+
+const QRCodeEl = document.getElementById("QR-codeWrapper");
+//-------------------- Toogle QRCode//
+function showQRCode() {
+    QRCodeEl.classList.toggle("inactive");
+}
+//-------------------- Close QRCode//
+function closeQRCode() {
+    QRCodeEl.classList.toggle("inactive");
+}
 //--------------------------------------------------//
+
 
 //--------------- backgndswitching ---------------//
 var first_time_homepage_switching = 1;
@@ -75,3 +86,34 @@ function homepage_change() {
 }
 setInterval(homepage_change, 5000);
 //--------------------------------------------------//
+
+
+function add_to_cart(id) {
+    console.log(id);
+
+    var xhr = new XMLHttpRequest();
+    xhr.open("POST", "/cart/add", true);
+    xhr.setRequestHeader("Content-Type", "application/json");
+    xhr.responseType = "json";
+
+    xhr.onload = function () {
+        if (xhr.status === 200) {
+            const data = xhr.response;
+            console.log(data);
+        } else {
+            console.log("request failed");
+        }
+    };
+
+    xhr.onerror = function () {
+        console.log("request error");
+    };
+
+    let req_data = {
+        id: id,
+        account: localStorage.getItem("account")
+    };
+
+    xhr.send(JSON.stringify(req_data));
+
+}

@@ -16,7 +16,7 @@
     </head>
 
     <body>
-        <!-- absolute position bar -->
+        <!-- general -->
         <div id="navbar">
             <div id="hamburger_icon" onclick="show_hamburger_content()"></div>
             <div id="hamburger_content_shadow" onclick="show_hamburger_content()"></div>
@@ -28,19 +28,19 @@
                     onclick="window.location.href='./index.html'"
                 >
                     <p class="hamburger_element_zsh">首頁</p>
-                    <p class="hamburger_element_eng">homepage</p>
+                    <p class="hamburger_element_eng">Homepage</p>
                 </div>
                 <div class="hamburger_element" onclick="window.location.href='./recomendation.html'">
                     <p class="hamburger_element_zsh">個人化推薦</p>
-                    <p class="hamburger_element_eng">personalized recommendation</p>
+                    <p class="hamburger_element_eng">Personalized Recommendation</p>
                 </div>
                 <div class="hamburger_element" onclick="window.location.href='./product.html'">
                     <p class="hamburger_element_zsh">商品一覽</p>
-                    <p class="hamburger_element_eng">product list</p>
+                    <p class="hamburger_element_eng">Product List</p>
                 </div>
                 <div class="hamburger_element" onclick="window.location.href='./shop.html'">
                     <p class="hamburger_element_zsh">門市介紹</p>
-                    <p class="hamburger_element_eng">shop introduction</p>
+                    <p class="hamburger_element_eng">Shop Introduction</p>
                 </div>
                 <div
                     class="hamburger_element"
@@ -48,7 +48,7 @@
                     onclick="window.location.href='./login.html'"
                 >
                     <p class="hamburger_element_zsh">登入/註冊</p>
-                    <p class="hamburger_element_eng">Log in/Sign up</p>
+                    <p class="hamburger_element_eng">Log in / Sign up</p>
                 </div>
                 <div class="hamburger_element" id="hamburger_element_logout" onclick="to_logout()">
                     <p class="hamburger_element_zsh">登出</p>
@@ -56,13 +56,24 @@
                 </div>
             </div>
             <div id="you_are_in_element">
-                <p>You are in 登入/註冊</p>
+                <p>You are in 登入／註冊</p>
             </div>
         </div>
         <div id="functionbar">
             <div id="cart_func" onclick="window.location.href='./cart.html'"></div>
-            <div id="line_func" onclick="window.location.href='./index.html'"></div>
-            <div id="info_func" onclick="window.location.href='./index.html'"></div>
+            <div id="line_func" onclick="showQRCode()"></div>
+            <div id="info_func" onclick="showQRCode()"></div>
+        </div>
+        <div id="QR-codeWrapper" class="inactive">
+            <img src="../src/Vector.png" style="display: none" />
+            <div id="QR-content">
+                <div id="closeQRCode" onClick="closeQRCode()"></div>
+                <div id="title">驗光師諮詢</div>
+                <div id="subtitle">加入LINE官方帳號</div>
+                <div id="QRCodeImage"></div>
+                <div id="Text_1">服務項目</div>
+                <div id="Text_2">鏡片介紹 眼鏡製作進度查詢 專業諮詢</div>
+            </div>
         </div>
 
         <!-- <button onclick="print_local_storage()">localStorage</button> -->

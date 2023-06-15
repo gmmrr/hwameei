@@ -6,7 +6,7 @@ const __filename = fileURLToPath(import.meta.url);
 const __dirname = dirname(__filename);
 
 const app = express();
-const port = 9193;
+const port = 9192;
 
 app.listen(port, () => {
     console.log(`listening on port: ${port}`);
@@ -20,6 +20,7 @@ app.use(express.static(__dirname));
 
 import fs from "fs";
 const jsonPath = "./json/userprofile.json";
+const itemList = "./json/productprofile.json";
 
 app.get("/", (req, res) => {
     res.sendFile(__dirname + "/index.html");
@@ -167,6 +168,143 @@ app.post("/login/data", (req, res) => {
     });
 });
 
-app.post("/cart/add", (req, res) => {});
-app.post("/cart/delete", (req, res) => {});
-app.post("/cart/get", (req, res) => {});
+app.post("/cart/add", (req, res) => {
+    const id = req.body.id;
+    const account = req.body.account;
+    console.log(id);
+    console.log(account);
+
+    fs.readFile(itemList, "utf8", (err, data) => {
+        const data_obj = JSON.parse(data);
+        if (err) {
+            console.error(err);
+            return;
+        } else {
+            let item_index = -1;
+            for (let i = 0; i < data_obj.length; i++) {
+                if (data_obj[i].id === id) {
+                    item_index = i;
+                    break;
+                }
+            }
+            console.log(data_obj[item_index]);
+            res.send(data_obj[item_index]);
+        }
+    });
+    fs.readFile(jsonPath, "utf8", (err, data) => {
+        let data_obj = JSON.parse(data);
+        if (err) {
+            console.error(err);
+            return;
+        } else {
+            for (let i = 0; i < data_obj.length; i++) {
+                if (data_obj[i].account === account) {
+                    data_obj[i].cart.push(id);
+                    break;
+                }
+            }
+            fs.writeFile(jsonPath, JSON.stringify(data_obj), "utf8", (err) => {
+                if (err) {
+                    console.error("Error writing JSON file:", err);
+                    return;
+                }
+            });
+        }
+    });
+});
+app.post("/cart/delete", (req, res) => {
+    const id = req.body.id;
+    const account = req.body.account;
+    console.log(id);
+    console.log(account);
+
+    fs.readFile(jsonPath, "utf8", (err, data) => {
+        let data_obj = JSON.parse(data);
+        if (err) {
+            console.error(err);
+            return;
+        } else {
+            for (let i = 0; i < data_obj.length; i++) {
+                if (data_obj[i].account === account) {
+                    const index = data_obj[i].cart.indexOf(id);
+                    if (index !== -1) {
+                        data_obj[i].cart.splice(index, 1);
+                    }
+                    break;
+                }
+            }
+            fs.writeFile(jsonPath, JSON.stringify(data_obj), "utf8", (err) => {
+                if (err) {
+                    console.error("Error writing JSON file:", err);
+                    return;
+                }
+                res.send("success");
+            });
+        }
+    });
+});
+
+app.post("/cart/get", (req, res) => {
+    const account = req.body.account;
+    console.log(account);
+
+    fs.readFile(jsonPath, "utf8", (err, data) => {
+        let data_obj = JSON.parse(data);
+        if (err) {
+            console.error(err);
+            return;
+        } else {
+            for (let i = 0; i < data_obj.length; i++) {
+                if (data_obj[i].account === account) {
+                    let cart_index = [];
+                    cart_index = data_obj[i].cart;
+                    fs.readFile(itemList, "utf8", (err, data) => {
+                        let item_obj = JSON.parse(data);
+                        if (err) {
+                            console.error(err);
+                            return;
+                        } else {
+                            let cart_obj = [];
+                            for (let j = 0; j < cart_index.length; j++) {
+                                for (let k = 0; k < item_obj.length; k++) {
+                                    if (cart_index[j] === item_obj[k].id) {
+                                        cart_obj.push(item_obj[k]);
+                                    }
+                                }
+                            }
+                            res.send(cart_obj);
+                        }
+                    });
+                    break;
+                }
+            }
+        }
+    });
+});
+
+app.post("/cart/getbyid", (req, res) => {
+    const id = req.body.id;
+    console.log(id);
+
+    let recommend_obj = {};
+
+    fs.readFile(itemList, "utf8", (err, data) => {
+        let data_obj = JSON.parse(data);
+        let recommend_obj = {};
+        if (err) {
+            console.error(err);
+            return;
+        } else {
+            for (let i = 0; i < data_obj.length; i++) {
+                console.log(data_obj[i].id);
+                if (id == data_obj[i].id) {
+                    recommend_obj = data_obj[i];
+                    console.log(data_obj[i]);
+                    break;
+                }
+            }
+            console.log(recommend_obj);
+            res.send(recommend_obj);
+        }
+    });
+});

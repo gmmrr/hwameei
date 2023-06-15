@@ -48,6 +48,16 @@ function login_logout_switching() {
         logout_block.style.display = "none";
     }
 }
+
+const QRCodeEl = document.getElementById("QR-codeWrapper");
+//-------------------- Toogle QRCode//
+function showQRCode() {
+    QRCodeEl.classList.toggle("inactive");
+}
+//-------------------- Close QRCode//
+function closeQRCode() {
+    QRCodeEl.classList.toggle("inactive");
+}
 //--------------------------------------------------//
 
 //--------------- homepage switching ---------------//

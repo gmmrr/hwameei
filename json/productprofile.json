@@ -1,0 +1,89 @@
+[
+    {
+        "id": 1,
+        "name": "v系列_黑",
+        "description": "B411-1-PCPL",
+        "price": 3980,
+        "img": "./src/glasses_vseries_black.jpg"
+    },
+
+    {
+        "id": 2,
+        "name": "v系列_白",
+        "description": "B411-2",
+        "price": 3280,
+        "img": "./src/glasses_vseries_white.jpg"
+    },
+
+    {
+        "id": 3,
+        "name": "caelum",
+        "description": "KT-534",
+        "price": 4250,
+        "img": "./src/glasses_caelum.jpg"
+    },
+
+    {
+        "id": 4,
+        "name": "artemis",
+        "description": "G-15",
+        "price": 5380,
+        "img": "./src/glasses_artemis.jpg"
+    },
+    {
+        "id": 5,
+        "name": "echo-black",
+        "description": "KP-244",
+        "price": 5250,
+        "img": "./src/glasses_echo_black.jpg"
+    },
+    {
+        "id": 6,
+        "name": "planet",
+        "description": "silver",
+        "price": 6750,
+        "img": "./src/glasses_vseries_planet_silver.jpg"
+    },
+    {
+        "id": 7,
+        "name": "威騰灰棕運動眼鏡",
+        "description": "wi6970",
+        "price": 3300,
+        "img": "./src/glasses_wi6970.jpg"
+    },
+    {
+        "id": 8,
+        "name": "kamikaze",
+        "description": "B406R-1-PCPL",
+        "price": 2480,
+        "img": "./src/glasses_kamikaze.jpg"
+    },
+    {
+        "id": 9,
+        "name": "dogma_ocean",
+        "description": "B406R-1-PCPL",
+        "price": 2480,
+        "img": "./src/glasses_dogma_ocean.jpg"
+    },
+    {
+        "id": 10,
+        "name": "ode_ocean",
+        "description": "B416R-2",
+        "price": 1980,
+        "img": "./src/glasses_ode_ocean.jpg"
+    },
+    {
+        "id": 11,
+        "name": "kilmer",
+        "description": "KP-236",
+        "price": 5380,
+        "img": "./src/glasses_kilmer.jpeg"
+    },
+    {
+        "id": 12,
+        "name": "MAGNUS",
+        "description": "KP-226",
+        "price": 4250,
+        "img": "./src/glasses_magnus.jpeg"
+    }
+]

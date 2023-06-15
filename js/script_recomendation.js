@@ -24,6 +24,8 @@ function check_login() {
     if (localStorage.getItem("account") != null && localStorage.getItem("password") != null) {
         login_logout_switching();
     }
+    localStorage.getItem("cart");
+    console.log();
 }
 check_login();
 
@@ -45,6 +47,16 @@ function login_logout_switching() {
         login_block.style.display = "flex";
         logout_block.style.display = "none";
     }
+}
+
+const QRCodeEl = document.getElementById("QR-codeWrapper");
+//-------------------- Toogle QRCode//
+function showQRCode() {
+    QRCodeEl.classList.toggle("inactive");
+}
+//-------------------- Close QRCode//
+function closeQRCode() {
+    QRCodeEl.classList.toggle("inactive");
 }
 //--------------------------------------------------//
 
@@ -86,6 +98,9 @@ function change_next_button() {
         let container2 = document.getElementById("preferenceflex_container");
         container2.style.display = "flex";
 
+        // let skip_button =document.getElementById("skip_button");
+        // skip_button.classList.add("inactive_button");
+
         state++;
     } else if (state === 1) {
         tab_arr[state].classList.remove("active");
@@ -112,12 +127,15 @@ function change_next_button() {
         let button = document.getElementById("next_container");
         let button2 = document.getElementById("next_container_2");
 
+        let skip_button = document.getElementById("skip_button");
+        skip_button.style.display = "none";
+
         button.classList.remove("active_button");
         button.classList.add("inactive_button");
 
         button2.classList.remove("inactive_button");
         button2.classList.add("active_button");
-
+        console.log("State==========>", state);
         state++;
     } else if (state === 2) {
         window.location.href = "./recomendation.html"; //actually change to recommended page
@@ -140,6 +158,7 @@ function change_goback_button() {
 
     if (state === 0) {
         console.log("no less");
+        console.log("State==========>", state);
     } else if (state === 1) {
         // Make first Tab Inactive
         tab_arr[state].classList.remove("active");
@@ -161,8 +180,10 @@ function change_goback_button() {
         let container2 = document.getElementById("preferenceflex_container");
         container2.style.display = "none";
 
+        console.log("Hereee  State==========>", state);
         state--;
-    } else if (state === 2) {
+    }
+    if (state === 2) {
         // Make first Tab Inactive
         tab_arr[state].classList.remove("active");
         tab_arr[state].classList.add("inactive");
@@ -188,13 +209,19 @@ function change_goback_button() {
         let button = document.getElementById("next_container");
         let button2 = document.getElementById("next_container_2");
 
+        let skip_button = document.getElementById("skip_button");
+        skip_button.style.display = "flex";
+
         button2.classList.remove("active_button");
         button2.classList.add("inactive_button");
 
         button.classList.remove("inactive_button");
         button.classList.add("active_button");
 
+        console.log("State==========>", state);
         state--;
+    } else if (state === 3) {
+        window.location.href = "./recomendation.html"; //actually change to recommended page
     }
 }
 //--------------------------------------------------//
@@ -218,31 +245,88 @@ function open_camera() {
             navigator.mediaDevices
                 .getUserMedia({ video: true })
                 .then(function (stream) {
-                    camera_stream = document.getElementById("camera_stream");
+                    const camera_stream = document.getElementById("camera_stream");
                     camera_stream.srcObject = stream;
+
+                    const canvas = document.createElement("canvas");
+                    const imageDiv = document.getElementById("image_result_container");
+                    const context = canvas.getContext("2d");
+                    let frameCount = 0;
+
+                    function captureTenthFrame() {
+                        frameCount++;
+
+                        if (frameCount === 10) {
+                            canvas.width = camera_stream.videoWidth;
+                            canvas.height = camera_stream.videoHeight;
+                            context.drawImage(camera_stream, 0, 0, canvas.width, canvas.height);
+
+                            const imageData = canvas.toDataURL("image/png");
+                            const image = new Image();
+                            image.src = imageData;
+
+                            imageDiv.appendChild(image);
+                        }
+
+                        if (frameCount < 10) {
+                            requestAnimationFrame(captureTenthFrame);
+                        }
+                    }
+
+                    camera_stream.addEventListener("loadeddata", function () {
+                        requestAnimationFrame(captureTenthFrame);
+                    });
                 })
                 .catch(function (error) {
-                    console.error("Cannot access to camera media: ", error);
+                    console.error("Cannot access camera media: ", error);
                 });
         } else {
             console.error("getUserMedia API not supported");
         }
+
         //----------------------------//
 
         let button_1 = document.getElementById("next_container_2");
         button_1.classList.remove("active_button");
         button_1.classList.add("inactive_button");
 
-        // setTimeout(() => {
-        let button_2 = document.getElementById("next_container_3");
-        button_2.classList.remove("inactive_button");
-        button_2.classList.add("active_button");
+        let button_container = document.getElementById("other_container");
+        button_container.style.display = "none";
+
         let container_button = document.getElementById("next_button_container");
         container_button.classList.add("container_result");
-        // }, 1000);
+
+        setTimeout(() => {
+            let body = document.body;
+            body.classList.toggle("active");
+            let videoEl = document.getElementById("video_popup_container");
+            videoEl.classList.toggle("active");
+            let result_container = document.getElementById("resultflex_container");
+            result_container.classList.remove("result_inactive");
+
+            let text_container_4 = document.getElementById("succed");
+            text_container_4.classList.remove("inactive_succed");
+            text_container_4.classList.add("active_succed");
+
+            let container_4 = document.getElementById("next_container_4");
+            container_4.classList.remove("inactive_button");
+            container_4.classList.add("active_button");
+
+            let button_container = document.getElementById("other_container");
+            button_container.style.display = "flex";
+            button_container.style.position = "relative";
+            button_container.style.bottom = "101px";
+
+            try {
+                close_camera();
+            } catch (err) {
+                console.log(err);
+            }
+            state++;
+            console.log("State=====>", state);
+        }, 1000);
     }
 }
-
 function close_camera() {
     var stream = camera_stream.srcObject;
     var tracks = stream.getTracks();
@@ -253,6 +337,7 @@ function close_camera() {
 
     camera_stream.srcObject = null;
 }
+
 //--------------------------------------------------//
 
 //------------------ go to result ------------------//
@@ -276,18 +361,47 @@ function go_to_result() {
     button.classList.toggle("inactive_button");
     pic.classList.toggle("result_inactive");
 }
+function facetype_random() {
+    let facetype_container = document.getElementById("button_pic");
+    let facetype = Math.floor(Math.random() * 6) + 1;
+    switch (facetype) {
+        case 1:
+            facetype_container.textContent = "圓臉";
+            break;
+        case 2:
+            facetype_container.textContent = "方臉";
+            break;
+        case 3:
+            facetype_container.textContent = "長臉";
+            break;
+        case 4:
+            facetype_container.textContent = "橢圓臉";
+            break;
+        case 5:
+            facetype_container.textContent = "心形臉";
+            break;
+        case 6:
+            facetype_container.textContent = "菱形臉";
+            break;
+    }
+}
+facetype_random();
 //--------------------------------------------------//
 
 //---------------- show all face type --------------//
-function all_facetype_showing() {
+let show = false;
+function all_facetype_switch() {
     let all_face_container = document.getElementById("all_face_container");
     let body = document.body;
-    body.classList.toggle("active");
-    if (all_face_container.style.display === "none" || all_face_container.style.display === "") {
+
+    if (show === false) {
+        body.classList.toggle("active");
         all_face_container.style.display = "flex";
     } else {
+        body.classList.toggle("active");
         all_face_container.style.display = "none";
     }
+    show = !show;
 }
 //--------------------------------------------------//
 

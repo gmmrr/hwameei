@@ -48,7 +48,9 @@ body {
   width: 65vw;
   z-index: 10;
   background-color: white;
-  user-select: none;
+  -webkit-user-select: none;
+     -moz-user-select: none;
+          user-select: none;
 }
 #navbar #hamburger_content #hamburger_close {
   position: absolute;
@@ -168,6 +170,108 @@ footer p {
   color: white;
 }
 
+#QR-codeWrapper {
+  position: fixed;
+  background-color: blue;
+  top: 100px;
+  bottom: 4rem;
+  background: rgba(250, 248, 248, 0.5);
+  border: 1px solid #ffffff;
+  box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+  -webkit-backdrop-filter: blur(7.5px);
+          backdrop-filter: blur(7.5px);
+  border-radius: 42px;
+  bottom: 1rem;
+  left: 8rem;
+  width: 372px;
+  height: 474px;
+  z-index: 4;
+}
+#QR-codeWrapper #QR-content {
+  display: flex;
+  height: 100%;
+  width: 100%;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+#QR-codeWrapper #QR-content #closeQRCode {
+  position: absolute;
+  width: 12.25px;
+  height: 12.25px;
+  top: 26.46px;
+  left: 329.46px;
+  background-image: url("../src/Vector.png");
+  background-position: center;
+  background-size: contain;
+  background-repeat: no-repeat;
+}
+#QR-codeWrapper #QR-content #closeQRCode:hover {
+  cursor: pointer;
+}
+#QR-codeWrapper #QR-content #title {
+  position: absolute;
+  top: 64px;
+  font-family: "Inter";
+  font-style: normal;
+  font-weight: 700;
+  font-size: 28px;
+  line-height: 34px;
+  /* identical to box height */
+  letter-spacing: 0.5em;
+  color: #439a97;
+}
+#QR-codeWrapper #QR-content #subtitle {
+  position: absolute;
+  top: 110px;
+  font-family: "Inter";
+  font-style: normal;
+  font-weight: 700;
+  font-size: 16px;
+  line-height: 19px;
+  letter-spacing: 0.5em;
+  color: #62b6b7;
+}
+#QR-codeWrapper #QR-content #QRCodeImage {
+  position: absolute;
+  top: 144px;
+  width: 200px;
+  height: 200px;
+  background-image: url("https://qr-official.line.me/gs/M_736wdmqa_BW.png");
+  background-position: center;
+  background-size: contain;
+  background-repeat: no-repeat;
+}
+#QR-codeWrapper #QR-content #Text_1 {
+  position: absolute;
+  top: 362px;
+  font-family: "Inter";
+  font-style: normal;
+  font-weight: 700;
+  font-size: 16px;
+  line-height: 19px;
+  text-align: center;
+  letter-spacing: 0.5em;
+  color: #62b6b7;
+}
+#QR-codeWrapper #QR-content #Text_2 {
+  position: absolute;
+  top: 392px;
+  font-family: "Inter";
+  font-style: normal;
+  font-weight: 400;
+  font-size: 14px;
+  line-height: 17px;
+  /* identical to box height */
+  text-align: center;
+  letter-spacing: 0.2em;
+  color: #62b6b7;
+}
+
+#QR-codeWrapper.inactive {
+  display: none;
+}
+
 #scrollbar #scroll_icon {
   position: absolute;
   top: 86vh;
@@ -207,7 +311,7 @@ footer p {
   display: flex;
   justify-content: center;
   align-items: center;
-  margin-top: 5vh;
+  margin-top: 7vh;
   font-family: "Inter", sans-serif;
   font-style: normal;
   font-weight: 400;
@@ -236,6 +340,7 @@ footer p {
   flex-wrap: wrap;
 }
 #product_container .product_element {
+  position: relative;
   width: 350px;
   height: 440px;
   margin-left: 22px;
@@ -243,79 +348,69 @@ footer p {
   margin-top: 10vh;
   background: #ffffff;
   box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
-  display: flex;
-  justify-content: center;
-  flex-wrap: wrap;
-  overflow: hidden;
 }
-
-.glasses_pic {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  flex-wrap: wrap;
-  object-fit: cover; /* Scale the image so it covers whole area, thus will likely crop */
-  object-position: center;
-  width: 350px;
-  height: 200px;
+#product_container .product_element .glasses_pic {
   margin-top: 37px;
-  overflow: hidden;
+  -o-object-fit: cover;
+     object-fit: cover; /* Scale the image so it covers whole area, thus will likely crop */
+  -o-object-position: center;
+     object-position: center;
+  margin-left: 10%;
+  width: 80%;
+  height: 200px;
 }
-
-.glasses_text_container {
-  display: flex;
-  justify-content: center;
-  flex-wrap: wrap;
+#product_container .product_element .glasses_text_container {
   width: 100%;
-  height: 161px;
 }
-
-.glasses_name {
+#product_container .product_element .glasses_text_container .glasses_name {
   display: flex;
   justify-content: center;
   align-items: center;
-  width: 100%;
-  height: 29px;
-  font-family: "Inter", sans-serif;
-  font-style: normal;
-  font-weight: 700;
-  font-size: 24px;
-  line-height: 29px;
-  letter-spacing: 0.1em;
   color: #000000;
   opacity: 0.8;
-}
-
-.glasses_description {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  text-align: center;
-  width: 100%;
-  height: 82px;
   font-family: "Inter", sans-serif;
-  font-style: normal;
   font-weight: 400;
   font-size: 24px;
-  line-height: 29px;
-  /* identical to box height */
   letter-spacing: 0.1em;
-  color: #000000;
-  opacity: 0.8;
 }
-
-.cart_icon {
+#product_container .product_element .glasses_text_container .glasses_description {
   display: flex;
   justify-content: center;
   align-items: center;
-  flex-wrap: wrap;
-  object-fit: cover; /* Scale the image so it covers whole area, thus will likely crop */
-  object-position: center;
+  margin-top: 2px;
+  color: #000000;
+  opacity: 0.3;
+  font-family: "Inter", sans-serif;
+  font-weight: 400;
+  font-size: 20px;
+  letter-spacing: 0.1em;
+}
+#product_container .product_element .glasses_price {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-top: 65px;
+  color: #000000;
+  opacity: 0.8;
+  font-family: "Inter";
+  font-weight: 400;
+  font-size: 24px;
+  letter-spacing: 0.1em;
+}
+#product_container .product_element .cart_icon {
+  position: absolute;
+  bottom: 10px;
+  right: 10px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  -o-object-fit: cover;
+     object-fit: cover; /* Scale the image so it covers whole area, thus will likely crop */
+  -o-object-position: center;
+     object-position: center;
   width: 44px;
   height: 44px;
-  margin-left: 303px;
-  margin-top: 0px;
-  overflow: hidden;
 }
-
-/*# sourceMappingURL=style_product.css.map */
+#product_container .product_element .cart_icon:hover {
+  cursor: pointer;
+}/*# sourceMappingURL=style_product.css.map */

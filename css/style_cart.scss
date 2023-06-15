@@ -76,17 +76,18 @@ body {
             margin-top: 10vh;
 
             .hamburger_element_zsh {
-                font-family: "Inter", sans-serif;
                 font-size: 2rem;
                 color: #62b6b7;
                 letter-spacing: 1.5rem;
+                font-family: "Inter", sans-serif;
             }
             .hamburger_element_eng {
                 margin-left: 3vw;
-                font-family: "Inter", sans-serif;
+                font-family: "Inter";
                 font-size: 1rem;
                 font-weight: 400;
                 color: #62b6b7;
+                font-family: "Inter", sans-serif;
             }
 
             &:hover {
@@ -184,44 +185,150 @@ footer {
     }
 }
 
+#QR-codeWrapper {
+    position: fixed;
+    background-color: blue;
+    top: 100px;
+    bottom: 4rem;
+    background: rgba(250, 248, 248, 0.5);
+    border: 1px solid #ffffff;
+    box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+    backdrop-filter: blur(7.5px);
+    border-radius: 42px;
+    bottom: 1rem;
+    left: 8rem;
+    width: 372px;
+    height: 474px;
+    z-index: 4;
+    #QR-content {
+        display: flex;
+        height: 100%;
+        width: 100%;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        #closeQRCode {
+            position: absolute;
+            width: 12.25px;
+            height: 12.25px;
+            top: 26.46px;
+            left: 329.46px;
+            background-image: url("../src/Vector.png");
+            background-position: center;
+            background-size: contain;
+            background-repeat: no-repeat;
+        }
+        #closeQRCode:hover {
+            cursor: pointer;
+        }
+        #title {
+            position: absolute;
+            top: 64px;
+            font-family: "Inter";
+            font-style: normal;
+            font-weight: 700;
+            font-size: 28px;
+            line-height: 34px;
+            /* identical to box height */
+            letter-spacing: 0.5em;
+            color: #439a97;
+        }
+        #subtitle {
+            position: absolute;
+            top: 110px;
+            font-family: "Inter";
+            font-style: normal;
+            font-weight: 700;
+            font-size: 16px;
+            line-height: 19px;
+            letter-spacing: 0.5em;
+
+            color: #62b6b7;
+        }
+        #QRCodeImage {
+            position: absolute;
+            top: 144px;
+            width: 200px;
+            height: 200px;
+            background-image: url("https://qr-official.line.me/gs/M_736wdmqa_BW.png");
+            background-position: center;
+            background-size: contain;
+            background-repeat: no-repeat;
+        }
+        #Text_1 {
+            position: absolute;
+            top: 362px;
+            font-family: "Inter";
+            font-style: normal;
+            font-weight: 700;
+            font-size: 16px;
+            line-height: 19px;
+            text-align: center;
+            letter-spacing: 0.5em;
+
+            color: #62b6b7;
+        }
+        #Text_2 {
+            position: absolute;
+            top: 392px;
+            font-family: "Inter";
+            font-style: normal;
+            font-weight: 400;
+            font-size: 14px;
+            line-height: 17px;
+            /* identical to box height */
+
+            text-align: center;
+            letter-spacing: 0.2em;
+
+            color: #62b6b7;
+        }
+    }
+}
+#QR-codeWrapper.inactive {
+    display: none;
+}
 //--------------------------------------------------//
 
 #main_container {
     display: flex;
-    padding-top: 10vh;
+    // padding-top: 10vh;
+    height: 80vh;
 }
 
 #left_container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
     width: 60vw;
-    padding-top: 10vh;
+    // padding-top: 10vh;
 
     #section_container {
         display: flex;
         justify-content: center;
         align-items: center;
-        flex-wrap: wrap;
         overflow: hidden;
-        width: 100%;
+        width: 10%;
     }
 
-    #product_container {
-        display: flex;
-        justify-content: center;
-        align-items: top;
-        flex-wrap: wrap;
+    #product_container_cart {
+        height: 70vh;
         width: 90%;
         margin-left: 10%;
+        overflow: scroll;
 
         .product_element {
             display: flex;
             justify-content: center;
+            margin-top: 3vh;
             align-items: center;
-            width: 100%;
             height: 20vh;
+            width: 100%;
             background: #ffffff;
 
             .glasses_pic {
-                width: 25%;
+                height: 98px;
+                width: 213px;
                 object-fit: cover; /* Scale the image so it covers whole area, thus will likely crop */
                 object-position: center;
             }
@@ -262,11 +369,18 @@ footer {
                 letter-spacing: 0.1em;
             }
             .delete_icon {
-                width: 25%;
+                width: 25px;
+                height: 25px;
                 object-fit: cover;
                 object-position: center;
             }
+            .delete_icon:hover {
+                cursor: pointer;
+            }
         }
+    }
+    #product_container_cart.inactive {
+        display: none;
     }
     #keyin_container {
         display: flex;
@@ -284,6 +398,141 @@ footer {
     }
 }
 
+#order_form {
+    position: absolute;
+    height: 70vh;
+    left: 139px;
+    font-family: "Inter";
+    font-style: normal;
+    font-weight: 400;
+    font-size: 24px;
+    line-height: 29px;
+    /* identical to box height */
+    color: #62b6b7;
+    p {
+        margin-top: 26px;
+    }
+    input {
+        margin-top: 7px;
+        font-family: "Inter";
+        font-style: normal;
+        font-weight: 400;
+        font-size: 20px;
+        line-height: 24px;
+        color: #000000;
+        opacity: 0.5;
+    }
+    input[type="text"] {
+        padding: 12px 20px;
+        margin: 8px 0;
+    }
+    .order_input {
+        margin-top: 7px;
+        box-sizing: border-box;
+        width: 844px;
+        height: 61px;
+        background: #ffffff;
+        border: 1px solid #62b6b7;
+        border-radius: 30px;
+    }
+    #payment_container {
+        position: absolute;
+        top: 480px;
+        width: 844px;
+        height: 61px;
+        #text_payment {
+            position: absolute;
+        }
+        #options {
+            display: flex;
+            justify-content: space-between;
+            margin-left: 340px;
+            list-style-type: none;
+        }
+        #options .select {
+            width: 30px;
+            height: 30px;
+            border-radius: 50%;
+            background: #ffffff;
+            border: 1px solid #62b6b7;
+
+            .select-inside {
+                position: absolute;
+                width: 19px;
+                height: 19px;
+                margin: 5px 5px 5px 5px;
+                border-radius: 50%;
+                background: #62b6b7;
+                border: 1px solid #62b6b7;
+            }
+        }
+        #options .select:hover {
+            cursor: pointer;
+        }
+        #options .select .inactive {
+            display: none;
+        }
+        #options .text {
+            margin-top: 5px;
+        }
+        #options * {
+            font-family: "Inter";
+            font-style: normal;
+            font-weight: 400;
+            font-size: 22px;
+            line-height: 27px;
+            /* identical to box height */
+            color: #62b6b7;
+            margin-left: 1px;
+        }
+    }
+}
+#navtab_container_cart {
+    display: flex;
+    margin-left: 10%;
+    justify-content: center;
+    align-items: center;
+    width: 844px;
+    height: 140px;
+    // background: blue;
+    border-bottom: 3px solid #62b6b7;
+    // border: 3px solid #cbedd5;
+}
+#navtab_container_cart.inactive {
+    display: none;
+}
+#order_complete_container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    margin-left: 80vh;
+    // margin-bottom: 30vh;
+
+    font-family: "Inter";
+    font-style: normal;
+    font-weight: 400;
+    font-size: 32px;
+    line-height: 39px;
+    /* identical to box height */
+
+    letter-spacing: 0.5em;
+
+    color: #439a97;
+    p {
+        margin-top: 23px;
+    }
+
+    #image_order {
+        width: 288px;
+        height: 288px;
+        object-fit: cover;
+        object-position: center;
+    }
+}
+#order_complete_container.inactive {
+    display: none;
+}
 #right_container {
     width: 40vw;
     padding-top: 10vh;
@@ -435,4 +684,7 @@ footer {
         margin-top: 10px;
         width: 10vw;
     }
+}
+.inactive {
+    display: none;
 }

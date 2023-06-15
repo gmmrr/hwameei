@@ -48,7 +48,9 @@ body {
   width: 65vw;
   z-index: 10;
   background-color: white;
-  user-select: none;
+  -webkit-user-select: none;
+     -moz-user-select: none;
+          user-select: none;
 }
 #navbar #hamburger_content #hamburger_close {
   position: absolute;
@@ -74,6 +76,7 @@ body {
   font-size: 2rem;
   color: #62b6b7;
   letter-spacing: 1.5rem;
+  font-family: "Inter", sans-serif;
 }
 #navbar #hamburger_content .hamburger_element .hamburger_element_eng {
   margin-left: 3vw;
@@ -81,6 +84,7 @@ body {
   font-size: 1rem;
   font-weight: 400;
   color: #62b6b7;
+  font-family: "Inter", sans-serif;
 }
 #navbar #hamburger_content .hamburger_element:hover {
   cursor: pointer;
@@ -102,6 +106,7 @@ body {
   font-size: 1.5rem;
   color: #62b6b7;
   letter-spacing: 3px;
+  font-family: "Inter", sans-serif;
 }
 
 #functionbar {
@@ -117,8 +122,30 @@ body {
   background-position: center;
   background-size: cover;
 }
+#functionbar #cart_func #counter_cart {
+  position: absolute;
+  width: 29px;
+  height: 29px;
+  left: 52px;
+  border-radius: 50%;
+  background: #97dece;
+}
+#functionbar #cart_func #counter_cart #text_counter {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-family: "Inter";
+  font-style: normal;
+  font-weight: 700;
+  font-size: 24px;
+  line-height: 29px;
+  letter-spacing: 0.1em;
+  color: #ffffff;
+}
 #functionbar #cart_func:hover {
   cursor: pointer;
+  transform: scale(1.1);
+  transition: 0.4s;
 }
 #functionbar #line_func {
   width: 4vw;
@@ -130,6 +157,8 @@ body {
 }
 #functionbar #line_func:hover {
   cursor: pointer;
+  transform: scale(1.1);
+  transition: 0.4s;
 }
 #functionbar #info_func {
   width: 4vw;
@@ -141,6 +170,8 @@ body {
 }
 #functionbar #info_func:hover {
   cursor: pointer;
+  transform: scale(1.1);
+  transition: 0.4s;
 }
 
 footer {
@@ -163,6 +194,112 @@ footer #footer_fax {
 }
 footer p {
   color: white;
+}
+
+#QR-codeWrapper {
+  position: fixed;
+  background-color: blue;
+  top: 100px;
+  bottom: 4rem;
+  background: rgba(250, 248, 248, 0.5);
+  border: 1px solid #ffffff;
+  box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+  -webkit-backdrop-filter: blur(7.5px);
+          backdrop-filter: blur(7.5px);
+  border-radius: 42px;
+  bottom: 1rem;
+  left: 8rem;
+  width: 372px;
+  height: 474px;
+  z-index: 4;
+}
+#QR-codeWrapper #QR-content {
+  display: flex;
+  height: 100%;
+  width: 100%;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+#QR-codeWrapper #QR-content #closeQRCode {
+  position: absolute;
+  width: 12.25px;
+  height: 12.25px;
+  top: 26.46px;
+  left: 329.46px;
+  background-image: url("../src/Vector.png");
+  background-position: center;
+  background-size: contain;
+  background-repeat: no-repeat;
+}
+#QR-codeWrapper #QR-content #closeQRCode:hover {
+  cursor: pointer;
+}
+#QR-codeWrapper #QR-content #title {
+  position: absolute;
+  top: 64px;
+  font-family: "Inter";
+  font-style: normal;
+  font-weight: 700;
+  font-size: 28px;
+  line-height: 34px;
+  /* identical to box height */
+  letter-spacing: 0.5em;
+  color: #439a97;
+}
+#QR-codeWrapper #QR-content #subtitle {
+  position: absolute;
+  top: 110px;
+  font-family: "Inter";
+  font-style: normal;
+  font-weight: 700;
+  font-size: 16px;
+  line-height: 19px;
+  letter-spacing: 0.5em;
+  color: #62b6b7;
+}
+#QR-codeWrapper #QR-content #QRCodeImage {
+  position: absolute;
+  top: 144px;
+  width: 200px;
+  height: 200px;
+  background-image: url("https://qr-official.line.me/gs/M_736wdmqa_BW.png");
+  background-position: center;
+  background-size: contain;
+  background-repeat: no-repeat;
+}
+#QR-codeWrapper #QR-content #Text_1 {
+  position: absolute;
+  top: 362px;
+  font-family: "Inter";
+  font-style: normal;
+  font-weight: 700;
+  font-size: 16px;
+  line-height: 19px;
+  text-align: center;
+  letter-spacing: 0.5em;
+  color: #62b6b7;
+}
+#QR-codeWrapper #QR-content #Text_2 {
+  position: absolute;
+  top: 392px;
+  font-family: "Inter";
+  font-style: normal;
+  font-weight: 400;
+  font-size: 14px;
+  line-height: 17px;
+  /* identical to box height */
+  text-align: center;
+  letter-spacing: 0.2em;
+  color: #62b6b7;
+}
+
+#QR-codeWrapper.inactive {
+  display: none;
+}
+
+#you_are_in_element {
+  display: none;
 }
 
 #scrollbar #scroll_icon {
@@ -329,6 +466,4 @@ footer p {
 }
 #start_banner #start_button:hover {
   cursor: pointer;
-}
-
-/*# sourceMappingURL=style.css.map */
+}/*# sourceMappingURL=style.css.map */

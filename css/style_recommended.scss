@@ -181,6 +181,110 @@ footer {
     }
 }
 
+#QR-codeWrapper {
+    position: fixed;
+    background-color: blue;
+    top: 100px;
+    bottom: 4rem;
+    background: rgba(250, 248, 248, 0.5);
+    border: 1px solid #ffffff;
+    box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+    backdrop-filter: blur(7.5px);
+    border-radius: 42px;
+    bottom: 1rem;
+    left: 8rem;
+    width: 372px;
+    height: 474px;
+    z-index: 4;
+    #QR-content {
+        display: flex;
+        height: 100%;
+        width: 100%;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        #closeQRCode {
+            position: absolute;
+            width: 12.25px;
+            height: 12.25px;
+            top: 26.46px;
+            left: 329.46px;
+            background-image: url("../src/Vector.png");
+            background-position: center;
+            background-size: contain;
+            background-repeat: no-repeat;
+        }
+        #closeQRCode:hover {
+            cursor: pointer;
+        }
+        #title {
+            position: absolute;
+            top: 64px;
+            font-family: "Inter";
+            font-style: normal;
+            font-weight: 700;
+            font-size: 28px;
+            line-height: 34px;
+            /* identical to box height */
+            letter-spacing: 0.5em;
+            color: #439a97;
+        }
+        #subtitle {
+            position: absolute;
+            top: 110px;
+            font-family: "Inter";
+            font-style: normal;
+            font-weight: 700;
+            font-size: 16px;
+            line-height: 19px;
+            letter-spacing: 0.5em;
+
+            color: #62b6b7;
+        }
+        #QRCodeImage {
+            position: absolute;
+            top: 144px;
+            width: 200px;
+            height: 200px;
+            background-image: url("https://qr-official.line.me/gs/M_736wdmqa_BW.png");
+            background-position: center;
+            background-size: contain;
+            background-repeat: no-repeat;
+        }
+        #Text_1 {
+            position: absolute;
+            top: 362px;
+            font-family: "Inter";
+            font-style: normal;
+            font-weight: 700;
+            font-size: 16px;
+            line-height: 19px;
+            text-align: center;
+            letter-spacing: 0.5em;
+
+            color: #62b6b7;
+        }
+        #Text_2 {
+            position: absolute;
+            top: 392px;
+            font-family: "Inter";
+            font-style: normal;
+            font-weight: 400;
+            font-size: 14px;
+            line-height: 17px;
+            /* identical to box height */
+
+            text-align: center;
+            letter-spacing: 0.2em;
+
+            color: #62b6b7;
+        }
+    }
+}
+#QR-codeWrapper.inactive {
+    display: none;
+}
+
 //--------------------------------------------------//
 
 #you_choose {
@@ -253,16 +357,91 @@ footer {
     justify-content: center;
     align-items: center;
     flex-wrap: wrap;
-    margin-top: 5vh;
 
     .item_element {
+        position: relative;
+
         width: 350px;
         height: 440px;
         margin-left: 22px;
         margin-right: 22px;
-
+        margin-top: 10vh;
         background: #ffffff;
         box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+
+        .glasses_pic {
+            margin-top: 37px;
+            object-fit: cover; /* Scale the image so it covers whole area, thus will likely crop */
+            object-position: center;
+            margin-left: 10%;
+            width: 80%;
+            height: 200px;
+        }
+
+        .glasses_text {
+            width: 100%;
+
+            .glasses_name {
+                display: flex;
+                justify-content: center;
+                align-items: center;
+
+                color: #000000;
+                opacity: 0.8;
+
+                font-family: "Inter", sans-serif;
+                font-weight: 400;
+                font-size: 24px;
+                letter-spacing: 0.1em;
+            }
+
+            .glasses_description {
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                margin-top: 2px;
+
+                color: #000000;
+                opacity: 0.3;
+
+                font-family: "Inter", sans-serif;
+                font-weight: 400;
+                font-size: 20px;
+                letter-spacing: 0.1em;
+            }
+        }
+
+        .glasses_price {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            margin-top: 65px;
+
+            color: #000000;
+            opacity: 0.8;
+
+            font-family: "Inter";
+            font-weight: 400;
+            font-size: 24px;
+            letter-spacing: 0.1em;
+        }
+
+        .cart_icon {
+            position: absolute;
+            bottom: 10px;
+            right: 10px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            object-fit: cover; /* Scale the image so it covers whole area, thus will likely crop */
+            object-position: center;
+            width: 44px;
+            height: 44px;
+
+            &:hover {
+                cursor: pointer;
+            }
+        }
     }
 }
 
