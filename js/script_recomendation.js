@@ -324,7 +324,7 @@ function open_camera() {
             }
             state++;
             console.log("State=====>", state);
-        }, 1000);
+        }, 800000);
     }
 }
 function close_camera() {

@@ -169,7 +169,8 @@ function show_recommended_items(item_chosen_index) {
     for (let i = 0; i < 3; i++) {
         get_item(item_chosen_index[i], function (item) {
             console.log(item);
-            frame.innerHTML += `<div class="item_element">
+            if (item.id !== undefined) {
+                frame.innerHTML += `<div class="item_element">
                 <img class="glasses_pic" src="${item.img}" />
                 <div class="glasses_text">
                     <div class="glasses_name">${item.name}</div>
@@ -179,6 +180,9 @@ function show_recommended_items(item_chosen_index) {
                 <img class="cart_icon" src="./src/add_to_cart.png " onclick="add_to_cart(${item_chosen_index[i]})"/>
             </div>
             `;
+            } else {
+                frame.innerHTML += `<div class="item_element"></div>`;
+            }
         });
     }
 }
@@ -192,7 +196,6 @@ function get_item(id, callback) {
     xhr.onload = function () {
         if (xhr.status === 200) {
             const data = xhr.response;
-            console.log(data);
             callback(data);
         } else {
             console.log("request failed");
